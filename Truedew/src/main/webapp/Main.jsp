@@ -1,0 +1,180 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The River</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="The River template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
+<link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+
+<style>
+	/* #bookbtn{
+		text-align:center !important;
+		margin: auto !important;
+		line-height: 4;
+		color: white;
+	} */
+
+
+	/* 지역리스트 */
+	#menuitems{
+		background-color: white;
+	}
+	.locallist{
+		display: none;
+	}
+
+	li:hover {
+		background-color: rgb(183, 186, 231) !important;
+	}
+
+	/* 메인검색 */
+	#lolist,#ctlist{
+		color: rgb(255,163,123);
+	}
+
+
+</style>
+</head>
+<body>
+
+<div class="super_container">
+	
+
+	<div id="headers"></div>
+	
+	
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<!-- Slide -->
+				<div class="slide">
+					<div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3D)"></div>
+					<div class="home_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_content text-center">
+										<div class="home_title">청년공감 공유공간</div>
+										<div class="booking_form_container">
+											<form action="#" class="booking_form">
+												<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
+													<div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+															<div>
+																<!-- <input type="text" class="booking_input booking_input_b" placeholder="지역(시/도)" required="required"> -->
+																<select name="" id="lolist" class="booking_input booking_input_b">
+																	<option value="">지역(시/도)</option>
+																	<option value="">서울</option>
+																	<option value="">경기/인천</option>
+																	<option value="">대구</option>
+																	<option value="">경상</option>
+																	<option value="">강원</option>
+																	<option value="">충청</option>
+																	<option value="">광주/전라</option>
+																	<option value="">제주</option>
+																</select>
+																<!-- select option 선택 시 밑에 있는 센터명 정보 필터링해서 값 가져오기 -->
+															</div>
+														<div>
+															<!-- <input type="text" class="booking_input booking_input_b" placeholder="센터명" required="required"> -->
+															<select name="" id="ctlist" class="booking_input booking_input_b">
+																<option value="">센터명</option>
+																<option value="">이건</option>
+																<option value="">DB에서</option>
+																<option value="">가져와야</option>
+																<option value="">합니다</option>
+															</select>
+														
+														</div>
+														<div><button class="booking_button trans_200">예약하기</button></div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- 달력 -->
+	<!-- <div><input type="text" class="datepicker booking_input booking_input_a booking_out" placeholder="Check out" required="required"></div> -->
+
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="copyright">
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Made by True이슬 : 이슬이 이민지 송소라 강정진 유성훈 김응진
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</div>
+	</footer>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/progressbar/progressbar.min.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="js/custom.js"></script>
+
+<script>
+
+  $('.book_button').hover(function(){
+	if($(".locallist").is(":visible")){
+                    $(".locallist").css("display","none");
+                }
+                else{
+                    $(".locallist").css("display","block");
+                }
+  });
+
+  $(document).ready( function() {
+
+$("#headers").load("menubar.jsp");  // 원하는 파일 경로를 삽입하면 된다
+// $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+
+});
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
