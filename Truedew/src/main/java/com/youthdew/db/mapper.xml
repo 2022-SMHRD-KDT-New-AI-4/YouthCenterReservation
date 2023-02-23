@@ -5,13 +5,13 @@
 <mapper namespace="com.youthdew.db.mapper">
 	<!-- 회원가입 -->
 	<insert id="join" parameterType="MemberVO">
-		insert into tb_user values(#{USER_ID} , #{USER_PW} , #{USER_NAME} , #{BIRTH} , #{TEL})
+		insert into tb_user values(#{user_id} , #{user_pw} , #{user_name} , #{user_birthdate} , #{user_phone} , #{user_joindate}, 'M')
 	</insert>
 	
 	<!-- 로그인 -->
 	<select id="login" resultType="MemberVO"
 		parameterType="MemberVO">
-		select * from tb_user where USER_ID = #{USER_ID} and USER_PW = #{USER_PW}
+		select * from tb_user where user_id = #{user_id} and user_pw = #{user_pw}
 	</select>
 
 </mapper>
