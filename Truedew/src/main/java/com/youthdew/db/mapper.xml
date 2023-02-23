@@ -3,6 +3,15 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.youthdew.db.mapper">
-
+	<!-- 회원가입 -->
+	<insert id="join" parameterType="MemberVO">
+		insert into USER_INFO values(#{USER_ID} , #{USER_PW} , #{USER_NAME} , #{BIRTH} , #{TEL})
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="MemberVO"
+		parameterType="MemberVO">
+		select * from USER_INFO where USER_ID = #{USER_ID} and USER_PW = #{USER_PW}
+	</select>
 
 </mapper>

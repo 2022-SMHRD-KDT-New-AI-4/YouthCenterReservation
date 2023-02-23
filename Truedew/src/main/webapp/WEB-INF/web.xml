@@ -4,4 +4,44 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>LoginService</servlet-name>
+  	<display-name>LoginService</display-name>
+  	<description></description>
+  	<servlet-class>com.youthdew.model.LoginService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MemberDAO</servlet-name>
+  	<display-name>MemberDAO</display-name>
+  	<description></description>
+  	<servlet-class>com.youthdew.model.MemberDAO</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MemberVO</servlet-name>
+  	<display-name>MemberVO</display-name>
+  	<description></description>
+  	<servlet-class>com.youthdew.model.MemberVO</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>JoinService</servlet-name>
+  	<display-name>JoinService</display-name>
+  	<description></description>
+  	<servlet-class>com.youthdew.controller.JoinService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginService</servlet-name>
+  	<url-pattern>/LoginService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MemberDAO</servlet-name>
+  	<url-pattern>/MemberDAO</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MemberVO</servlet-name>
+  	<url-pattern>/MemberVO</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JoinService</servlet-name>
+  	<url-pattern>/JoinService</url-pattern>
+  </servlet-mapping>
 </web-app>
