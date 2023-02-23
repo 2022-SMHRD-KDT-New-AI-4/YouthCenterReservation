@@ -46,7 +46,7 @@
                            <div class="home_content text-center">
                               <div class="home_title">청년공감 공유공간</div>
                               <div class="booking_form_container">
-                                 <form action="#" class="booking_form">
+                                 <form action="SpaceReservation" class="booking_form">
                                     <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
                                        <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
                                              <div>
@@ -71,7 +71,7 @@
 											 </select>
                                           
                                           </div>
-                                          <div><button class="booking_button trans_200">예약하기</button></div>
+                                          <div><button name="btn" type="button" onclick="location.href='SpaceReservation.jsp'" class="booking_button trans_200">예약하기</button></div>
                                        </div>
                                     </div>
                                  </form>
