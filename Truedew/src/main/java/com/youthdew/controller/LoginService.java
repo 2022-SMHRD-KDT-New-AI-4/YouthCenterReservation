@@ -18,10 +18,10 @@ public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 	      PrintWriter out = response.getWriter();
-	      String USER_ID = request.getParameter("USER_ID");
-	      String USER_PW = request.getParameter("USER_PW");
+	      String user_id = request.getParameter("user_id");
+	      String user_pw = request.getParameter("user_pw");
 	      
-	      MemberVO vo = new MemberVO(USER_ID,USER_PW);
+	      MemberVO vo = new MemberVO(user_id,user_pw);
 	      
 	      MemberDAO dao = new MemberDAO();
 	      //로그인 처리 (db에 값이 있는지 확인) -> 사용자의 정보 가져오기

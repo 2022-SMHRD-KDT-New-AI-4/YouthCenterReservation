@@ -18,13 +18,17 @@ public class JoinService extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String USER_ID = request.getParameter("USER_ID");
-		String USER_PW = request.getParameter("USER_PW");
-		String USER_NAME = request.getParameter("USER_NAME");
-		String BIRTH = request.getParameter("BIRTH");
-		String TEL = request.getParameter("TEL");
+		String user_id = request.getParameter("user_id");
+		String user_pw = request.getParameter("user_pw");
+		String user_name = request.getParameter("user_name");
+		String user_birthdate = request.getParameter("user_birthdate");
+		String user_phone = request.getParameter("user_phone");
+		String user_joindate = request.getParameter("user_joindate");
+		String user_type = request.getParameter("user_type");
 		
-		MemberVO vo = new MemberVO(USER_ID , USER_PW , USER_NAME , BIRTH , TEL);
+		
+		
+		MemberVO vo = new MemberVO(user_id, user_pw, user_name, user_birthdate, user_phone, user_joindate, user_type);
 		
 		MemberDAO dao = new MemberDAO();
 		int cnt = dao.join(vo);
@@ -37,7 +41,7 @@ public class JoinService extends HttpServlet {
 			// response.sendRedirect("join_success.jsp")
 			// email값을 공유 -> forwarding 방식을 사용해 request 공유
 			RequestDispatcher rd = request.getRequestDispatcher("joinsuccess.jsp");
-			request.setAttribute("USER_ID",USER_ID); // 공유하고 싶은 데이터 request 영역에 저장 (우리가쓸이름(식별값) , 실제이름)
+			request.setAttribute("user_id",user_id); // 공유하고 싶은 데이터 request 영역에 저장 (우리가쓸이름(식별값) , 실제이름)
 			rd.forward(request, response);
 		}else {
 			System.out.println("회원가입 실패");
