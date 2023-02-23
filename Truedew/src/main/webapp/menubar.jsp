@@ -18,21 +18,8 @@
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 
-<style>
-    /* 지역리스트 */
-	#menuitems{
-		background-color: white;
-	}
-	.locallist{
-		display: none;
-	}
-
-	li:hover {
-		background-color: rgb(183, 186, 231) !important;
-	}
-
-</style>
 </head>
 
 <body>
@@ -112,20 +99,8 @@
 <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/listevent.js"></script>
 
-<script>
-
-  $('.book_button').hover(function(){
-	if($(".locallist").is(":visible")){
-                    $(".locallist").css("display","none");
-                }
-                else{
-                    $(".locallist").css("display","block");
-                }
-  });
-
-
-</script>
 </body>
 
 </html>

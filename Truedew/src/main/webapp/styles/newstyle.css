@@ -1,0 +1,16 @@
+    /* 지역리스트 */
+	#menuitems{
+		background-color: white;
+	}
+	.locallist{
+		display: none;
+	}
+
+	li:hover {
+		background-color: rgb(183, 186, 231) !important;
+	}
+
+    /* 메인검색 */
+	#lolist,#ctlist{
+		color: rgb(255,163,123);
+	}

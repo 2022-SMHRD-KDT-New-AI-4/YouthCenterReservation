@@ -17,25 +17,8 @@
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/blog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 
-<style>
-    /* 지역리스트 */
-	#menuitems{
-		background-color: white;
-	}
-	.locallist{
-		display: none;
-	}
-
-	li:hover {
-		background-color: rgb(183, 186, 231) !important;
-	}
-
-	/* 메인검색 */
-	#lolist,#ctlist{
-		color: rgb(255,163,123);
-	}
-</style>
 
 
 </head>
@@ -318,25 +301,8 @@ Made by True이슬 : 이슬이 이민지 송소라 강정진 유성훈 김응진
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/listevent.js"></script>
+<script src="js/htmlplus.js"></script>
 
-<script>
-
-	$('.book_button').hover(function(){
-	  if($(".locallist").is(":visible")){
-					  $(".locallist").css("display","none");
-				  }
-				  else{
-					  $(".locallist").css("display","block");
-				  }
-	});
-  
-	$(document).ready( function() {
-
-$("#headers").load("menubar.jsp");  // 원하는 파일 경로를 삽입하면 된다
-// $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
-
-});
-  
-  </script>
 </body>
 </html>
