@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Blog</title>
+<title>로그인</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
@@ -17,35 +17,13 @@
 <link rel="stylesheet" type="text/css" href="styles/blog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    h1 {
-      margin-left : 100px;  
-    }
-    h2 {
-      margin-left : -52px; 
-      
-    }
-    h3 {
-      margin-left : 30px;  
-    }
-    h4 {
-      margin-left : -50px;  
-    }
-    h5 {
-      margin-left : -10px;  
-    }
-    #double {
-        margin-top : 0px;
-    }
-
-  </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 </head>
 <body>
 
@@ -53,8 +31,11 @@
 	
 	<!-- Header -->
 	<header id="headers"></header>
+	
 
+	<!-- Menu -->
 
+	
 	<!-- Home -->
 	<div class="home" id="homehome">
 		<div class="background_image" id="bg_img" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
@@ -87,26 +68,73 @@
 							<div class="home_title" style="color:black" margin="text-center;" >회원가입</div>
 							
 									<br>
+			
 			<br>
 			<br>
-			<form action="JoinService2" method="post">
-		 
-                <h1 style="font-size:40px; color:white;">아이디 <input type="text" id="id" name="user_id" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;">
-                <button type="button" onclick="idCheck()" autofocusmaxlength="20" style="width:100px;height:50px;font-size:20px; color:black" id="double">중복확인</button></h1>
-                <br>
-                <span id="result"></span>
-                <h2 style="font-size:40px; color:white;">비밀번호 <input name="user_pw" type="password"  placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h2>
-                 <br>
-                 <h3 style="font-size:40px; color:white;">이름 <input name="user_name" type="text"  placeholder="이름을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h3>
-                 <br>
-                 <h4 style="font-size:40px; color:white;">생년월일 <input name="user_birthdate" type="text"  placeholder="생일을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h4>
-                 <br>
-                 <h5 style="font-size:40px; color:white;">연락처 <input name="user_phone" type="text"  placeholder="전화번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h5>
-                 <br>
-                 <button type="submit" autofocusmaxlength="20" style="width:550px;height:70px;font-size:30px;">회원가입</button><br>
-                
-           </form>
-        <br><br><br><br><br><br><br><br><br><br>
+			<br>
+			
+              <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+                  <img src="images/네이버회원가입.png" width="450" height="450" id="naver">
+              </a>
+      
+        <!-- 네이버 스크립트 -->
+        <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+        
+        <script>
+        // callbackUrl = 메인페이지 , 클라이언트 아이디 바꾸지말기. 
+        var naverLogin = new naver.LoginWithNaverId(
+                {
+                    clientId: "LlSvD47T4y2jbzBt5MZ3", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
+                    callbackUrl: "http://localhost:8081/gd/main2.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+                    isPopup: false,
+                    callbackHandle: true
+                    
+                }
+            );	
+        
+        naverLogin.init();
+        </script>
+        <!-- 카카오 로그인 버튼 -->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a onclick="kakaoLogin();" href="javascript:void(0)">
+                  <img src="images/카카오회원가입.png" width="450" height="450" id="kakao">
+              </a>
+        
+        <!-- 카카오 로그인 스크립트 -->
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+        <script>
+            window.Kakao.init('1a6f86c5de53b01691eddf232e3036c8');
+    
+            function kakaoLogin() {
+            	callbackUrl: "http://localhost:8081/gd/main2.jsp" // 로그인 후 callback할 사이트 
+                window.Kakao.Auth.login({
+                    scope: 'profile_nickname, account_email', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
+                    success: function(response) {
+                        console.log(response) // 로그인 성공하면 받아오는 데이터
+                        window.Kakao.API.request({ // 사용자 정보 가져오기 
+                            url: '/v2/user/me',
+                            success: (res) => {
+                                const kakao_account = res.kakao_account;
+                                console.log(kakao_account)
+                                
+                            }
+                        });
+                          //리다이렉트 되는 코드
+                         
+                    },
+                    fail: function(error) {
+                        console.log(error);
+                        window.location.href='join.jsp'
+                    }
+                });
+            }
+
+        </script>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="login.jsp">
+                  <img src="images/일반회원가입.png" width="450" height="450" id="ID">
+        </a>
+        <br><br><br><br><br>
         
         <script>
 								
@@ -136,7 +164,11 @@
 </div>
 
 	<!-- Blog -->
-    <footer id="footers"></footer>
+
+	
+	   <!-- Footer -->
+
+	<footer id="footers"></footer>
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -151,32 +183,11 @@
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/listevent.js"></script>
+<script src="plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
 
-     
-     
-     <script type="text/javascript">
-     function idCheck(){
-          //jQuery에서 선택자역할
-          var id = $("#id").val();
-          
-          $.ajax({
-              url : "IDCheckService?user_id="+id,
-              success : function(data){
-                   if(data == "success"){
-                        $("#result").html("<span>사용가능한 아이디입니다.<span><br>");
-                   }else if(data == "fail"){
-                        $("#result").html("<span>중복된 아이디입니다.<span><br>");
-                   }
-              }
-          });
-          
-          
-     }
-</script>
-
-	  
 </body>
 </html>
