@@ -20,7 +20,50 @@
 <link rel="stylesheet" type="text/css" href="styles/blog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<style>
+/*탭 스타일  */
+ul.list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+border-bottom: 1px solid #ccc;
+}
+ul.list::after {
+content: '';
+display: block;
+clear: both;
+}
+.tab-button {
+display: block;
+padding: 10px 20px 10px 20px;
+float: left;
+margin-right: -1px;
+margin-bottom: -1px;
+color: grey;
+text-decoration: none;
+cursor: pointer;
+}
+.active {
+border-top: 2px solid orange;
+border-right: 1px solid #ccc;
+border-bottom: 1px solid white;
+border-left: 1px solid #ccc;
+color: black;
+margin-top: -2px;
+}
+.tab-content {
+display: none;
+padding: 10px;
+}
+.show {
+display: block;
+}
 
+</style>
+
+
+
+</style>
 
 
 </head>
@@ -83,7 +126,17 @@
 	</div>
 
 
-	<%--청년센터 리스트 --%>
+	<!-- 탭 메뉴 상단 시작 -->
+	 <ul class="list">
+        <li class="tab-button active">공간 예약</li>
+        <li class="tab-button">상세 정보</li>
+        <li class="tab-button">리뷰</li>
+      </ul>
+    <!-- 탭 메뉴 상단 끝 -->
+    
+    <!-- 탭 메뉴 내용 시작 -->
+      <div class="tab-content show">
+        <%--청년센터 리스트 --%>
 		<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");%>
 		 <h1><%out.print(request.getAttribute("center_name"));%></h1>
 		 <%for (int i = 0; i < list.size();i++) {%>
@@ -92,157 +145,41 @@
 		 	<div class="blog_post_image">
 		 		<img src=<%= list.get(i).getShared_space_pic()%> alt="">
 		 	</div>
-			<div class="blog_post_content">
-		 		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
-		 		<div class="blog_post_info">
-		 	</div>
-		 	<div class="blog_post_text">
-		 		<p><%=list.get(i).getLocal_do() %></p>
-		 		<p>사용 가능 인원 : <%=list.get(i).getPersons() %></p>
-				<p><%=list.get(i).getSpace_info() %></p>
-			</div>
-			<div class="button blog_post_button"><a href="#">예약하기</a></div> 
+		<div class="blog_post_content">
+		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
+		 		
+		</div>
+		<div class="blog_post_text">
+		 	<p><%=list.get(i).getLocal_do() %></p>
+		 	<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
+			<p><%=list.get(i).getSpace_info() %></p>
+		</div>
+		<div class="button blog_post_button"><a href="#">예약하기</a></div> 
 		</div>
 			<%} %>
+      </div>
+      
+      <div class="tab-content">
+        <%for (int i = 0; i < list.size();i++) {%>
+		 	<div class="blog_post">
+		 		<div class="blog_post_text">
+		 		<p><%=list.get(i).getCenter_name() %></p>
+		 		<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
+				<p><%=list.get(i).getSpace_info() %></p>
+			</div>
+  		<%} %>
+      </div>
+      
+      <div class="tab-content">
+        <p>리뷰정보입니다</p>
+ 
+      </div>
 
-	 <!-- Blog -->
+	</div>
 
-	<!--<div class="blog">
-		<div class="container">
-			<div class="row">
-				
-				Blog Posts
-				<div class="col-lg-9">
-					<div class="blog_posts">
+<!-- 탭 메뉴 내용 끝 -->
+	 
 						
-						Blog Post
-						<div class="blog_post">
-							<div class="blog_post_image">
-								<img src="images/blog_1.jpg" alt="">
-								<div class="blog_post_date"><a href="#">Oct 20, 2018</a></div>
-							</div>
-							<div class="blog_post_content">
-								<div class="blog_post_title"><a href="#">Top dream destinations</a></div>
-								<div class="blog_post_info">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_4.png" alt="">
-											<a href="#">News</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_5.png" alt="">
-											<a href="#">21 Likes</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_6.png" alt="">
-											<a href="#">602 views</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_7.png" alt="">
-											<a href="#">1 min</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_8.png" alt="">
-											<a href="#">3 comments</a>
-										</li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Vivamus auctor mi eget odio feugiat, quis aliquet velit ornare. Integer egestas sit amet neque sed elementum. Fusce ut turpis felis. Etiam pretium pharetra augue, ac porttitor dolor consequat eget. Cras tempor suscipit enim vehicula ultrices. Mauris sed orci blandit.</p>
-								</div>
-								<div class="button blog_post_button"><a href="#">Read More</a></div>
-							</div>
-						</div>
-
-						Blog Post
-						<div class="blog_post">
-							<div class="blog_post_image">
-								<img src="images/blog_2.jpg" alt="">
-								<div class="blog_post_date"><a href="#">Oct 20, 2018</a></div>
-							</div>
-							<div class="blog_post_content">
-								<div class="blog_post_title"><a href="#">How to book your stay</a></div>
-								<div class="blog_post_info">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_4.png" alt="">
-											<a href="#">News</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_5.png" alt="">
-											<a href="#">21 Likes</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_6.png" alt="">
-											<a href="#">602 views</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_7.png" alt="">
-											<a href="#">1 min</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_8.png" alt="">
-											<a href="#">3 comments</a>
-										</li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Vivamus auctor mi eget odio feugiat, quis aliquet velit ornare. Integer egestas sit amet neque sed elementum. Fusce ut turpis felis. Etiam pretium pharetra augue, ac porttitor dolor consequat eget. Cras tempor suscipit enim vehicula ultrices. Mauris sed orci blandit.</p>
-								</div>
-								<div class="button blog_post_button"><a href="#">Read More</a></div>
-							</div>
-						</div>
-
-						Blog Post
-						<div class="blog_post">
-							<div class="blog_post_image">
-								<img src="images/blog_3.jpg" alt="">
-								<div class="blog_post_date"><a href="#">Oct 20, 2018</a></div>
-							</div>
-							<div class="blog_post_content">
-								<div class="blog_post_title"><a href="#">Perfect beach wedding</a></div>
-								<div class="blog_post_info">
-									<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_4.png" alt="">
-											<a href="#">News</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_5.png" alt="">
-											<a href="#">21 Likes</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_6.png" alt="">
-											<a href="#">602 views</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_7.png" alt="">
-											<a href="#">1 min</a>
-										</li>
-										<li class="d-flex flex-row align-items-center justify-content-start">
-											<img src="images/icon_8.png" alt="">
-											<a href="#">3 comments</a>
-										</li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Vivamus auctor mi eget odio feugiat, quis aliquet velit ornare. Integer egestas sit amet neque sed elementum. Fusce ut turpis felis. Etiam pretium pharetra augue, ac porttitor dolor consequat eget. Cras tempor suscipit enim vehicula ultrices. Mauris sed orci blandit.</p>
-								</div>
-								<div class="button blog_post_button"><a href="#">Read More</a></div>
-							</div>
-						</div>
- -->
-						<!-- Page Nav -->
-						<div class="page_nav">
-							<ul class="d-flex flex-row align-items-start justify-content-start">
-								<li class="active"><a href="#">01.</a></li>
-								<li><a href="#">02.</a></li>
-								<li><a href="#">03.</a></li>
-							</ul>
-						</div>
-
-					</div>
-				</div>
 
 				<!-- Sidebar -->
 				<div class="col-lg-3">
@@ -323,49 +260,25 @@
 <script src="js/blog.js"></script>
 <script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
+<script src="js/space.js"></script>
 <script>
 
-
-	function categoryChange(e) {
-		var lolist_seoul = ["강북청년창업마루", "서울청년센터 성동오랑", "서울청년센터 광진오랑", "마포오랑","동대문오랑","서울청년센터 관악 오랑 청년문화공간","서울청년센터 서초 오랑","서울청년센터 노원오랑","서울청년센터강동오랑","서울청년센터은평오랑","서울청년센터금천오랑"];
-		var lolist_incheon = ["인천청년센터 서구1939", "인천 청년공간 유유기지"];
-		var lolist_gyeonggi = ["의정부시 청년센터청년공감터", "연천군청년센터","청년스테이션","양주시청년센터"];
-		var lolist_daegu = ["대구광역시 동구청년센터 the꿈", "수성구청년센터", "대구광역시청년센터공감그래", "대구광역시청년센터다온나그래", "대구광역시청년센터활동그래"];
-		var lolist_ulsan = ["울산광역시청년센터"];
-		var lolist_gyeongsan = ["상주시 청년센터 들락날락", "김천시 청년센터", "거제청년센터 이룸", "양산시 청년센터 청담","통영시청년센터통영청년세움","청년온나"];
-		var lolist_gwangwon = ["삼척청년센터", "강릉시청년센터 두루"];
-		var lolist_chungcheong = ["당진청년센터나래","천안청년센터 불당이음"];
-		var lolist_sejong =["세종시청년센터"];
-		var lolist_gwangju = ["광주청년센터"];
-		var lolist_jeonla = ["청년이음전주", "군산시청년뜰청년센터창업센터","보성군 청년센터", "영광군 청년센터 청춘공방", "진도군 청년센터", "청춘이랑"];
-		var lolist_jeju = ["제주청년센터", "청년다락 1호점", "청년다락 2호점", "청년다락3호점", "청년다락4호점"];
-		
-		var target = document.getElementById("ctlist");
-	
-		if(e.value == "서울") var d = lolist_seoul;
-		else if(e.value == "경기") var d = lolist_gyeonggi;
-		else if(e.value == "인천") var d = lolist_incheon;
-		else if(e.value == "대구") var d = lolist_daegu;
-		else if(e.value == "울산") var d = lolist_ulsan;
-		else if(e.value == "경상") var d = lolist_gyeongsanc;
-		else if(e.value == "강원") var d = lolist_gwangwon;
-		else if(e.value == "충청") var d = lolist_chungcheong;
-		else if(e.value == "세종") var d = lolist_sejong;
-		else if(e.value == "광주") var d = lolist_gwangju;
-		else if(e.value == "전라") var d = lolist_jeonla;
-		else if(e.value == "제주") var d = lolist_jeju;
-	
-		target.options.length = 0;
-	
-		for (x in d) {
-			var opt = document.createElement("option");
-			opt.value = d[x];
-			opt.innerHTML = d[x];
-			target.appendChild(opt);
-		}
+	//함수 호출 반복문
+	for(let i = 0; i < $('.tab-button').length; i++){
+	    tabOpen(i); 
 	}
-
+	
+	//함수에 보관
+	function tabOpen(e){
+	    $('.tab-button').eq(e).click(function(){
+	        $('.tab-button').removeClass('active');
+	        $('.tab-content').removeClass('show');
+	        $('.tab-button').eq(e).addClass('active');
+	        $('.tab-content').eq(e).addClass('show');
+	    });
+	}
 </script>
+
 
 </body>
 </html>

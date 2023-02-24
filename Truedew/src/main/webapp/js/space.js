@@ -19,7 +19,7 @@
 		else if(e.value == "인천") var d = lolist_incheon;
 		else if(e.value == "대구") var d = lolist_daegu;
 		else if(e.value == "울산") var d = lolist_ulsan;
-		else if(e.value == "경상") var d = lolist_gyeongsanc;
+		else if(e.value == "경상") var d = lolist_gyeongsan;
 		else if(e.value == "강원") var d = lolist_gwangwon;
 		else if(e.value == "충청") var d = lolist_chungcheong;
 		else if(e.value == "세종") var d = lolist_sejong;

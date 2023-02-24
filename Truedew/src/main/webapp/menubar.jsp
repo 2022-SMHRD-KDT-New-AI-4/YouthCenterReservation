@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<!-- <link rel="stylesheet" type="text/css" href="styles/main_styles.css"> -->
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 
