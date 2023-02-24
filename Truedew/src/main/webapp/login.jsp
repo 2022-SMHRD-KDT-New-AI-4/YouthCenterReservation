@@ -15,10 +15,10 @@
 %>
 <div class="container">
 	<a><h1>로그인</h1></a>
-			<form action="LoginService" method="post">
-				<div><input name="USER_ID" type="text" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:20px;"></div><br>
-				<div><input name="USER_PW" type="password" placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:20px;"></div><br>
-				<div><input type="submit" value="LogIn" class="button fit" autofocusmaxlength="20" style="width:400px;height:50px;font-size:20px;"></div>
+			<form action="loginService_gen" method="post">
+				<div><input name="user_id" type="text" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:20px;"></div><br>
+				<div><input name="user_pw" type="password" placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:20px;"></div><br>
+				<div><input type="submit" value="로그인" class="button fit" autofocusmaxlength="20" style="width:400px;height:50px;font-size:20px;"></div>
 			</form>
 			<!-- 네이버 로고버튼 -->
 			<ul>
