@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -28,40 +29,8 @@
 <div class="super_container">
 	
 	<!-- Header -->
-
-	<header class="header">
-		<div class="header_content d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="#">청년이슬</a></div>
-			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-				<nav class="main_nav">
-					<ul class="d-flex flex-row align-items-start justify-content-start">
-
-						<li><a href="blog.html">로그인</a></li>
-						<li><a href="contact.html">회원가입</a></li>
-					</ul>
-				</nav>
-			
-			
-				<div class="book_button">
-					<a href="#">검색하기</a>
-					<!-- <label for="collapsible"><span id="bookbtn">예약하기</span></label> -->
-				</ul>
-				<div class="locallist">
-				<ul id="menuitems">
-					<li ><a href="#">서울</a></li>
-					<li ><a href="#">경기/인천</a></li>
-					<li ><a href="#">대구</a></li>
-					<li ><a href="#">경상</a></li>
-					<li ><a href="#">강원</a></li>
-					<li ><a href="#">충청</a></li>
-					<li ><a href="#">광주/전라</a></li>
-					<li ><a href="#">제주</a></li>
-				</ul>
-				</div>
-			</div>
-		</div>
-		</div>
-	</header>
+	<header id="headers"></header>
+	
 
 	<!-- Menu -->
 
@@ -209,7 +178,9 @@
 	<!-- Blog -->
 
 	
-	</footer>
+	   <!-- Footer -->
+
+	<footer id="footers"></footer>
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -226,5 +197,7 @@
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/htmlplus.js"></script>
+
 </body>
 </html>
