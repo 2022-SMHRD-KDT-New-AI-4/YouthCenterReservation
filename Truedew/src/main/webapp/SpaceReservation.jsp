@@ -83,19 +83,39 @@
 	</div>
 
 
+	<%--청년센터 리스트 --%>
+		<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");%>
+		 <h1><%out.print(request.getAttribute("center_name"));%></h1>
+		 <%for (int i = 0; i < list.size();i++) {%>
 
+		 <div class="blog_post">
+		 	<div class="blog_post_image">
+		 		<img src=<%= list.get(i).getShared_space_pic()%> alt="">
+		 	</div>
+			<div class="blog_post_content">
+		 		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
+		 		<div class="blog_post_info">
+		 	</div>
+		 	<div class="blog_post_text">
+		 		<p><%=list.get(i).getLocal_do() %></p>
+		 		<p>사용 가능 인원 : <%=list.get(i).getPersons() %></p>
+				<p><%=list.get(i).getSpace_info() %></p>
+			</div>
+			<div class="button blog_post_button"><a href="#">예약하기</a></div> 
+		</div>
+			<%} %>
 
-	<!-- Blog -->
+	 <!-- Blog -->
 
-	<div class="blog">
+	<!--<div class="blog">
 		<div class="container">
 			<div class="row">
 				
-				<!-- Blog Posts -->
+				Blog Posts
 				<div class="col-lg-9">
 					<div class="blog_posts">
 						
-						<!-- Blog Post -->
+						Blog Post
 						<div class="blog_post">
 							<div class="blog_post_image">
 								<img src="images/blog_1.jpg" alt="">
@@ -134,7 +154,7 @@
 							</div>
 						</div>
 
-						<!-- Blog Post -->
+						Blog Post
 						<div class="blog_post">
 							<div class="blog_post_image">
 								<img src="images/blog_2.jpg" alt="">
@@ -173,7 +193,7 @@
 							</div>
 						</div>
 
-						<!-- Blog Post -->
+						Blog Post
 						<div class="blog_post">
 							<div class="blog_post_image">
 								<img src="images/blog_3.jpg" alt="">
@@ -211,7 +231,7 @@
 								<div class="button blog_post_button"><a href="#">Read More</a></div>
 							</div>
 						</div>
-
+ -->
 						<!-- Page Nav -->
 						<div class="page_nav">
 							<ul class="d-flex flex-row align-items-start justify-content-start">
@@ -281,26 +301,7 @@
 		</div>
 	</div>
 
-	<!--청년센터 공유공간 리스트  -->
-	<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");%>
-		 
-	<%for (int i = 0; i < list.size();i++) {%>
 	
-	<div class="blog_post">
-		 	<div class="blog_post_image">
-		 		<img src=<%= list.get(i).getShared_space_pic()%> alt="">
-		 	</div>
-			<div class="blog_post_content">
-		 		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
-		 		<div class="blog_post_info">
-		 	</div>
-		 	<div class="blog_post_text">
-		 		<p><%=list.get(i).getLocal_do() %></p>
-		 		<p><%=list.get(i).getPersons() %></p>
-				<img src=<%=list.get(i).getSpace_info() %>>
-			</div>
-			<div class="button blog_post_button"><a href="#">Read More</a></div> 
-			<%} %>
 	
 	<!-- Footer -->
 	<footer class="footer">
