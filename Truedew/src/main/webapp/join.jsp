@@ -39,7 +39,7 @@
           var id = $("#id").val();
           
           $.ajax({
-              url : "CheckService?user_id="+id,
+              url : "IDCheckService?user_id="+id,
               success : function(data){
                    if(data == "success"){
                         $("#result").html("<span>사용가능한 아이디입니다.<span><br>");
