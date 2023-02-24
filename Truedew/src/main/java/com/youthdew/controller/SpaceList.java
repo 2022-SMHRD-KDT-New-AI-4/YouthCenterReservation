@@ -40,7 +40,7 @@ public class SpaceList extends HttpServlet {
 		}
 		
 		request.setAttribute("list", list);
-		RequestDispatcher rd = request.getRequestDispatcher("mySpaceReservation.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("SpaceReservation.jsp");
 		rd.forward(request, response);
 	}
 

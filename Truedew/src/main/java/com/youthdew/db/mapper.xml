@@ -18,5 +18,10 @@
 	<select id="userSearch" resultType="MemberVO">
 		select * from tb_user where user_id=#{user_id}
 	</select>
+	
+	<!--센터 공유공간 조회  -->
+	<select id="selectspace" resultType="SpaceListVO">
+ 	select * from tb_center, tb_shared_space where tb_center.center_id=tb_shared_space.center_id and tb_center.center_name=#{center_name} and tb_center.local_do like '%'||#{local_do}||'%'
+ 	</select>
 
 </mapper>
