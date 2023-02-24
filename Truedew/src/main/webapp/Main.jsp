@@ -98,13 +98,8 @@
 
 
    <!-- Footer -->
-   <footer class="footer">
-      <div class="copyright">
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Made by True이슬 : 이슬이 이민지 송소라 강정진 유성훈 김응진
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</div>
-   </footer>
+
+	<footer id="footers"></footer>
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
