@@ -588,15 +588,16 @@ section
 .home
 {
 	width: 100%;
-	height: 969px;
+	height: 100vh;
 	background: #0f0e24;
+	
 }
 .home_content {
 	width: 100%;
 	height: 775px;
 }
 #homehome {
-	height: 969px;
+	height: 100vh;
 	
 }
 #bg_img {
