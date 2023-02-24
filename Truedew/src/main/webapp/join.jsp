@@ -8,19 +8,51 @@
 <style>
 
 </style>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body style=text-align:center;>
 <h1>회원가입</h1>
 
 
-<form action="JoinService2" method="post">
-	      아이디 : <a><input style="width:400px;height:50px;font-size:20px;" name="USER_ID" type="text"  placeholder="ID를 입력하세요"></a><br>
-	    비밀번호 : <a><input style="width:400px;height:50px;font-size:20px;" name="USER_PW" type="password"  placeholder="PW를 입력하세요"></a><br>
-	    이름 : <a><input style="width:400px;height:50px;font-size:20px;" name="USER_NAME" type="text"  placeholder="이름을 입력하세요"></a><br>
-	    생년월일 : <a><input style="width:400px;height:50px;font-size:20px;" name="BIRTH" type="text"  placeholder="생일을 입력하세요"></a><br>
-	      연락처 : <a><input style="width:400px;height:50px;font-size:20px;" name="TEL" type="text"  placeholder="전화번호를 입력하세요"></a><br>
-	    <a><input style="width:400px;height:50px;font-size:20px;" type="submit" value="입력" class="button fit"></a><br>
-	 </form>
-	 
+	<form action="JoinService2" method="post">
+		 
+		 아이디 :<input type="text" id="id" name="user_id" placeholder="아이디를 입력하세요">
+	     <button type="button" onclick="idCheck()">click</button>
+	     <br>
+	     <span id="result"></span>
+	     비밀번호 :<input name="user_pw" type="password"  placeholder="비밀번호를 입력하세요">
+	      <br>
+	      이름 :<input name="user_name" type="text"  placeholder="이름을 입력하세요">
+	      <br>
+	      생년월일 :<input name="user_birthdate" type="text"  placeholder="생일을 입력하세요">
+	      <br>
+	      연락처 :<input name="user_phone" type="text"  placeholder="전화번호를 입력하세요">
+	      <br>
+	      <button type="submit">회원가입</button><br>
+	     
+	</form>
+     
+     
+     <script type="text/javascript">
+     function idCheck(){
+          //jQuery에서 선택자역할
+          var id = $("#id").val();
+          
+          $.ajax({
+              url : "IDCheckService?user_id="+id,
+              success : function(data){
+                   if(data == "success"){
+                        $("#result").html("<span>사용가능한 아이디입니다.<span><br>");
+                   }else if(data == "fail"){
+                        $("#result").html("<span>중복된 아이디입니다.<span><br>");
+                   }
+              }
+          });
+          
+          
+     }
+</script>
+
+	  
 </body>
 </html>

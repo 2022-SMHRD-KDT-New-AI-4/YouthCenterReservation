@@ -7,6 +7,7 @@
 
 <typeAliases>
 	<typeAlias alias="MemberVO"  type="com.youthdew.model.MemberVO"/>
+	<typeAlias alias="SpaceListVO"  type="com.youthdew.model.SpaceListVO"/>
 </typeAliases>
 
   <environments default="development">
@@ -21,6 +22,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com.youthdew.db.mapper.xml"/>
+    <mapper resource="com/youthdew/db/mapper.xml"/>
   </mappers>
 </configuration>
