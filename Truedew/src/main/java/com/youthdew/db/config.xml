@@ -8,6 +8,7 @@
 <typeAliases>
 	<typeAlias alias="MemberVO"  type="com.youthdew.model.MemberVO"/>
 	<typeAlias alias="SpaceListVO"  type="com.youthdew.model.SpaceListVO"/>
+	<typeAlias alias="CenterVO"  type="com.youthdew.model.CenterVO"/>
 </typeAliases>
 
   <environments default="development">
