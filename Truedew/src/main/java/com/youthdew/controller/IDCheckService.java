@@ -12,11 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.youthdew.model.MemberDAO;
 import com.youthdew.model.MemberVO;
 
-@WebServlet("/CheckService")
-public class CheckService extends HttpServlet {
+/**
+ * Servlet implementation class IDCheckService
+ */
+@WebServlet("/IDCheckService")
+public class IDCheckService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	 
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
@@ -39,10 +42,10 @@ public class CheckService extends HttpServlet {
 		}
 		
 		
-
-	
-	
-	
+		
+		
+		
+		
 	}
 
 }
