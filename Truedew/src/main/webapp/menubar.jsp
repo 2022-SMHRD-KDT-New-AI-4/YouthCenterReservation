@@ -45,14 +45,18 @@
                     </ul>
                     <div class="locallist">
                     <ul id="menuitems">
-                        <li ><a href="#">서울</a></li>
-                        <li ><a href="#">경기/인천</a></li>
-                        <li ><a href="#">대구</a></li>
-                        <li ><a href="#">경상</a></li>
-                        <li ><a href="#">강원</a></li>
-                        <li ><a href="#">충청</a></li>
-                        <li ><a href="#">광주/전라</a></li>
-                        <li ><a href="#">제주</a></li>
+						<li ><a href="#" onclick="local_click(this);">서울</a></li>
+                        <li ><a href="#" onclick="local_click(this);">인천</a></li>
+                        <li ><a href="#" onclick="local_click(this);">경기</a></li>
+                        <li ><a href="#" onclick="local_click(this);">대구</a></li>
+                        <li ><a href="#" onclick="local_click(this);">울산</a></li>
+                        <li ><a href="#" onclick="local_click(this);">경상</a></li>
+                        <li ><a href="#" onclick="local_click(this);">강원</a></li>
+                        <li ><a href="#" onclick="local_click(this);">충청</a></li>
+                        <li ><a href="#" onclick="local_click(this);">세종</a></li>
+                        <li ><a href="#" onclick="local_click(this);">광주</a></li>
+                        <li ><a href="#" onclick="local_click(this);">전라</a></li>
+                        <li ><a href="#" onclick="local_click(this);">제주</a></li>
                     </ul>
                     </div>
                 </div>
@@ -100,6 +104,19 @@
 <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/listevent.js"></script>
+
+<script type="text/javascript">
+function local_click(item) {
+	  
+	  
+    var text = $(item).text();
+    location.href='CenterListService?local_do='+text;
+
+		
+}
+
+
+</script>
 
 </body>
 
