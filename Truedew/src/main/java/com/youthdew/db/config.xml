@@ -22,6 +22,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com.youthdew.db.mapper.xml"/>
+    <mapper resource="com/youthdew/db/mapper.xml"/>
   </mappers>
 </configuration>
