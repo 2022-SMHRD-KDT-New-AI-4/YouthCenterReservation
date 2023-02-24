@@ -74,7 +74,7 @@
 			<br>
 			
               <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                  <img src="./네이버.png" width="450" height="450" id="naver">
+                  <img src="images/네이버.png" width="450" height="450" id="naver">
               </a>
       
         <!-- 네이버 스크립트 -->
@@ -97,7 +97,7 @@
         <!-- 카카오 로그인 버튼 -->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a onclick="kakaoLogin();" href="javascript:void(0)">
-                  <img src="./카카오.png" width="450" height="450" id="kakao">
+                  <img src="images/카카오.png" width="450" height="450" id="kakao">
               </a>
         
         <!-- 카카오 로그인 스크립트 -->
@@ -132,7 +132,7 @@
         </script>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="login.jsp">
-                  <img src="./일반계정.png" width="400" height="400" id="ID">
+                  <img src="images/일반계정.png" width="420" height="400" id="ID">
         </a>
         <br><br><br><br><br>
         
