@@ -109,15 +109,13 @@
 							<div class="home_title" style="color:black" margin="text-center;" >로그인</div>
 							
 									<br>
-			<br>
-			<br>
-			<br>
+			
 			<br>
 			<br>
 			<br>
 			
               <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                  <img src="./네이버.png" width="550" height="550" id="naver">
+                  <img src="images/네이버.png" width="450" height="450" id="naver">
               </a>
       
         <!-- 네이버 스크립트 -->
@@ -140,7 +138,7 @@
         <!-- 카카오 로그인 버튼 -->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a onclick="kakaoLogin();" href="javascript:void(0)">
-                  <img src="./카카오.png" width="550" height="550" id="kakao">
+                  <img src="images/카카오.png" width="450" height="450" id="kakao">
               </a>
         
         <!-- 카카오 로그인 스크립트 -->
@@ -175,9 +173,9 @@
         </script>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="login.jsp">
-                  <img src="./일반계정.png" width="500" height="500" id="ID">
+                  <img src="images/일반계정.png" width="400" height="400" id="ID">
         </a>
-        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
         
         
         <p style="font-size : 30px; color:white">계정이 없으신가요 ? <a href="join.jsp" style="color:skyblue">회원가입</a></p>
