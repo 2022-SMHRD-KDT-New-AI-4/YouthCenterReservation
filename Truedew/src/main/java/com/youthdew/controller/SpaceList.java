@@ -31,14 +31,16 @@ public class SpaceList extends HttpServlet {
 
 		ArrayList<SpaceListVO> list= (ArrayList)dao.selectspace(vo);
 		
-		for (int i = 0; i < list.size();i++) {
-			System.out.println(list.get(i).getShared_space_pic());
-			System.out.println(list.get(i).getShared_space_name());
-			System.out.println(list.get(i).getLocal_do());
-			System.out.println(list.get(i).getPersons());
-			
-		}
-		
+		/*
+		 * for (int i = 0; i < list.size();i++) {
+		 * System.out.println(list.get(i).getShared_space_pic());
+		 * System.out.println(list.get(i).getShared_space_name());
+		 * System.out.println(list.get(i).getLocal_do());
+		 * System.out.println(list.get(i).getPersons());
+		 * 
+		 * }
+		 */
+		request.setAttribute("center_name", center_name);
 		request.setAttribute("list", list);
 		RequestDispatcher rd = request.getRequestDispatcher("SpaceReservation.jsp");
 		rd.forward(request, response);
