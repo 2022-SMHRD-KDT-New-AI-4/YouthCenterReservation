@@ -33,11 +33,36 @@ public class MemberVO {
 	}
 	
 	
+	
+
+	public MemberVO(String user_id, String user_pw, String user_name, String user_phone) {
+		super();
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_phone = user_phone;
+	}
+
+	public MemberVO(String user_id) {
+		super();
+		this.user_id = user_id;
+	}
 
 	public MemberVO(String user_id, String user_pw) {
 		super();
 		this.user_id = user_id;
 		this.user_pw = user_pw;
+	}
+	
+	
+
+	public MemberVO(String user_id, String user_pw, String user_name, String user_birthdate, String user_phone) {
+		super();
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_birthdate = user_birthdate;
+		this.user_phone = user_phone;
 	}
 
 	public MemberVO() {

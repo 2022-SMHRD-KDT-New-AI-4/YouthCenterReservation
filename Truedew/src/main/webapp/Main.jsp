@@ -22,7 +22,7 @@
 
 </head>
 <body>
-<a>안녕</a>
+
 <div class="super_container">
    
 
@@ -46,25 +46,25 @@
                            <div class="home_content text-center">
                               <div class="home_title">청년공감 공유공간</div>
                               <div class="booking_form_container">
-                                 <form action="SpaceReservation" class="booking_form">
+                                 <form action="SpaceList" class="booking_form">
                                     <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
                                        <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
                                              <div>
                                                 <!-- <input type="text" class="booking_input booking_input_b" placeholder="지역(시/도)" required="required"> -->
                                                 <select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
 													<option>지역(시/도)</option>
-													<option value="seoul">서울</option>
-													<option value="incheon">인천</option>
-													<option value="gyeonggi">경기</option>
-													<option value="daegu">대구</option>
-													<option value="ulsan">울산</option>
-													<option value="gyeongsan">경상</option>
-													<option value="gwangwon">강원</option>
-													<option value="chungcheong">충청</option>
-													<option value="sejong">세종</option>
-													<option value="gwangju">광주</option>
-													<option value="jeonla">전라</option>
-													<option value="jeju">제주</option>
+													<option value="서울">서울</option>
+													<option value="인천">인천</option>
+													<option value="경기">경기</option>
+													<option value="대구">대구</option>
+													<option value="울산">울산</option>
+													<option value="경상">경상</option>
+													<option value="강원">강원</option>
+													<option value="충청">충청</option>
+													<option value="세종">세종</option>
+													<option value="광주">광주</option>
+													<option value="전라">전라</option>
+													<option value="제주">제주</option>
 												</select>
                                                 <!-- select option 선택 시 밑에 있는 센터명 정보 필터링해서 값 가져오기 -->
                                              </div>
@@ -75,7 +75,7 @@
 											 </select>
                                           
                                           </div>
-                                          <div><button name="btn" type="button" onclick="location.href='SpaceReservation.jsp'" class="booking_button trans_200">예약하기</button></div>
+                                          <div> <input type="submit" class="booking_button trans_200" value="예약하기"></div>
                                        </div>
                                     </div>
                                  </form>
@@ -93,14 +93,6 @@
    </div>
    
    
-	
-	response.setCharacterEncoding("UTF-8");
-	for(int i=0;i<list.size();i++){
-		out.print(list.get(i).getShared_space_pic());
-        out.print(list.get(i).getShared_space_name());
-        out.print(list.get(i).getPersons());
-             
-	} %>
    <!-- 달력 -->
    <!-- <div><input type="text" class="datepicker booking_input booking_input_a booking_out" placeholder="Check out" required="required"></div> -->
 
@@ -144,22 +136,23 @@ function categoryChange(e) {
 	var lolist_chungcheong = ["당진청년센터나래","천안청년센터 불당이음"];
 	var lolist_sejong =["세종시청년센터"];
 	var lolist_gwangju = ["광주청년센터"];
-	var lolist_gwangju = ["청년이음전주", "군산시청년뜰청년센터창업센터","보성군 청년센터", "영광군 청년센터 청춘공방", "진도군 청년센터", "청춘이랑"];
+	var lolist_jeonla = ["청년이음전주", "군산시청년뜰청년센터창업센터","보성군 청년센터", "영광군 청년센터 청춘공방", "진도군 청년센터", "청춘이랑"];
 	var lolist_jeju = ["제주청년센터", "청년다락 1호점", "청년다락 2호점", "청년다락3호점", "청년다락4호점"];
 	
 	var target = document.getElementById("ctlist");
 
-	if(e.value == "seoul") var d = lolist_seoul;
-	else if(e.value == "gyeonggi") var d = lolist_gyeonggi;
-	else if(e.value == "incheon") var d = lolist_incheon;
-	else if(e.value == "daegu") var d = lolist_daegu;
-	else if(e.value == "ulsan") var d = lolist_ulsan;
-	else if(e.value == "gyeongsan") var d = lolist_gyeongsanc;
-	else if(e.value == "gwangwon") var d = lolist_gwangwon;
-	else if(e.value == "chungcheong") var d = lolist_chungcheong;
-	else if(e.value == "sejong") var d = lolist_sejong;
-	else if(e.value == "gwangju") var d = lolist_gwangju;
-	else if(e.value == "jeju") var d = lolist_jeju;
+	if(e.value == "서울") var d = lolist_seoul;
+	else if(e.value == "경기") var d = lolist_gyeonggi;
+	else if(e.value == "인천") var d = lolist_incheon;
+	else if(e.value == "대구") var d = lolist_daegu;
+	else if(e.value == "울산") var d = lolist_ulsan;
+	else if(e.value == "경상") var d = lolist_gyeongsan;
+	else if(e.value == "강원") var d = lolist_gwangwon;
+	else if(e.value == "충청") var d = lolist_chungcheong;
+	else if(e.value == "세종") var d = lolist_sejong;
+	else if(e.value == "광주") var d = lolist_gwangju;
+	else if(e.value == "전라") var d = lolist_jeonla;
+	else if(e.value == "제주") var d = lolist_jeju;
 
 	target.options.length = 0;
 
