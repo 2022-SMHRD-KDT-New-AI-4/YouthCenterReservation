@@ -11,7 +11,8 @@ public class MemberDAO {
 
 	
 	private SqlSessionFactory SqlSessionFactory = com.youthdew.db.SqlSessionManager.getSqlSession();
-
+	
+	// 회원가입
 	public int join(MemberVO vo) {
 		
 		 SqlSession session = SqlSessionFactory.openSession(true);
@@ -21,6 +22,7 @@ public class MemberDAO {
 	      return cnt;
 	}
 
+	// 로그인
 	public MemberVO login(MemberVO vo) {
 		SqlSession session = SqlSessionFactory.openSession(true);
 	      // 하나의 값만 확인하고 반환
@@ -28,6 +30,15 @@ public class MemberDAO {
 	      MemberVO lvo = session.selectOne("login", vo);
 		session.close(); // sql 호출 마무리 되면 세션도 마무리
 						// 자원이 계속해서 사용되기 때문에 꼭 close를 해줘야함
+		return lvo;
+	}
+	
+	
+	// 회원조회
+	public MemberVO userSearch(MemberVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		MemberVO lvo= session.selectOne("userSearch",vo);
+		session.close();
 		return lvo;
 	}
 }
