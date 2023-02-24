@@ -17,12 +17,13 @@
 <link rel="stylesheet" type="text/css" href="styles/blog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 </head>
 <body>
 
@@ -34,18 +35,7 @@
 
 	<!-- Menu -->
 
-	<div class="menu trans_400 d-flex flex-column align-items-end justify-content-start">
-		<div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-		
-		<div class="menu_extra">
-			<div class="menu_book text-right"><a href="#">Book online</a></div>
-			<div class="menu_phone d-flex flex-row align-items-center justify-content-center">
-				<img src="images/phone-2.png" alt="">
-				<span>0183-12345678</span>
-			</div>
-		</div>
-	</div>
-
+	
 	<!-- Home -->
 	<div class="home" id="homehome">
 		<div class="background_image" id="bg_img" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
@@ -84,7 +74,7 @@
 			<br>
 			
               <a id="naverIdLogin_loginButton" href="javascript:void(0)">
-                  <img src="images/네이버.png" width="450" height="450" id="naver">
+                  <img src="./네이버.png" width="450" height="450" id="naver">
               </a>
       
         <!-- 네이버 스크립트 -->
@@ -107,7 +97,7 @@
         <!-- 카카오 로그인 버튼 -->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a onclick="kakaoLogin();" href="javascript:void(0)">
-                  <img src="images/카카오.png" width="450" height="450" id="kakao">
+                  <img src="./카카오.png" width="450" height="450" id="kakao">
               </a>
         
         <!-- 카카오 로그인 스크립트 -->
@@ -142,7 +132,7 @@
         </script>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="login.jsp">
-                  <img src="images/일반계정.png" width="400" height="400" id="ID">
+                  <img src="./일반계정.png" width="400" height="400" id="ID">
         </a>
         <br><br><br><br><br>
         
@@ -196,7 +186,9 @@
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
 
 </body>
