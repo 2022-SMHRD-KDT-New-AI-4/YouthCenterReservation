@@ -42,7 +42,7 @@
 						<div class="home_content text-center">
 							<div class="home_title">공간예약</div>
 							<div class="booking_form_container">
-								<form action="#" class="booking_form" id="booking_form">
+								<form action="SpaceList" class="booking_form" id="booking_form">
 									<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
 										<div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap">
 											<div>
