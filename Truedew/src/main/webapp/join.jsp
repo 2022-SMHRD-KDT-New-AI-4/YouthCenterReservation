@@ -44,7 +44,6 @@
     #double {
         margin-top : 0px;
     }
-
   </style>
 </head>
 <body>
