@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page errorPage="error.html" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,73 +86,7 @@
 	</div>
 
 
-	<!-- 탭 메뉴 상단 시작 -->
-	 <ul class="list">
-        <li class="tab-button active">공간 예약</li>
-        <li class="tab-button">상세 정보</li>
-        <li class="tab-button">리뷰</li>
-      </ul>
-    <!-- 탭 메뉴 상단 끝 -->
-    
-    <!-- 탭 메뉴 내용 시작 -->
-      <div class="tab-content show">
-        <%--청년센터 리스트 --%>
-		<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
-		CenterVO center_info=(CenterVO)request.getAttribute("center_info");%>
-		 <h1><%=center_info.getCenter_name()%></h1>
-		 <%for (int i = 0; i < list.size();i++) {%>
 
-		 <div class="blog_post">
-		 	<div class="blog_post_image">
-		 		<img src=<%= list.get(i).getShared_space_pic()%> alt="">
-		 	</div>
-		<div class="blog_post_content">
-		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
-		 		
-		</div>
-		<div class="blog_post_text">
-		 	<p><%=list.get(i).getLocal_do() %></p>
-		 	<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
-			<p><%=list.get(i).getSpace_info() %></p>
-		</div>
-		<div class="button blog_post_button"><a href="#" onClick="location.href='reservation.jsp'">예약하기</a></div> 
-		</div>
-			<%} %>
-      </div>
-      
-      <div class="tab-content">
-		 	<div class="blog_post">
-		 		<div class="blog_post_text">
-		 			<img src=<%= center_info.getCenter_pic()%> alt="">
-		 			<table>
-		 				<tr>
-		 					<td>운영기관 : </td>
-		 					<td><%=center_info.getCenter_name()%></td>
-		 				</tr>
-		 				<tr>
-		 					<td>공간이용시간 : </td>
-		 					<td><%=center_info.getCenter_runtime()%></td>
-		 				</tr>
-		 				<tr>
-		 					<td>주소 : </td>
-		 					<td><%=center_info.getLocal_gu()%></td>
-		 				</tr>
-		 				<tr>
-		 					<td>전화번호 : </td>
-		 					<td><%=center_info.getCenter_tel()%></td>
-		 				</tr>
-		 			</table>
-			</div>
-      </div>
-      
-      <div class="tab-content">
-        <p>리뷰정보입니다</p>
- 
-      </div>
-
-	</div>
-
-<!-- 탭 메뉴 내용 끝 -->
 	 
 						
 
@@ -236,23 +170,7 @@
 <script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
 <script src="js/space.js"></script>
-<script>
 
-	//함수 호출 반복문
-	for(let i = 0; i < $('.tab-button').length; i++){
-	    tabOpen(i); 
-	}
-	
-	//함수에 보관
-	function tabOpen(e){
-	    $('.tab-button').eq(e).click(function(){
-	        $('.tab-button').removeClass('active');
-	        $('.tab-content').removeClass('show');
-	        $('.tab-button').eq(e).addClass('active');
-	        $('.tab-content').eq(e).addClass('show');
-	    });
-	}
-</script>
 
 
 </body>
