@@ -36,3 +36,13 @@
 			target.appendChild(opt);
 		}
 	}
+	
+	//셀렉트 박스 선택 안할 시 경고차 띄우기
+	function formCheck(){
+	
+	if($("#lolist").val()==""){
+		alert("지역을 선택하여 주십시오."); 
+		$("#lolist").focus();
+		return false; 
+	} 
+	}
