@@ -11,7 +11,9 @@ public class CenterVO {
 	private String lng;
 	private String center_pic;
 	
-	
+	private int center_fac_seqc;
+	private String fac_code;
+	private int fac_cnt;
 	
 	
 	public CenterVO() {
@@ -21,6 +23,12 @@ public class CenterVO {
 	public CenterVO(String local_do) {
 		super();
 		this.local_do = local_do;
+	}
+	
+	public CenterVO(String local_do, String fac_code) {
+		super();
+		this.local_do = local_do;
+		this.fac_code = fac_code;
 	}
 
 	public CenterVO(String center_id, String center_name, String local_do, String local_gu, String center_runtime,

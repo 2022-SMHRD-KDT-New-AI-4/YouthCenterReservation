@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Booking</title>
+<title>청년이슬_센터목록</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
@@ -20,8 +20,28 @@
 <link rel="stylesheet" type="text/css" href="styles/booking.css">
 <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/elements.css">
+<link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
 
+<style>
 
+	#localname{
+		font-size: 70px;
+		text-align: center;
+		margin-top: 50px;
+		color: black;
+	}
+	
+	#fac{
+		text-align: center;
+		left:17%;
+	}
+
+	#fac_div{
+		margin-top: 10px;
+	}
+
+</style>
 </head>
 <body>
 
@@ -86,6 +106,30 @@
 	
 	<% ArrayList<CenterVO> list = (ArrayList<CenterVO>)request.getAttribute("list"); %>
 	<!-- Booking -->
+	<div id="localname"><%=list.get(0).getLocal_do().substring(0,2)%></div>
+
+	<div class="col-lg-8" id="fac">
+	<!-- Accordion -->
+	<div class="accordions">
+	<div class="accordion_container">
+		<div class="accordion d-flex flex-row align-items-center"><div>부대시설 상세 검색</div></div>
+		<div class="accordion_panel">
+			<div id="fac_div" class="elements_title" style="color:black; text-align: center; font-size: 20px">
+				<form action="FacService" method="post">
+				<input type="hidden" name="local_do" value="<%=list.get(0).getLocal_do().substring(0,2)%>" readonly/>
+				<input type="checkbox" name="fac_code" value="빔프로젝트">빔프로젝트
+				<input type="checkbox" name="fac_code" value="PC">PC
+				<input type="checkbox" name="fac_code" value="프린터">프린터
+				<input type="checkbox" name="fac_code" value="마이크">마이크
+				<input type="submit" class="booking_button trans_200" value="검색">
+				</form>
+				<div class="button button_4"><a href="#">지도로 보기</a></div>
+
+
+			</div>
+		</div>
+	</div>
+	</div>
 
 	<div class="booking">
 		<div class="container">
@@ -218,6 +262,7 @@
 <script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
 <script src="js/space.js"></script>
+<script src="js/elements.js"></script>
 
 </body>
 </html>

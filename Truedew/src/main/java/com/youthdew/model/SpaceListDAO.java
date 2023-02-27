@@ -37,4 +37,12 @@ public class SpaceListDAO {
 		return cvo;
 	}
 	
+	
+	// 센터 부대시설 필터링
+	public ArrayList<CenterVO> Selectfac(CenterVO vo) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<CenterVO> list = session.selectList("Selectfac", vo);
+		session.close();
+		return (ArrayList<CenterVO>) list;
+	}
 }
