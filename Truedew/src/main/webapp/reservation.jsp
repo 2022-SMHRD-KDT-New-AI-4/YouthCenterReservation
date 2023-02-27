@@ -63,7 +63,7 @@
 													<option value="광주">광주</option>
 													<option value="전라">전라</option>
 													<option value="제주">제주</option>
-												</select>
+												</select>ㅇㅇ
 											</div>
 											<div>
 											<select name="center_list" id="ctlist" class="booking_input booking_input_b">
