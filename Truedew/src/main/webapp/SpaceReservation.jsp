@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.CenterVO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -133,8 +134,9 @@ display: block;
     <!-- 탭 메뉴 내용 시작 -->
       <div class="tab-content show">
         <%--청년센터 리스트 --%>
-		<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");%>
-		 <h1><%out.print(request.getAttribute("center_name"));%></h1>
+		<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
+		CenterVO center_info=(CenterVO)request.getAttribute("center_info");%>
+		 <h1><%=center_info.getCenter_name()%></h1>
 		 <%for (int i = 0; i < list.size();i++) {%>
 
 		 <div class="blog_post">
@@ -156,14 +158,28 @@ display: block;
       </div>
       
       <div class="tab-content">
-        <%for (int i = 0; i < list.size();i++) {%>
 		 	<div class="blog_post">
 		 		<div class="blog_post_text">
-		 		<p><%=list.get(i).getCenter_name() %></p>
-		 		<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
-				<p><%=list.get(i).getSpace_info() %></p>
+		 			<img src=<%= center_info.getCenter_pic()%> alt="">
+		 			<table>
+		 				<tr>
+		 					<td>운영기관 : </td>
+		 					<td><%=center_info.getCenter_name()%></td>
+		 				</tr>
+		 				<tr>
+		 					<td>공간이용시간 : </td>
+		 					<td><%=center_info.getCenter_runtime()%></td>
+		 				</tr>
+		 				<tr>
+		 					<td>주소 : </td>
+		 					<td><%=center_info.getLocal_gu()%></td>
+		 				</tr>
+		 				<tr>
+		 					<td>전화번호 : </td>
+		 					<td><%=center_info.getCenter_tel()%></td>
+		 				</tr>
+		 			</table>
 			</div>
-  		<%} %>
       </div>
       
       <div class="tab-content">
