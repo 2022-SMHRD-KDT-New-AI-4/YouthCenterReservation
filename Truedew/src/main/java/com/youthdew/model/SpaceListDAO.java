@@ -29,4 +29,12 @@ public class SpaceListDAO {
 		return (ArrayList<CenterVO>) list;
 	}
 	
+	//센터 한개 리스트
+	public CenterVO selectcenter(String center_name){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		CenterVO cvo= session.selectOne("selectcenter", center_name);
+		session.close();
+		return cvo;
+	}
+	
 }

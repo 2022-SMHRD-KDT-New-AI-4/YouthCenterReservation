@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.youthdew.model.CenterVO;
 import com.youthdew.model.SpaceListDAO;
 import com.youthdew.model.SpaceListVO;
 
@@ -28,20 +28,13 @@ public class SpaceList extends HttpServlet {
 
 		SpaceListVO vo = new SpaceListVO(center_name, local_do);
 		SpaceListDAO dao= new SpaceListDAO();
+		SpaceListDAO dao2 = new SpaceListDAO();
 
 		ArrayList<SpaceListVO> list= (ArrayList)dao.selectspace(vo);
+		CenterVO cvo = dao2.selectcenter(center_name);
 		
-		/*
-		 * for (int i = 0; i < list.size();i++) {
-		 * System.out.println(list.get(i).getShared_space_pic());
-		 * System.out.println(list.get(i).getShared_space_name());
-		 * System.out.println(list.get(i).getLocal_do());
-		 * System.out.println(list.get(i).getPersons());
-		 * 
-		 * }
-		 */
-		request.setAttribute("center_name", center_name);
 		request.setAttribute("list", list);
+		request.setAttribute("center_info", cvo);
 		RequestDispatcher rd = request.getRequestDispatcher("SpaceReservation.jsp");
 		rd.forward(request, response);
 	}

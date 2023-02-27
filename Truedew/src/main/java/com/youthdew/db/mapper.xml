@@ -29,5 +29,10 @@
 	<select id="Searchcenter" resultType="CenterVO">
 	select * from tb_center where local_do like '%'||#{local_do}||'%'
 	</select>
+	
+	<!--한개 센터정보 조회  -->
+	<select id="selectcenter" resultType="CenterVO" parameterType="String">
+	select * from tb_center where center_name=#{center_name}
+	</select>
 
 </mapper>
