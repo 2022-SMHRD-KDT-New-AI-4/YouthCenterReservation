@@ -132,19 +132,19 @@ $(document).ready(function()
 			bookingSlider.owlCarousel(
 			{
 				items:3,
-				autoplay:true,
+				autoplay:false,
 				autoplayHoverPause:true,
 				loop:false,
 				smartSpeed:1200,
 				dots:false,
 				nav:false,
 				margin:30,
-				responsive:
+				/*responsive:
 				{
 					0:{items:1},
 					768:{items:2},
 					992:{items:3}
-				}
+				}*/
 			});
 		}
 	}

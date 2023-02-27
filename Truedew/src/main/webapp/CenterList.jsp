@@ -90,38 +90,39 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
+							
+				<%for(int i=0; i< list.size();i=i+3){ %>
 					<!-- Booking Slider -->
-					<div class="booking_slider_container">
+					<div > <!-- class="booking_slider_container" -->
 						<div class="owl-carousel owl-theme booking_slider">
-	
+						
+						<%for(int j=i;j<i+3;j++) {
+							if(j<list.size()){%>
 							<!-- Slide -->
-				<%for(int i=0; i< list.size();i++){ %>
-					
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(<%=list.get(i).getCenter_pic()%>)"></div>
+								<div class="background_image" style="background-image:url(<%=list.get(j).getCenter_pic()%>)"></div>
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_item_content">
 									<div class="booking_item_list">
 										<ul>
-											<li><%=list.get(i).getCenter_name()%></li>
-											<li>Balcony with view</li>
-											<li>Garden / Mountain view</li>
-											<li>Flat-screen TV</li>
-											<li>Air conditioning</li>
-											<li>Soundproofing</li>
-											<li>Private bathroom</li>
-											<li>Free WiFi</li>
+											<li><%=list.get(j).getCenter_tel()%></li>
+											<li><%=list.get(j).getLocal_gu()%></li>
+											<li><%=list.get(j).getCenter_runtime()%></li>
 										</ul>
 									</div>
 								</div>
-								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="booking.html">Family Room</a></div>
+								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
+								<div class="booking_link"><a href="booking.html">예약하기</a></div>
 							</div>
 				
-				<%} %>	
-	
+					<%} else{ %>
+						<div class="booking_item"></div>
+					<%} }%>
 						</div>
 					</div>
+					<br><br>
+				<%} %>
+	
 				</div>
 			</div>
 		</div>
