@@ -115,12 +115,14 @@
 		<div class="accordion d-flex flex-row align-items-center"><div>부대시설 상세 검색</div></div>
 		<div class="accordion_panel">
 			<div id="fac_div" class="elements_title" style="color:black; text-align: center; font-size: 20px">
-				<form action="FacService" method="post">
+				<form action="FacService" method="post" onsubmit="return facCheck();">
+				<div id="fac_div2">
 				<input type="hidden" name="local_do" value="<%=list.get(0).getLocal_do().substring(0,2)%>" readonly/>
 				<input type="checkbox" name="fac_code" value="빔프로젝트">빔프로젝트
 				<input type="checkbox" name="fac_code" value="PC">PC
 				<input type="checkbox" name="fac_code" value="프린터">프린터
 				<input type="checkbox" name="fac_code" value="마이크">마이크
+				<div>
 				<input type="submit" class="booking_button trans_200" value="검색">
 				</form>
 				<div class="button button_4"><a href="#">지도로 보기</a></div>
@@ -264,5 +266,16 @@
 <script src="js/space.js"></script>
 <script src="js/elements.js"></script>
 
+<script>
+//셀렉트 박스 선택 안할 시 경고창 띄우기
+function facCheck(){
+
+if($("#fac_div2").val()==""){
+	alert("부대시설을 선택하여 주십시오."); 
+	$("#fac_div2").focus();
+	return false; 
+} 
+}
+</script>
 </body>
 </html>
