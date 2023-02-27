@@ -34,5 +34,16 @@
 	<select id="selectcenter" resultType="CenterVO" parameterType="String">
 	select * from tb_center where center_name=#{center_name}
 	</select>
+	
+	
+	<!-- 부대시설 필터링 센터정보 조회 -->
+	<select id="Selectfac" parameterType="CenterVO" resultType="CenterVO">
+	select *
+	from tb_center a, tb_center_facility b
+	where a.center_id=b.center_id
+	and a.local_do like '%'||#{local_do}||'%'
+	and b.fac_code=#{fac_code}
+	and b.fac_cnt>=1
+	</select>
 
 </mapper>
