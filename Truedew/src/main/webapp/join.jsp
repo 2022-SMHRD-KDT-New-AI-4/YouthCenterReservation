@@ -91,19 +91,19 @@
 			<br>
 			<form action="JoinService2" method="post">
 		 
-                <h1 style="font-size:40px; color:white;">아이디 <input type="text" id="id" name="user_id" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;">
-                <button type="button" onclick="idCheck()" autofocusmaxlength="20" style="width:100px;height:50px;font-size:20px; color:black" id="double">중복확인</button></h1>
+                <h1 style="font-size:40px; color:white;">아이디 <input type="text" id="id" name="user_id" class="booking_input booking_input_b" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;">
+                <button type="button" onclick="idCheck()" class="booking_button trans_200">중복확인</button></h1>
                 <br>
                 <span id="result"></span>
-                <h2 style="font-size:40px; color:white;">비밀번호 <input name="user_pw" type="password"  placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h2>
+                <h2 style="font-size:40px; color:white;">비밀번호 <input name="user_pw" type="password" class="booking_input booking_input_b"  placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h2>
                  <br>
-                 <h3 style="font-size:40px; color:white;">이름 <input name="user_name" type="text"  placeholder="이름을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h3>
+                 <h3 style="font-size:40px; color:white;">이름 <input name="user_name" type="text" class="booking_input booking_input_b" placeholder="이름을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h3>
                  <br>
-                 <h4 style="font-size:40px; color:white;">생년월일 <input name="user_birthdate" type="text"  placeholder="생일을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h4>
+                 <h4 style="font-size:40px; color:white;">생년월일 <input name="user_birthdate" type="date" class="booking_input booking_input_b" placeholder="생일을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h4>
                  <br>
-                 <h5 style="font-size:40px; color:white;">연락처 <input name="user_phone" type="text"  placeholder="전화번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h5>
+                 <h5 style="font-size:40px; color:white;">연락처 <input name="user_phone" type="text" class="booking_input booking_input_b" placeholder="전화번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h5>
                  <br>
-                 <button type="submit" autofocusmaxlength="20" style="width:550px;height:70px;font-size:30px;">회원가입</button><br>
+                 <button type="submit" class="booking_button trans_200" autofocusmaxlength="20" style="width:550px;height:70px;font-size:30px;">회원가입</button><br>
                 
            </form>
         <br><br><br><br><br><br><br><br><br><br>

@@ -68,9 +68,9 @@
 			<br>
 			<br>
 			<form action="loginService_gen" method="post">
-				<div><input name="user_id" type="text" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
-				<div><input name="user_pw" type="password" placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
-				<div><input type="submit" value="로그인" class="button fit" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div>
+				<div><input name="user_id" type="text" placeholder="아이디를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
+				<div><input name="user_pw" type="password" placeholder="비밀번호를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
+				<div><button type="submit" class="booking_button trans_200">로그인</button></div>
 			</form>
         <br><br><br><br><br><br><br><br><br><br>
         
