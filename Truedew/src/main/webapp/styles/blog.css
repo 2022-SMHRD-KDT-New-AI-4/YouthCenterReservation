@@ -346,7 +346,18 @@ section
 }
 .header.scrolled::before
 {
-	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	background: rgba(0,0,0,0.7);
+	content: '';
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
 }
 .header_content
 {
