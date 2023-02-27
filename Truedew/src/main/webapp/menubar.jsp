@@ -35,8 +35,8 @@
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">
     
-                            <li><a href="blog.html">로그인</a></li>
-                            <li><a href="contact.html">회원가입</a></li>
+                            <li><a href="login.jsp">로그인</a></li>
+                            <li><a href="join.jsp">회원가입</a></li>
                         </ul>
                     </nav>
                 <div class="book_button">
