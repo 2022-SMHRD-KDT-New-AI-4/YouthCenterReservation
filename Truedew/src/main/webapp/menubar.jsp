@@ -30,7 +30,7 @@
     
         <header class="header">
             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                <div class="logo"><a href="#">청년이슬</a></div>
+                <div class="logo"><a href="#" onClick="location.href='Main.jsp'">청년이슬</a></div>
                 <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">
