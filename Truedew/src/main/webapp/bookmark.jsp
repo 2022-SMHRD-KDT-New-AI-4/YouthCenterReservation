@@ -1,46 +1,47 @@
+<%@page import="com.youthdew.model.MemberVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.youthdew.model.MarkVO"%>
+<%@page import="com.youthdew.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>마이페이지</title>
+<title>MyFavor</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/mypage.css">
+<link rel="stylesheet" type="text/css" href="styles/myreserv.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/booking.css">
+<link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
+
+
 </head>
 <body>
 
 <div class="super_container">
 	
-	<!-- Header -->
+	<!-- selectMember.jsp로 이동 시 바로 회원정보(DB)를 불러와서 출력! -->
+		<% 
+			// 1. DB에 있는 회원정보 데이터 가져오기
+			// -> DAO에 기능을 호출
+			MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+			MemberDAO dao = new MemberDAO();
+			List<MarkVO> list = dao.selectMark(loginM.getUser_id());
+			
+			%>
 
-	<header class="header">
-		<div class="header_content d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="Main.jsp">청년이슬</a></div>
-			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
-				<nav class="main_nav">
-					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li class="active"><a href="mypage.jsp">마이페이지</a></li>
-						<li><a href="Main.jsp">로그아웃</a></li>
-						<li><img src="./images/paper-plane_2.png" alt="알림"></li>
-					</ul>
-				</nav>
-				<div class="book_button"><a href="Main.jsp">검색하기</a></div>
-
-				<!-- Hamburger Menu -->
-				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-			</div>
-		</div>
-	</header>
+	<header id="headers"></header>
 
 	<!-- Home -->
 
@@ -59,7 +60,7 @@
 		</div>
 	</div>
 
-	<!-- Blog -->
+	<!-- Main -->
 
 	<div class="blog">
 		<div class="container">
@@ -71,16 +72,23 @@
 					<div class="sidebar">
 						<!-- 나의 정보 -->
 						<div class="recent_posts">
-							<div class="sidebar_title"><a hred="mypage.jsp"><h3>마이페이지</h3></a></div>
+							<div class="sidebar_title"><a hred="mypage.html"><h3>마이페이지</h3></a></div>
 							<div class="sidebar_list">
 							<ul>
-								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 정보 -->
+								<li><a href="mypage.html"> - 나의 정보</a></li> <!-- 나의 예약 -->
 								<br>
 								<br>
-								<li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 나의 예약 -->
+								<li><a href="myreservation.html"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
 								<br>
 								<br>
-								<li><a href="bookmark.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
+								<li><a href="myfavor.html"> - 나의 공간</a></li> <!-- 나의 공간 -->
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
 								<br>
 								<br>
 							</ul>
@@ -97,69 +105,71 @@
 				<!-- User_info -->
 				<div class="col-lg-9">
 					<div class="blog_posts">
+						<div class="user_info"><h4>예약확인/취소</h4></div>
+						<div>
+							<hr>
+						</div>
+                        <br>
 						<div class="user_info_cond">
-							<img src="./images/person.JPG" id="personImg" alt="">
-							<h4 id="user_name">홍길동</h4>
+							<br>
+							<h4 id="user_name">홍길동 님의 즐겨찾기 내역입니다.</h4>
+						</div>
+						<br><br>
+						<div>
+						
+						
+						<% for(int i=0; i< list.size();i=i+3){ %>
+					<!-- Booking Slider -->
+					<div > <!-- class="booking_slider_container" -->
+						<div class="owl-carousel owl-theme booking_slider">
+						
+						<%for(int j=i;j<i+3;j++) {
+							if(j<list.size()){%>
+							<!-- Slide -->
+							<div class="booking_item">
+								<div class="background_image" style="background-image:url(<%=list.get(j).getCenter_pic()%>)"></div>
+								<div class="booking_overlay trans_200"></div>
+								<div class="booking_item_content">
+									<div class="booking_item_list">
+										<ul>
+											<li><%=list.get(j).getCenter_tel()%></li>
+											<li><%=list.get(j).getLocal_gu()%></li>
+											<li><%=list.get(j).getCenter_runtime()%></li>
+										</ul>
+									</div>
+								</div>
+								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
+								<div class="booking_link"><a href="booking.html">예약하기</a></div>
+							</div>
+				
+					<%} else{ %>
+						<div class="booking_item"></div>
+					<%} }%>
 						</div>
 					</div>
-					<br>
-					<br>
-					<br>
-					<div id="user_info_view">
-						<h4>회원정보</h4>
-						<table id="user_info_view_detail">
-							<tr>
-								<td>성명</td>
-								<td class="info_detail">홍길동</td>
-							</tr>
-							<tr>
-								<td>이메일</td>
-								<td class="info_detail">aaa@naver.com</td>
-							</tr>
-							<tr>
-								<td>생년월일</td>
-								<td class="info_detail">2000-01-01</td>
-							</tr>
-						</table>
-					<br>
-					<br>
-					<br>
-					</div>
-					<div id="user_address_info"><h4>연락처정보</h4>
-						<table>
-							<tr>
-								<td>전화번호</td>
-								<td class="info_detail">010-0000-0000</td>
-							</tr>
-						</table>
-						<div class="info_detail_button">
-							<button class="change_button"><a href="#">회원 정보 수정</a></button>
-							<button class="out_button"><a href="#">회원 탈퇴</a></button>
+					<br><br>
+				<%} %>
+					
+				
+						</div>
+								
 						</div>
 					</div>
 				</div>
+				
+
 			</div>
 		</div>
 	</div>
 
 	<!-- Footer -->
 
-	<footer class="footer">
-		<div class="footer_content">
-			<div class="container">
-			</div>
-		</div>
-		<div class="copyright">
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</div>
-	</footer>
+	<footer id="footers"></footer>
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="styles/popper.js"></script>
-<script src="styles/bootstrap.min.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
 <script src="plugins/greensock/TweenMax.min.js"></script>
 <script src="plugins/greensock/TimelineMax.min.js"></script>
 <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
@@ -171,5 +181,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/listevent.js"></script>
+<script src="js/htmlplus.js"></script>
 </body>
 </html>

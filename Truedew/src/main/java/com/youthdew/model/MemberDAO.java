@@ -1,5 +1,7 @@
 package com.youthdew.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -40,5 +42,15 @@ public class MemberDAO {
 		MemberVO lvo= session.selectOne("userSearch",vo);
 		session.close();
 		return lvo;
+	}
+	
+	
+	// 나의공간(즐겨찾기)
+	public List<MarkVO> selectMark(String user_id) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		List<MarkVO> list = session.selectList("selectMark",user_id);
+		session.close();
+		return list;
+		
 	}
 }

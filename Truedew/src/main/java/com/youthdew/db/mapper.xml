@@ -45,5 +45,25 @@
 	and b.fac_code=#{fac_code}
 	and b.fac_cnt>=1
 	</select>
+	
+	
+	
+	<!-- 즐겨찾기 추가 -->
+	<insert id="insertMark" parameterType="MarkVO">
+	insert into tb_bookmark values(tb_bookmark_seq.NEXTVAL,#{user_id},#{center_id}, sysdate)
+	</insert>
+	
+	<!-- 즐겨찾기 조회 -->
+	<select id="selectMark" resultType="MarkVO">
+	SELECT A.CENTER_NAME, A.LOCAL_DO, A.LOCAL_GU, A.CENTER_RUNTIME, A.CENTER_TEL, A.CENTER_PIC
+  	FROM TB_CENTER A, TB_BOOKMARK B
+ 	WHERE A.CENTER_ID = B.CENTER_ID
+   	AND B.USER_ID = #{user_id}
+	</select>
+	
+	<!-- 즐겨찾기 삭제 -->
+	<delete id="deleteMark">
+	delete from tb_bookmark where center_id=#{center_id}
+	</delete>
 
 </mapper>
