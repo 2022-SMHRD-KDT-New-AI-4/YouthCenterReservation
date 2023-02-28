@@ -91,54 +91,57 @@
 	</div>
 
 	<!-- 캘린더  -->
-	<div id='calendar'></div>
+	<div id='calendar' style="width: 50%;"></div>
+	<div>
+	<form action="reservationService" method="get">
+	<input type="hidden" id="dayValue" value="" name="reserv_date">
 	<div id='selectedDate'></div>
 	
 	
 	<div class="col-2">
-	<form action="" method="get">
+	
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_1" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_1" value="9:00~10:00"/>
 			<label for="checkbox_solid_border_1">9:00~10:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_2" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_2" value="10:00~11:00"/>
 			<label for="checkbox_solid_border_2">10:00~11:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_3" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_3" value="11:00~12:00"/>
 			<label for="checkbox_solid_border_3">11:00~12:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_4" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_4" value="12:00~13:00"/>
 			<label for="checkbox_solid_border_4">12:00~13:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_5" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_5" value="13:00~14:00"/>
 			<label for="checkbox_solid_border_5">13:00~14:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_6" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_6" value="14:00~15:00"/>
 			<label for="checkbox_solid_border_6">14:00~15:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_7" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_7" value="15:00~16:00"/>
 			<label for="checkbox_solid_border_7">15:00~16:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_8" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_8" value="16:00~17:00" />
 			<label for="checkbox_solid_border_8">16:00~17:00</label>
 		</div>
 		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_9" />
+			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_9" value="17:00~18:00" />
 			<label for="checkbox_solid_border_9">17:00~18:00</label>
 		</div>
 		<input id="checkRes" type="button" value="예약하기">
-	</form>
+		</div>
 		
+		</form>
 		</div>
-		</div>
-
+	</div>
 	 
 						
 
@@ -199,8 +202,12 @@
 		}
 		if(isCheck){
 			alert("시간은 연속으로 예약 가능합니다.");
+			$('#checkRes').attr('type','button');
+		}else{
+			/* console.log(checkList); */
+			$('#checkRes').attr('type','submit');
+			alert("예약이 완료되었습니다.")
 		}
-		console.log(checkList);
 	});
 	
 	
@@ -241,6 +248,7 @@
 				// 선택한 날짜를 selectedDate 요소에 출력
 				let selectedDateEl = document.getElementById('selectedDate');
 				selectedDateEl.textContent = info.dateStr;
+				$('#dayValue').val(info.dateStr);
 			}
 		
 		});

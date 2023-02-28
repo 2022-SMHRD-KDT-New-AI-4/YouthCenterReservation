@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.MemberVO"%>
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -28,6 +29,10 @@
 
 </head>
 <body>
+	<%
+	//loginM 키값이 지정되어있는 세션 값
+	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+    %>
 
 <div class="super_container">
 	
@@ -115,7 +120,7 @@
 		 	<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
 			<p><%=list.get(i).getSpace_info() %></p>
 		</div>
-		<div class="button blog_post_button"><a href="#" onClick="location.href='reservation.jsp'">예약하기</a></div> 
+		<div class="button blog_post_button"><a href="#" onClick='chklogin()'>예약하기</a></div> 
 		</div>
 			<%} %>
       </div>
@@ -251,6 +256,14 @@
 	        $('.tab-button').eq(e).addClass('active');
 	        $('.tab-content').eq(e).addClass('show');
 	    });
+	}
+	function chklogin(){
+		if(loginM==null){
+			alert("로그인 후 이용해주세요.");
+			location.href='login.jsp';
+		}else{
+			location.href='reservaion.jsp';
+		}
 	}
 </script>
 
