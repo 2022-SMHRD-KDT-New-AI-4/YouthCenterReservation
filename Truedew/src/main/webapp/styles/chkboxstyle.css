@@ -1,0 +1,182 @@
+.grid {
+    border-top: 1px solid var(--grid-border-clr);
+    border-bottom: 1px solid var(--grid-border-clr);
+    margin-bottom: -1px;
+}
+.col-2 {
+    width: 50%;
+    float: left;
+    padding: 25px 0;
+}
+.box-group {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+}
+.box-group input[type="radio"], .box-group input[type="checkbox"] {
+    display: none;
+}
+.box-group label {
+    position: relative;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--clr-gray);
+}
+.box-group.basic label {
+    font-size: 16px;
+    padding-left: 25px;
+    transform: var(--transition);
+}
+.box-group.basic label::before, .box-group.basic label::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+.box-group.basic label::after {
+    border: 1px solid var(--clr-gray);
+}
+.box-group.basic label::before {
+    left: 1px;
+    font-family: "Material Design Icons";
+    opacity: 0;
+}
+.box-group.basic input[type="checkbox"] + label::before {
+    content: "\F12C";
+}
+/* .box-group.basic input[type="radio"] + label::before {
+    content: "\F0DA";
+} */
+.box-group.basic.zoomOut label::before {
+    transform: scale(0);
+}
+.box-group.basic.zoomIn label::before {
+    transform: scale(2);
+}
+/* .box-group.basic input[type="radio"] + label::after {
+    border-radius: 50%;
+} */
+.box-group.basic:hover label {
+    color: var(--clr-gray);
+}
+.box-group.basic:hover label::after {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15) inset;
+}
+.box-group.basic input[type="radio"]:checked + label, .box-group.basic input[type="checkbox"]:checked + label {
+    color: var(--clr-green);
+} 
+.box-group.basic input[type="radio"]:checked + label::after, .box-group.basic input[type="checkbox"]:checked + label::after {
+    border-color: var(--clr-green);
+}
+.box-group.basic input[type="radio"]:checked + label::before, .box-group.basic input[type="checkbox"]:checked + label::before {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--clr-green);
+}
+.box-group.solid label {
+    padding: 10px 25px;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+.box-group.solid.border label {
+    border: 1px solid rgba(0, 0, 0, .25);
+}
+.box-group.solid.border-bg label {
+    background: rgba(0, 0, 0, .1);
+}
+.box-group.solid:hover label {
+    background: rgba(0, 0, 0, .05);
+}
+.box-group.solid input[type="checkbox"]:checked + label, .box-group.solid input[type="radio"]:checked + label {
+    color: #ffffff;
+    background: var(--clr-green);
+    border-color: var(--clr-green);
+}
+.box-group.solid label::before {
+    position: absolute;
+    content: "";
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    font-family: "Material Design Icons";
+    color: #ffffff;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 3px;
+    transform: scale(0) translateX(-20px);
+    opacity: 0;
+    transition: var(--transition);
+}
+.box-group.solid input[type="checkbox"] + label::before {
+    content: "\F12C";
+}
+/* .box-group.solid input[type="radio"] + label::before {
+    content: "\F0DA";
+} */
+.box-group.solid input[type="checkbox"]:checked + label::before, .box-group.solid input[type="radio"]:checked + label::before {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+.box-group.card {
+    position: relative;
+    padding: 15px 25px;
+    min-width: 120px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .5s;
+    z-index: 9;
+}
+.box-group.card.checked {
+    background: rgba(0, 0, 0, .15);
+}
+.box-group.card::after {
+    position: absolute;
+    font-family: "Material Design Icons";
+    top: 5px;
+    left: 5px;
+    font-size: 24px;
+    color: var(--clr-green);
+    transform: scale(0);
+    opacity: 0;
+    transition: all .5s;
+}
+.box-group.card.radio::after {
+    content: "\F01A";
+}
+.box-group.card.checkbox::after {
+    content: "\F790";
+}
+.box-group.card.checked::after {
+    transform: scale(1);
+    opacity: 1;
+}
+.box-group.card label {
+    font-weight: 700;
+    font-size: 16px;
+    z-index: -1;
+}
+.box-group.card i {
+    font-size: 55px;
+    color: var(--clr-gray);
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: all .5s;
+}
+.box-group.card:hover {
+    background: rgba(0, 0, 0, .1);
+}
+.box-group.card:hover i {
+    color: var(--clr-black);
+    transform: translateY(5px);
+}
+.box-group.card.checked i {
+    color: var(--clr-black);
+    transform: translateY(5px);
+}

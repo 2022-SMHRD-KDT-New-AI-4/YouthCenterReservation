@@ -1,0 +1,8 @@
+:root {
+    --clr-blue: #4285F4;
+    --clr-gray: #6c6c6c;
+    --clr-black: #3c3c3c;
+    --clr-green: rgb(255,163,123);
+    --grid-border-clr: #cccccc;
+    --transition: .25s;
+}
