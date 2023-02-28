@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,7 +19,9 @@
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 </head>
 <body>
-
+<%
+MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+%>
 <div class="super_container">
 	
 	<!-- Header -->
@@ -110,15 +113,15 @@
 						<table id="user_info_view_detail">
 							<tr>
 								<td>성명</td>
-								<td class="info_detail">홍길동</td>
+								<td class="info_detail"><%=loginM.getUser_name() %></td>
 							</tr>
 							<tr>
-								<td>이메일</td>
-								<td class="info_detail">aaa@naver.com</td>
+								<td>아이디</td>
+								<td class="info_detail"><%=loginM.getUser_id() %></td>
 							</tr>
 							<tr>
 								<td>생년월일</td>
-								<td class="info_detail">2000-01-01</td>
+								<td class="info_detail"><%=loginM.getUser_birthdate().substring(0,11) %></td>
 							</tr>
 						</table>
 					<br>
@@ -129,7 +132,7 @@
 						<table>
 							<tr>
 								<td>전화번호</td>
-								<td class="info_detail">010-0000-0000</td>
+								<td class="info_detail"><%=loginM.getUser_phone() %></td>
 							</tr>
 						</table>
 						<div class="info_detail_button">
