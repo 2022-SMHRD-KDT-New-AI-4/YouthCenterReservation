@@ -87,11 +87,11 @@
 												<option>센터명</option>															
 											 </select>
 											</div>
-				
-										</div>
-										<div>
-										<input type="submit" class="booking_button trans_200" value="다시예약하기">
-										</div>
+											<div>
+												<input type="submit" class="booking_button trans_200" value="다시예약하기">
+											</div>
+											</div>
+										
 									</div>
 								</form>
 							</div>

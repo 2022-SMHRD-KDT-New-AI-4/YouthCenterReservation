@@ -20,6 +20,16 @@
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 
+<style>
+#container_d-flex {
+	width:1100px;
+	margin-left: 150px;
+}
+#reserve {
+	margin:auto;
+}
+</style>
+
 </head>
 <body>
 
@@ -48,8 +58,8 @@
                               <div class="booking_form_container">
                                  <form action="SpaceList" class="booking_form" name="insertForm" onsubmit="return formCheck();">
                                     <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                                       <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
-                                             <div>
+                                       <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start" id="container_d-flex">
+                                             <div align="left">
                                                 <!-- <input type="text" class="booking_input booking_input_b" placeholder="지역(시/도)" required="required"> -->
                                                 <select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
 													<option value="">지역(시/도)</option>
@@ -68,14 +78,14 @@
 												</select>
                                                 <!-- select option 선택 시 밑에 있는 센터명 정보 필터링해서 값 가져오기 -->
                                              </div>
-                                          <div>
+                                          <div align="center">
                                              <!-- <input type="text" class="booking_input booking_input_b" placeholder="센터명" required="required"> -->
                                              <select name="center_list" id="ctlist" class="booking_input booking_input_b">
 												<option>센터명</option>															
 											 </select>
                                           
                                           </div>
-                                          <div> <input type="submit" class="booking_button trans_200" value="예약하기"></div>
+                                          <div align="right"> <input id="reserve" type="submit" class="booking_button trans_200" value="예약하기"></div>
                                        </div>
                                     </div>
                                  </form>

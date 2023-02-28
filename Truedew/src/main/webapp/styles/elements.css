@@ -653,6 +653,7 @@ section
 .booking_input_container
 {
 	width: 100%;
+	margin-left:150px;
 }
 .booking_input_container > div
 {

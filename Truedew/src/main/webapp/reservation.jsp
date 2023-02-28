@@ -30,6 +30,11 @@
 <link rel="stylesheet" type="text/css" href="styles/white-theme.css">
 <link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
 
+<style>
+#d-flex {
+	
+}
+</style>
 
 </head>
 <body>
@@ -51,7 +56,7 @@
 							<div class="home_title">공간예약</div>
 							<div class="booking_form_container">
 								<form action="SpaceList" class="booking_form" id="booking_form" name="insertForm" onsubmit="return formCheck();">
-									<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
+									<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start" id="d-flex">
 										<div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap">
 											<div>
 												<select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
