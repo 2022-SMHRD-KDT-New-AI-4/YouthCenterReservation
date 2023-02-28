@@ -75,13 +75,13 @@
 							<div class="sidebar_title"><a hred="mypage.html"><h3>마이페이지</h3></a></div>
 							<div class="sidebar_list">
 							<ul>
-								<li><a href="mypage.html"> - 나의 정보</a></li> <!-- 나의 예약 -->
+								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 예약 -->
 								<br>
 								<br>
-								<li><a href="myreservation.html"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
+								<li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
 								<br>
 								<br>
-								<li><a href="myfavor.html"> - 나의 공간</a></li> <!-- 나의 공간 -->
+								<li><a href="bookmark.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
 								<br>
 								<br>
 								<br>
