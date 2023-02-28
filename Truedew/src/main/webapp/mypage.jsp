@@ -102,7 +102,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 					<div class="blog_posts">
 						<div class="user_info_cond">
 							<img src="./images/person.JPG" id="personImg" alt="">
-							<h4 id="user_name">홍길동</h4>
+							<h4 id="user_name"><%=loginM.getUser_name() %></h4>
 						</div>
 					</div>
 					<br>
