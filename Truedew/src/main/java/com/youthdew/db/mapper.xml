@@ -55,15 +55,15 @@
 	
 	<!-- 즐겨찾기 조회 -->
 	<select id="selectMark" resultType="MarkVO">
-	SELECT A.CENTER_NAME, A.LOCAL_DO, A.LOCAL_GU, A.CENTER_RUNTIME, A.CENTER_TEL, A.CENTER_PIC
+	SELECT A.CENTER_ID, A.CENTER_NAME, A.LOCAL_DO, A.LOCAL_GU, A.CENTER_RUNTIME, A.CENTER_TEL, A.CENTER_PIC
   	FROM TB_CENTER A, TB_BOOKMARK B
  	WHERE A.CENTER_ID = B.CENTER_ID
    	AND B.USER_ID = #{user_id}
 	</select>
 	
 	<!-- 즐겨찾기 삭제 -->
-	<delete id="deleteMark">
-	delete from tb_bookmark where center_id=#{center_id}
+	<delete id="deleteMark" parameterType="MarkVO">
+	delete from tb_bookmark where center_id=#{center_id} and user_id=#{user_id}
 	</delete>
 
 </mapper>

@@ -45,12 +45,21 @@ public class MemberDAO {
 	}
 	
 	
-	// 나의공간(즐겨찾기)
+	// 나의공간(즐겨찾기) 조회
 	public List<MarkVO> selectMark(String user_id) {
 		SqlSession session = SqlSessionFactory.openSession(true);
 		List<MarkVO> list = session.selectList("selectMark",user_id);
 		session.close();
 		return list;
+		
+	}
+	
+	// 나의공간(즐겨찾기) 삭제
+	public int deleteMark(MarkVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		int cnt = session.delete("deleteMark",vo);
+		session.close();
+		return cnt;
 		
 	}
 }

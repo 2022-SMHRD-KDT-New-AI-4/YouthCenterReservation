@@ -40,6 +40,11 @@ public class MarkVO {
 		this.user_id = user_id;
 	}
 
+	public MarkVO(String center_id, String user_id) {
+		super();
+		this.center_id = center_id;
+		this.user_id = user_id;
+	}
 
 	public String getCenter_id() {
 		return center_id;

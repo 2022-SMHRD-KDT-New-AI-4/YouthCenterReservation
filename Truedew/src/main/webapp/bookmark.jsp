@@ -25,6 +25,15 @@
 <link rel="stylesheet" type="text/css" href="styles/booking.css">
 <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
 
+<style>
+#delete_mark{
+		left:80%;
+		margin-top: 10px;
+		width: 50px;
+		height: 50px;
+
+	}
+</style>
 
 </head>
 <body>
@@ -118,16 +127,19 @@
 						<div>
 						
 						
-						<% for(int i=0; i< list.size();i=i+3){ %>
+							<% for(int i=0; i< list.size();i=i+3){ %>
 					<!-- Booking Slider -->
-					<div > <!-- class="booking_slider_container" -->
+					
+					<div> <!-- class="booking_slider_container" -->
 						<div class="owl-carousel owl-theme booking_slider">
 						
 						<%for(int j=i;j<i+3;j++) {
 							if(j<list.size()){%>
 							<!-- Slide -->
+							<div>
 							<div class="booking_item">
 								<div class="background_image" style="background-image:url(<%=list.get(j).getCenter_pic()%>)"></div>
+								
 								<div class="booking_overlay trans_200"></div>
 								<div class="booking_item_content">
 									<div class="booking_item_list">
@@ -139,7 +151,10 @@
 									</div>
 								</div>
 								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
-								<div class="booking_link"><a href="booking.html">예약하기</a></div>
+								<!-- <div class="button button_1"><a href="reservation.jsp">예약하기</a></div> -->
+								<div class="booking_link"><a href="reservation.jsp">예약하기</a></div>
+							</div>
+									<div id="delete_mark"><a href="deleteMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>"><img src="./images/cancel.png"></a></div>
 							</div>
 				
 					<%} else{ %>
