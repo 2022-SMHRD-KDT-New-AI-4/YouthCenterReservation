@@ -40,11 +40,12 @@
                         <ul class="d-flex flex-row align-items-start justify-content-start">
     
     					<%if(loginM==null) { %>
-                            <li><a href="login.jsp">로그인</a></li>
                             <li><a href="join.jsp">회원가입</a></li>
+                            <li><a href="login.jsp">로그인</a></li>
                         <%} else { %>
                         <li><a href="mypage.jsp">마이페이지</a>	</li>					
                         <li><a href="LogoutService">로그아웃</a></li>
+                        <li><img src="./images/paper-plane_2.png" alt="알림"></li>
 						<%} %>
                             
                         </ul>
