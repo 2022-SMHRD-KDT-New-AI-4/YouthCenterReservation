@@ -112,7 +112,7 @@
                         <br>
 						<div class="user_info_cond">
 							<br>
-							<h4 id="user_name">홍길동 님의 즐겨찾기 내역입니다.</h4>
+							<h4 id="user_name"><%=loginM.getUser_name() %> 님의 즐겨찾기 내역입니다.</h4>
 						</div>
 						<br><br>
 						<div>
