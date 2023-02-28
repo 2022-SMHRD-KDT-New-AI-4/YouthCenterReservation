@@ -25,24 +25,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    h1 {
-      margin-left : 100px;  
+    #Join2 {
+      position: absolute;
+      left: 600px;
     }
-    h2 {
-      margin-left : -52px; 
-      
+    #id {
+      position: relative;
+      right: -61px;
     }
-    h3 {
-      margin-left : 30px;  
+    #pw {
+      position: relative;
+      right : -10px;
     }
-    h4 {
-      margin-left : -50px;  
+    #named {
+      position: relative;
+      right: -90px;
     }
-    h5 {
-      margin-left : -10px;  
+    #birth {
+      position: relative;
+      right: -10px;
+    }
+    #tel {
+      position: relative;
+      right: -50px;
     }
     #double {
-        margin-top : 0px;
+      position: relative;
+      right: -61px;
+      top: -4px;
     }
   </style>
 </head>
@@ -85,25 +95,37 @@
 						<div class="home_content text-center">
 							<div class="home_title" style="color:black" margin="text-center;" >회원가입</div>
 							
-									<br>
-			<br>
+									
 			<br>
 			<form action="JoinService2" method="post">
-		 
-                <h1 style="font-size:40px; color:white;">아이디 <input type="text" id="id" name="user_id" class="booking_input booking_input_b" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;">
-                <button type="button" onclick="idCheck()" class="booking_button trans_200">중복확인</button></h1>
-                <br>
+		 <table id="Join2" align="center" style="width: 800px; height: 500px;">
+          <tbody>
+                <tr>
+                  <td style="font-size:40px; color:white;" align="left">아이디<input type="text" id="id" name="user_id" class="booking_input booking_input_b" placeholder="아이디를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;">
+                <button type="button" onclick="idCheck()" autofocusmaxlength="20" style="width:100px;height:50px;font-size:20px; class="booking_button trans_200" color:black" id="double"> 중복확인</button></h1></td>
+                </tr><br>
                 <span id="result"></span>
-                <h2 style="font-size:40px; color:white;">비밀번호 <input name="user_pw" type="password" class="booking_input booking_input_b"  placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h2>
-                 <br>
-                 <h3 style="font-size:40px; color:white;">이름 <input name="user_name" type="text" class="booking_input booking_input_b" placeholder="이름을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h3>
-                 <br>
-                 <h4 style="font-size:40px; color:white;">생년월일 <input name="user_birthdate" type="date" class="booking_input booking_input_b" placeholder="생일을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h4>
-                 <br>
-                 <h5 style="font-size:40px; color:white;">연락처 <input name="user_phone" type="text" class="booking_input booking_input_b" placeholder="전화번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></h5>
-                 <br>
-                 <button type="submit" class="booking_button trans_200" autofocusmaxlength="20" style="width:550px;height:70px;font-size:30px;">회원가입</button><br>
-                
+                <tr>
+                  <td><h2 style="font-size:40px; color:white;" align="left">비밀번호 <input id ="pw" name="user_pw" class="booking_input booking_input_b" type="password"  placeholder="비밀번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></td></h2>
+                </tr><br>
+                 
+                <tr>
+                  <td><h3 style="font-size:40px; color:white;" align="left">이름 <input id="named" name="user_name" class="booking_input booking_input_b" type="text"  placeholder="이름을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></td></h3>
+                </tr>
+                 
+                <tr>
+                  <td><h4 style="font-size:40px; color:white;" align="left">생년월일 <input id="birth" name="user_birthdate" class="booking_input booking_input_b" type="text"  placeholder="생일을 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></td></h4>
+                </tr>
+                 
+                <tr>
+                  <td><h5 style="font-size:40px; color:white;" align="left">연락처 <input id="tel" name="user_phone" class="booking_input booking_input_b" type="text"  placeholder="전화번호를 입력하세요" autofocusmaxlength="20" style="width:400px;height:50px;font-size:30px;"></td></h5>
+                </tr>
+                 
+                <tr>
+                <td align="left"><button type="submit" autofocusmaxlength="20" class="booking_button trans_200" style="width:585px;height:70px;font-size:30px;" >회원가입</button></td>
+                </tr>
+              </tbody>
+                </table>
            </form>
         <br><br><br><br><br><br><br><br><br><br>
         
