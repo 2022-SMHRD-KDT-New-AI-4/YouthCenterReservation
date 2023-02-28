@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +20,9 @@
 </head>
 <body>
 
+<%
+MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+%>
 <div class="super_container">
 	
 	<!-- Header -->
@@ -71,7 +75,7 @@
 					<div class="sidebar">
 						<!-- 나의 정보 -->
 						<div class="recent_posts">
-							<div class="sidebar_title"><a hred="mypage.jspl"><h3>마이페이지</h3></a></div>
+							<div class="sidebar_title"><a hred="mypage.jsp"><h3>마이페이지</h3></a></div>
 							<div class="sidebar_list">
 							<ul>
 								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 예약 -->
@@ -80,7 +84,7 @@
 								<li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
 								<br>
 								<br>
-								<li><a href="myFavor.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
+								<li><a href="bookmark.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
 								<br>
 								<br>
 								<br>
@@ -111,7 +115,7 @@
                         <br>
 						<div class="user_info_cond">
 							<br>
-							<h4 id="user_name">홍길동 님의 최근 예약 내역입니다.</h4>
+							<h4 id="user_name"><%=loginM.getUser_name() %> 님의 최근 예약 내역입니다.</h4>
 							<br>
 							<div class="res_search_date">
 								<input type="date" id="search_date_1" value="first">
