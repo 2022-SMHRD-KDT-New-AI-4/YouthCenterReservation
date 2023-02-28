@@ -3,18 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>마이페이지</title>
+<title>나의 예약</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/mypage.css">
+<link rel="stylesheet" type="text/css" href="styles/myreserv.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 </head>
 <body>
@@ -59,7 +59,7 @@
 		</div>
 	</div>
 
-	<!-- Blog -->
+	<!-- Main -->
 
 	<div class="blog">
 		<div class="container">
@@ -71,16 +71,23 @@
 					<div class="sidebar">
 						<!-- 나의 정보 -->
 						<div class="recent_posts">
-							<div class="sidebar_title"><a hred="mypage.jsp"><h3>마이페이지</h3></a></div>
+							<div class="sidebar_title"><a hred="mypage.jspl"><h3>마이페이지</h3></a></div>
 							<div class="sidebar_list">
 							<ul>
-								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 정보 -->
+								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 예약 -->
 								<br>
 								<br>
-								<li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 나의 예약 -->
+								<li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
 								<br>
 								<br>
-								<li><a href="myfavor.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
+								<li><a href="myFavor.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
 								<br>
 								<br>
 							</ul>
@@ -97,47 +104,39 @@
 				<!-- User_info -->
 				<div class="col-lg-9">
 					<div class="blog_posts">
-						<div class="user_info_cond">
-							<img src="./images/person.JPG" id="personImg" alt="">
-							<h4 id="user_name">홍길동</h4>
+						<div class="user_info"><h4>예약확인/취소</h4></div>
+						<div>
+							<hr>
 						</div>
-					</div>
-					<br>
-					<br>
-					<br>
-					<div id="user_info_view">
-						<h4>회원정보</h4>
-						<table id="user_info_view_detail">
-							<tr>
-								<td>성명</td>
-								<td class="info_detail">홍길동</td>
-							</tr>
-							<tr>
-								<td>이메일</td>
-								<td class="info_detail">aaa@naver.com</td>
-							</tr>
-							<tr>
-								<td>생년월일</td>
-								<td class="info_detail">2000-01-01</td>
-							</tr>
-						</table>
-					<br>
-					<br>
-					<br>
-					</div>
-					<div id="user_address_info"><h4>연락처정보</h4>
-						<table>
-							<tr>
-								<td>전화번호</td>
-								<td class="info_detail">010-0000-0000</td>
-							</tr>
-						</table>
-						<div class="info_detail_button">
-							<button class="change_button"><a href="#">회원 정보 수정</a></button>
-							<button class="out_button"><a href="#">회원 탈퇴</a></button>
+                        <br>
+						<div class="user_info_cond">
+							<br>
+							<h4 id="user_name">홍길동 님의 최근 예약 내역입니다.</h4>
+							<br>
+							<div class="res_search_date">
+								<input type="date" id="search_date_1" value="first">
+								<input type="date" id="search_date_2" value="last">
+								<button>조회</button>
+							</div>
+						</div>
+						<br>
+						<div>
+							<table class="res_search_table">
+								<tr id="res_search_table_col">
+									<td>번호</td>
+									<td>예약 번호</td>
+									<td>센터 명</td>
+									<td>공간 명</td>
+									<td>예약 일자</td>
+									<td>예약 상태</td>
+									<td>예약 취소</td>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>
+				
+
 			</div>
 		</div>
 	</div>
@@ -158,8 +157,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="styles/popper.js"></script>
-<script src="styles/bootstrap.min.js"></script>
+<script src="styles/bootstrap-4.1.2/popper.js"></script>
+<script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
 <script src="plugins/greensock/TweenMax.min.js"></script>
 <script src="plugins/greensock/TimelineMax.min.js"></script>
 <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
