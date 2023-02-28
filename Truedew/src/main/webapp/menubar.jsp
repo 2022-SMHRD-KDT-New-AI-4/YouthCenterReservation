@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,7 +24,10 @@
 </head>
 
 <body>
-    
+    <%
+	//loginM 키값이 지정되어있는 세션 값
+	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+    %>
 	
         <!-- Header -->
         <div id="headers"></div>
@@ -35,8 +39,14 @@
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">
     
+    					<%if(loginM==null) { %>
                             <li><a href="login.jsp">로그인</a></li>
                             <li><a href="join.jsp">회원가입</a></li>
+                        <%} else { %>
+                        <li><a href="mypage.jsp">마이페이지</a>	</li>					
+                        <li><a href="LogoutService">로그아웃</a></li>
+						<%} %>
+                            
                         </ul>
                     </nav>
                 <div class="book_button">
@@ -62,17 +72,15 @@
                 </div>
     
     
-    
-    
                     <!-- Hamburger Menu -->
-                <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+<!--                 <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
                 </div>
             </div>
-        </header>
+        </header> -->
     
         <!-- Menu -->
     
-        <div class="menu trans_400 d-flex flex-column align-items-end justify-content-start">
+<!--         <div class="menu trans_400 d-flex flex-column align-items-end justify-content-start">
             <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
             <div class="menu_content">
                 <nav class="menu_nav text-right">
@@ -82,7 +90,7 @@
                     </ul>
                 </nav>
             </div>
-        </div>
+        </div> -->
    
 
 
