@@ -131,7 +131,7 @@
 
         </script>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="login.jsp">
+        <a href="join.jsp">
                   <img src="images/일반회원가입.png" width="450" height="450" id="ID">
         </a>
         <br><br><br><br><br>
