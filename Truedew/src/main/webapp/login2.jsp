@@ -85,7 +85,7 @@
         var naverLogin = new naver.LoginWithNaverId(
                 {
                     clientId: "LlSvD47T4y2jbzBt5MZ3", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-                    callbackUrl: "http://localhost:8081/gd/main2.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+                    callbackUrl: "http://localhost:8081/Truedew/Main.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
                     isPopup: false,
                     callbackHandle: true
                     
@@ -106,7 +106,7 @@
             window.Kakao.init('1a6f86c5de53b01691eddf232e3036c8');
     
             function kakaoLogin() {
-            	callbackUrl: "http://localhost:8081/gd/main2.jsp" // 로그인 후 callback할 사이트 
+            	callbackUrl: "http://localhost:8081/Truedew/Main.jsp" // 로그인 후 callback할 사이트 
                 window.Kakao.Auth.login({
                     scope: 'profile_nickname, account_email', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
                     success: function(response) {
