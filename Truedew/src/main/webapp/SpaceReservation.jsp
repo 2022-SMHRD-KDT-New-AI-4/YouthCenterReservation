@@ -29,70 +29,71 @@
 
 </head>
 <body>
-   <%
-   //loginM 키값이 지정되어있는 세션 값
-   MemberVO loginM = (MemberVO)session.getAttribute("loginM");
-    %>
+	
 
 <div class="super_container">
-   
+	
     <!-- Header -->
-   <div id="headers"></div>
+	<div id="headers"></div>
 
-   <!-- Home -->
+	<!-- Home -->
+	<%
+	//loginM 키값이 지정되어있는 세션 값
+	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+    %>
 
-   <div class="home">
-      <div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
-      <div class="home_container">
-         <div class="container">
-            <div class="row">
-               <div class="col">
-                  <div class="home_content text-center">
-                     <div class="home_title">공간예약</div>
-                     <div class="booking_form_container">
-                        <form action="SpaceList" class="booking_form" id="booking_form" name="insertForm" onsubmit="return formCheck();">
-                           <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
-                              <div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                 <div>
-                                    <select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
-                                       <option value="">지역(시/도)</option>
-                                       <option value="서울">서울</option>
-                                       <option value="인천">인천</option>
-                                       <option value="경기">경기</option>
-                                       <option value="대구">대구</option>
-                                       <option value="울산">울산</option>
-                                       <option value="경상">경상</option>
-                                       <option value="강원">강원</option>
-                                       <option value="충청">충청</option>
-                                       <option value="세종">세종</option>
-                                       <option value="광주">광주</option>
-                                       <option value="전라">전라</option>
-                                       <option value="제주">제주</option>
-                                    </select>
-                                 </div>
-                                 <div>
-                                 <select name="center_list" id="ctlist" class="booking_input booking_input_b">
-                                    <option value="">센터명</option>                                             
-                                  </select>
-                                 </div>
-            
-                              </div>
-                              <div>
-                              <input type="submit" class="booking_button trans_200" value="다시예약하기">
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+	<div class="home">
+		<div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_title">공간예약</div>
+							<div class="booking_form_container">
+								<form action="SpaceList" class="booking_form" id="booking_form" name="insertForm" onsubmit="return formCheck();">
+									<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
+										<div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap">
+											<div>
+												<select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
+													<option value="">지역(시/도)</option>
+													<option value="서울">서울</option>
+													<option value="인천">인천</option>
+													<option value="경기">경기</option>
+													<option value="대구">대구</option>
+													<option value="울산">울산</option>
+													<option value="경상">경상</option>
+													<option value="강원">강원</option>
+													<option value="충청">충청</option>
+													<option value="세종">세종</option>
+													<option value="광주">광주</option>
+													<option value="전라">전라</option>
+													<option value="제주">제주</option>
+												</select>
+											</div>
+											<div>
+											<select name="center_list" id="ctlist" class="booking_input booking_input_b">
+												<option value="">센터명</option>															
+											 </select>
+											</div>
+				
+										</div>
+										<div>
+										<input type="submit" class="booking_button trans_200" value="다시예약하기">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-   <!-- 탭 메뉴 상단 시작 -->
-    <ul class="list">
+	<!-- 탭 메뉴 상단 시작 -->
+	 <ul class="list">
         <li class="tab-button active">공간 예약</li>
         <li class="tab-button">상세 정보</li>
         <li class="tab-button">리뷰</li>
@@ -102,52 +103,52 @@
     <!-- 탭 메뉴 내용 시작 -->
       <div class="tab-content show">
         <%--청년센터 리스트 --%>
-      <% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
-      CenterVO center_info=(CenterVO)request.getAttribute("center_info");%>
-       <h1><%=center_info.getCenter_name()%></h1>
-       <%for (int i = 0; i < list.size();i++) {%>
+		<% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
+		CenterVO center_info=(CenterVO)request.getAttribute("center_info");%>
+		 <h1><%=center_info.getCenter_name()%></h1>
+		 <%for (int i = 0; i < list.size();i++) {%>
 
-       <div class="blog_post">
-          <div class="blog_post_image">
-             <img src=<%= list.get(i).getShared_space_pic()%> alt="">
-          </div>
-      <div class="blog_post_content">
-      <div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
-             
-      </div>
-      <div class="blog_post_text">
-          <p><%=list.get(i).getLocal_do() %></p>
-          <p>사용 가능 인원<%=list.get(i).getPersons() %></p>
-         <p><%=list.get(i).getSpace_info() %></p>
-      </div>
-      <div class="button blog_post_button"><a href="#" onClick='chklogin()'>예약하기</a></div> 
-      </div>
-         <%} %>
+		 <div class="blog_post">
+		 	<div class="blog_post_image">
+		 		<img src=<%= list.get(i).getShared_space_pic()%> alt="">
+		 	</div>
+		<div class="blog_post_content">
+		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
+		 		
+		</div>
+		<div class="blog_post_text">
+		 	<p><%=list.get(i).getLocal_do() %></p>
+		 	<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
+			<p><%=list.get(i).getSpace_info() %></p>
+		</div>
+		<div class="button blog_post_button"><a href="#" onclick="chklogin(this);">예약하기</a></div> 
+		</div>
+			<%} %>
       </div>
       
       <div class="tab-content">
-          <div class="blog_post">
-             <div class="blog_post_text">
-                <img src=<%= center_info.getCenter_pic()%> alt="">
-                <table>
-                   <tr>
-                      <td>운영기관 : </td>
-                      <td><%=center_info.getCenter_name()%></td>
-                   </tr>
-                   <tr>
-                      <td>공간이용시간 : </td>
-                      <td><%=center_info.getCenter_runtime()%></td>
-                   </tr>
-                   <tr>
-                      <td>주소 : </td>
-                      <td><%=center_info.getLocal_gu()%></td>
-                   </tr>
-                   <tr>
-                      <td>전화번호 : </td>
-                      <td><%=center_info.getCenter_tel()%></td>
-                   </tr>
-                </table>
-         </div>
+		 	<div class="blog_post">
+		 		<div class="blog_post_text">
+		 			<img src=<%= center_info.getCenter_pic()%> alt="">
+		 			<table>
+		 				<tr>
+		 					<td>운영기관 : </td>
+		 					<td><%=center_info.getCenter_name()%></td>
+		 				</tr>
+		 				<tr>
+		 					<td>공간이용시간 : </td>
+		 					<td><%=center_info.getCenter_runtime()%></td>
+		 				</tr>
+		 				<tr>
+		 					<td>주소 : </td>
+		 					<td><%=center_info.getLocal_gu()%></td>
+		 				</tr>
+		 				<tr>
+		 					<td>전화번호 : </td>
+		 					<td><%=center_info.getCenter_tel()%></td>
+		 				</tr>
+		 			</table>
+			</div>
       </div>
       
       <div class="tab-content">
@@ -155,74 +156,74 @@
  
       </div>
 
-   </div>
+	</div>
 
 <!-- 탭 메뉴 내용 끝 -->
-    
-                  
+	 
+						
 
-            <!-- Sidebar -->
-            <div class="col-lg-3">
-               <div class="sidebar">
-                  
-                  <!-- Search -->
-                  <div class="sidebar_search">
-                     <form action="#" class="sidebar_search_form" id="sidebar_saerch_form">
-                        <input type="text" class="sidebar_search_input" placeholder="Keyword" required="required">
-                        <button class="sidebar_search_button">Search</button>
-                     </form>
-                  </div>
+				<!-- Sidebar -->
+				<div class="col-lg-3">
+					<div class="sidebar">
+						
+						<!-- Search -->
+						<div class="sidebar_search">
+							<form action="#" class="sidebar_search_form" id="sidebar_saerch_form">
+								<input type="text" class="sidebar_search_input" placeholder="Keyword" required="required">
+								<button class="sidebar_search_button">Search</button>
+							</form>
+						</div>
 
-                  <!-- Recent Posts -->
-                  <div class="recent_posts">
-                     <div class="sidebar_title"><h4>Recent Posts</h4></div>
-                     <div class="sidebar_list">
-                        <ul>
-                           <li><a href="#">Featured Product</a></li>
-                           <li><a href="#">Standard Post</a></li>
-                           <li><a href="#">Gallery Post</a></li>
-                           <li><a href="#">Video Post</a></li>
-                           <li><a href="#">Audio Post</a></li>
-                        </ul>
-                     </div>
-                  </div>
+						<!-- Recent Posts -->
+						<div class="recent_posts">
+							<div class="sidebar_title"><h4>Recent Posts</h4></div>
+							<div class="sidebar_list">
+								<ul>
+									<li><a href="#">Featured Product</a></li>
+									<li><a href="#">Standard Post</a></li>
+									<li><a href="#">Gallery Post</a></li>
+									<li><a href="#">Video Post</a></li>
+									<li><a href="#">Audio Post</a></li>
+								</ul>
+							</div>
+						</div>
 
-                  <!-- Categories -->
-                  <div class="categories">
-                     <div class="sidebar_title"><h4>Categories</h4></div>
-                     <div class="sidebar_list">
-                        <ul>
-                           <li><a href="#">News</a></li>
-                           <li><a href="#">Hotel</a></li>
-                           <li><a href="#">Vacation</a></li>
-                        </ul>
-                     </div>
-                  </div>
+						<!-- Categories -->
+						<div class="categories">
+							<div class="sidebar_title"><h4>Categories</h4></div>
+							<div class="sidebar_list">
+								<ul>
+									<li><a href="#">News</a></li>
+									<li><a href="#">Hotel</a></li>
+									<li><a href="#">Vacation</a></li>
+								</ul>
+							</div>
+						</div>
 
-                  
+						
 
-                  <!-- Special Offer -->
-                  <div class="special_offer">
-                     <div class="background_image" style="background-image:url(images/special_offer.jpg)"></div>
-                     <div class="special_offer_container text-center">
-                        <div class="special_offer_title">Special Offer</div>
-                        <div class="special_offer_subtitle">Family Room</div>
-                        <div class="button special_offer_button"><a href="#">Book now</a></div>
-                     </div>
-                  </div>
+						<!-- Special Offer -->
+						<div class="special_offer">
+							<div class="background_image" style="background-image:url(images/special_offer.jpg)"></div>
+							<div class="special_offer_container text-center">
+								<div class="special_offer_title">Special Offer</div>
+								<div class="special_offer_subtitle">Family Room</div>
+								<div class="button special_offer_button"><a href="#">Book now</a></div>
+							</div>
+						</div>
 
-               </div>
-            </div>
+					</div>
+				</div>
 
-         </div>
-      </div>
-   </div>
+			</div>
+		</div>
+	</div>
 
-   
-   
+	
+	
    <!-- Footer -->
 
-   <footer id="footers"></footer>
+	<footer id="footers"></footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
@@ -243,28 +244,44 @@
 <script src="js/space.js"></script>
 <script>
 
-   //함수 호출 반복문
-   for(let i = 0; i < $('.tab-button').length; i++){
-       tabOpen(i); 
-   }
-   
-   //함수에 보관
-   function tabOpen(e){
-       $('.tab-button').eq(e).click(function(){
-           $('.tab-button').removeClass('active');
-           $('.tab-content').removeClass('show');
-           $('.tab-button').eq(e).addClass('active');
-           $('.tab-content').eq(e).addClass('show');
-       });
-   }
-   function chklogin(){
-      if(loginM==null){
-         alert("로그인 후 이용해주세요.");
-         location.href='login.jsp';
-      }else{
-         location.href='reservaion.jsp';
-      }
-   }
+	//함수 호출 반복문
+	for(let i = 0; i < $('.tab-button').length; i++){
+	    tabOpen(i); 
+	}
+	
+	//함수에 보관
+	function tabOpen(e){
+	    $('.tab-button').eq(e).click(function(){
+	        $('.tab-button').removeClass('active');
+	        $('.tab-content').removeClass('show');
+	        $('.tab-button').eq(e).addClass('active');
+	        $('.tab-content').eq(e).addClass('show');
+	    });
+	}
+	
+	//로그인 확인 여부 후 예약하기
+	function chklogin(item){
+		MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+	   
+		if(loginM==null){
+			console.log(loginM);
+			alert("로그인 후 이용해주세요.");
+			location.href='login.jsp';
+			
+		}else{
+			location.href='reservation.jsp';
+			
+		}
+	} 
+	
+	/* function local_click(item) {
+		  
+		  
+	    var text = $(item).text();
+	    location.href='CenterListService?local_do='+text;
+
+			
+	} */
 </script>
 
 
