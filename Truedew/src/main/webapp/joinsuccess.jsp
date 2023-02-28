@@ -63,7 +63,7 @@
 			
 				
 						<div class="home_content text-center">
-							<div class="home_title" style="color:black" margin="text-center;" >환영합니다!</div>
+							<div class="home_title" style="color:white;" margin="text-center;" >환영합니다!</div>
 							<% 
 	// getParameter : 패킷에 포함된 파라미터 가지고 올 때 사용
 	// getAttribute : 특정 영역에 저장된 값 가지고 올 때 (request) -> Object로 반환
@@ -71,8 +71,8 @@
 	<br><br>
 	
 							
-							<p style="font-size:40px;"><%=user_id %>님 회원가입을 축하합니다.</p><br><br>
-							<h4 style="font-size:50px;"><a href="main2.jsp">메인으로 가기</a></h4>
+							<p style="font-size:40px; color:white;"><%=user_id %>님 회원가입을 축하합니다.</p><br><br>
+							<h4 style="font-size:50px; color:white;"><a href="Main.jsp">메인으로 가기</a></h4>
 							
 									
 			
