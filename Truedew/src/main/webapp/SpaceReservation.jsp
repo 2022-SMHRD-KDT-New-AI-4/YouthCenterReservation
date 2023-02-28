@@ -29,10 +29,7 @@
 
 </head>
 <body>
-	<%
-	//loginM 키값이 지정되어있는 세션 값
-	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
-    %>
+	
 
 <div class="super_container">
 	
@@ -40,6 +37,10 @@
 	<div id="headers"></div>
 
 	<!-- Home -->
+	<%
+	//loginM 키값이 지정되어있는 세션 값
+	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+    %>
 
 	<div class="home">
 		<div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
@@ -120,7 +121,7 @@
 		 	<p>사용 가능 인원<%=list.get(i).getPersons() %></p>
 			<p><%=list.get(i).getSpace_info() %></p>
 		</div>
-		<div class="button blog_post_button"><a href="#" onClick='chklogin()'>예약하기</a></div> 
+		<div class="button blog_post_button"><a href="#" onclick="chklogin(this);">예약하기</a></div> 
 		</div>
 			<%} %>
       </div>
@@ -257,14 +258,30 @@
 	        $('.tab-content').eq(e).addClass('show');
 	    });
 	}
-	function chklogin(){
+	
+	//로그인 확인 여부 후 예약하기
+	function chklogin(item){
+		MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+	   
 		if(loginM==null){
+			console.log(loginM);
 			alert("로그인 후 이용해주세요.");
 			location.href='login.jsp';
+			
 		}else{
-			location.href='reservaion.jsp';
+			location.href='reservation.jsp';
+			
 		}
-	}
+	} 
+	
+	/* function local_click(item) {
+		  
+		  
+	    var text = $(item).text();
+	    location.href='CenterListService?local_do='+text;
+
+			
+	} */
 </script>
 
 
