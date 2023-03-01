@@ -20,6 +20,16 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css"> -->
+<style>
+	    #lettern{
+        width:10px;
+        height:10px;
+        position: absolute;
+        left:60%;
+    }
+
+</style>
+
 
 </head>
 
@@ -45,7 +55,13 @@
                         <%} else { %>
                         <li><a href="mypage.jsp">마이페이지</a>	</li>					
                         <li><a href="LogoutService">로그아웃</a></li>
-                        <li><img src="./images/paper-plane_2.png" alt="알림"></li>
+                        <li><a id="msg" href="Message.jsp" onclick="window.open(this.href,'_blank','width=500px, height=500px, toolbars=no, scrollbars=no,left=1100'); return false;">
+                                <div>
+                                    <img  id="lettern" src="./images/letter-n.png">
+                                    <img src="./images/icon_8.png">
+                                </div>
+                                </a>
+                        </li>
 						<%} %>
                             
                         </ul>
@@ -123,6 +139,14 @@ function local_click(item) {
 
 		
 }
+
+
+//New없애기
+$(document).ready(function () {
+	$("#msg").click(function () {
+		$("#lettern").attr('src',"");
+	})
+});
 
 
 </script>
