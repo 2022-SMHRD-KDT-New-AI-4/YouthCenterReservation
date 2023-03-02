@@ -157,8 +157,8 @@ h1::selection, h2::selection, h3::selection, h4::selection, h5::selection,
 }
 
 img {
-	width:200px;
-	height:150px;
+	width: 200px;
+	height: 150px;
 }
 
 button:active {
@@ -650,7 +650,7 @@ section {
 
 .booking_input_container {
 	width: 100%;
-	padding-left:130px;
+	padding-left: 130px;
 }
 
 .booking_input_container>div {
@@ -764,9 +764,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 .blog_post_content {
-	display:inline-block;
-	width:450px;
-	height:167px;
+	display: inline-block;
+	width: 450px;
+	height: 167px;
 }
 
 .blog_post_title a {
@@ -815,8 +815,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 .blog_post_button {
-	float:right;
-	margin-top:30px;
+	float: right;
+	margin-top: 30px;
 }
 
 .page_nav {

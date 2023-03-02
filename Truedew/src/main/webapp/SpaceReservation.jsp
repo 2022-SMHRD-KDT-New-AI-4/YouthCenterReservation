@@ -132,7 +132,7 @@
          <%} %>
       
       
-      <div class="tab-content">
+       <div class="tab-content">
           <div class="blog_post">
              <div class="blog_post_text">
                 <img src=<%= center_info.getCenter_pic()%> alt="">
@@ -154,8 +154,10 @@
                       <td><%=center_info.getCenter_tel()%></td>
                    </tr>
                 </table>
+                
          </div>
       </div>
+
       
       <div class="tab-content">
         <p>리뷰정보입니다</p>
