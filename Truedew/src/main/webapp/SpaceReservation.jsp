@@ -120,6 +120,7 @@ margin-top: 10px;
     
     <!-- 탭 메뉴 내용 시작 -->
    <% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
+   	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 		 CenterVO center_info=(CenterVO)request.getAttribute("center_info");%>
 	<div class="tab-content show">
 		 <h2 id="centerTopName"><%=center_info.getCenter_name()%></h2>
@@ -139,7 +140,10 @@ margin-top: 10px;
 		 		사용 가능 인원 &nbsp;: &nbsp;<%=list.get(i).getPersons() %><br>
 				<%=list.get(i).getSpace_info() %></div>
 			</div>
-			<span class="button blog_post_button" id="reservation"><a href="#" onClick="location.href='reservation.jsp'">예약하기</a></span> 
+			
+			<% if(loginM!=null) { %>
+			<span class="button blog_post_button" id="reservation"><a href="#" onClick="location.href='reservation.jsp?shared_space_seq=<%=list.get(i).getShared_space_seq() %>'">예약하기</a></span> 
+			<%} %>
 				</div>
 			 <hr> 
 			</div>

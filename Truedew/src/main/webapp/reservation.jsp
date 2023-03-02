@@ -42,10 +42,10 @@
 <!--내가 선택한 공유공간 정보불러오기  -->
 	<%
 	request.setCharacterEncoding("UTF-8");
-	int share_seq= Integer.parseInt(request.getParameter("share_seq"));
+	int shared_space_seq= Integer.parseInt(request.getParameter("shared_space_seq"));
 	
 	reservationInfoDAO dao = new reservationInfoDAO();
-	SpaceListVO lvo = dao.selectshared_space(share_seq); %>
+	SpaceListVO lvo = dao.selectshared_space(shared_space_seq); %>
 
 <div class="super_container">
 	
