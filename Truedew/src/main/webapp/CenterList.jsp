@@ -6,7 +6,7 @@
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page errorPage="error.html" %>
+<%@ page errorPage="login.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,7 +178,7 @@
 									</div>
 								</div>
 								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
-								<div class="booking_link"><a href="booking.html">예약하기</a></div>
+								<div class="booking_link"><a href="SpaceList?local_do=<%=list.get(0).getLocal_do().substring(0,2)%>&center_list=<%=list.get(j).getCenter_name()%>">예약하기</a></div>
 							</div>
 							
 							<%-- <%if(loginM != null){ %> --%>
