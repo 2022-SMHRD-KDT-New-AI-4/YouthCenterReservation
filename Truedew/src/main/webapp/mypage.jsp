@@ -17,6 +17,7 @@
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/mypage.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 </head>
 <body>
 <%
@@ -26,7 +27,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 	
 	<!-- Header -->
 
-	<header class="header">
+<!-- 	<header class="header">
 		<div class="header_content d-flex flex-row align-items-center justify-content-start">
 			<div class="logo"><a href="Main.jsp">청년이슬</a></div>
 			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
@@ -39,11 +40,12 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 				</nav>
 				<div class="book_button"><a href="Main.jsp">검색하기</a></div>
 
-				<!-- Hamburger Menu -->
+				Hamburger Menu
 				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			</div>
 		</div>
-	</header>
+	</header> -->
+	<header id="headers"></header>
 
 	<!-- Home -->
 
@@ -146,18 +148,18 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 	</div>
 
 	<!-- Footer -->
-
-	<footer class="footer">
+<footer id="footers"></footer>
+<!-- 	<footer class="footer">
 		<div class="footer_content">
 			<div class="container">
 			</div>
 		</div>
 		<div class="copyright">
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 </div>
-	</footer>
+	</footer> -->
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -174,5 +176,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
 <script src="js/blog.js"></script>
+<script src="js/listevent.js"></script>
+<script src="js/htmlplus.js"></script>
 </body>
 </html>
