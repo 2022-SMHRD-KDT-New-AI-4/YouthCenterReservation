@@ -67,6 +67,7 @@ public class MemberDAO {
 	public int insertMark(MarkVO vo) {
 		SqlSession session = SqlSessionFactory.openSession(true);
 		int cnt = session.insert("insertMark",vo);
+		session.close();
 		return cnt;
 	}
 
@@ -74,6 +75,8 @@ public class MemberDAO {
 	public MarkVO overlapMark(MarkVO vo) {
 		SqlSession session = SqlSessionFactory.openSession(true);
 		MarkVO mvo = session.selectOne("overlapMark", vo);
+		session.close();
 		return mvo;
+		
 	}
 }
