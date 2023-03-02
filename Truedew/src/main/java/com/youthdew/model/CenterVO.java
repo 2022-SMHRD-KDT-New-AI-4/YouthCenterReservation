@@ -116,6 +116,21 @@ public class CenterVO {
 	public void setCenter_pic(String center_pic) {
 		this.center_pic = center_pic;
 	}
+
+	public CenterVO(String center_name, String local_gu, String center_runtime, String center_tel, String center_pic) {
+		
+		this.center_name = center_name;
+		this.local_gu = local_gu;
+		this.center_runtime = center_runtime;
+		this.center_tel = center_tel;
+		this.center_pic = center_pic;
+	}
+
+	@Override
+	public String toString() {
+		return "CenterVO [center_name=" + center_name + ", local_gu=" + local_gu + ", center_tel=" + center_tel
+				+ ", center_pic=" + center_pic + "]";
+	}
 	
 	
 	

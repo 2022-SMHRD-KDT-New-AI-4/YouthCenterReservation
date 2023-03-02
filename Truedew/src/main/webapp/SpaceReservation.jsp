@@ -163,8 +163,7 @@
       
       
        <div class="tab-content">
-          <div class="blog_post">
-             <div class="blog_post_text">
+          <div>
                 <img src=<%= center_info.getCenter_pic()%> alt="">
                 <table>
                    <tr>
@@ -186,13 +185,13 @@
                 </table>
                 
          </div>
-      </div>
-
+      
+		</div>
       
       <div class="tab-content">
         <p>리뷰정보입니다</p>
  
-      </div>
+      
 
    </div>
 <!-- 탭 메뉴 내용 끝 -->
@@ -202,7 +201,7 @@
    <footer id="footers"></footer>
          </div>
    
-   
+   </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
