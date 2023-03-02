@@ -312,6 +312,7 @@ section {
 	-ms-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
+	margin-top:50px;
 }
 
 .button:hover {
@@ -627,8 +628,9 @@ section {
 .booking_form_container {
 	width: 100%;
 	margin-top: 34px;
-	padding-left: 78px;
-	padding-right: 88px;
+	margin-left: 100px;
+	/* padding-left: 78px;
+	padding-right: 88px; */
 }
 
 .booking_form {
@@ -650,7 +652,6 @@ section {
 
 .booking_input_container {
 	width: 100%;
-	padding-left: 130px;
 }
 
 .booking_input_container>div {
@@ -810,9 +811,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	color: #000000;
 }
 
-.blog_post_text {
+/* .blog_post_text {
 	margin-top: 16px;
-}
+} */
 
 .blog_post_button {
 	float: right;
@@ -1152,5 +1153,5 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 	font-size: 15px;
 	font-weight: 500;
 	color: #6d6d6d;
-	margin:center;
+	margin-top : 90%;
 }

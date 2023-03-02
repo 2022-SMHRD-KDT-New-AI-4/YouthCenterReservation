@@ -1,4 +1,5 @@
 /*탭 스타일  */
+/*
 ul.list {
 	list-style-type: none;
 	margin: 60px;
@@ -24,14 +25,14 @@ ul.list::after {
 	cursor: pointer;
 }
 
-.active {
+ .active {
 	border-top: 3px solid orange;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid white;
 	border-left: 1px solid #ccc;
 	color: black;
 	margin-top: -12px;
-}
+} 
 
 .tab-content {
 	display: none;
@@ -44,9 +45,50 @@ ul.list::after {
 	margin-left: 400px;
 	float: left;
 	width: 900px;
-	height: 100%;
+	height: 200px;
+} */
+ul.list {
+	list-style-type: none;
+	margin-left: 410px;
+	margin-top : 20px;
+	padding: 0;
+	width: 1200px;
+	border-bottom: 1px solid #ccc;
 }
-
+ul.list::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.tab-button {
+	display: block;
+	padding: 10px 20px 10px 20px;
+	float: left;
+	margin-right: -1px;
+	margin-bottom: -1px;
+	color: grey;
+	text-decoration: none;
+	cursor: pointer;
+}
+.active {
+	border-top: 2px solid orange;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid white;
+	border-left: 1px solid #ccc;
+	color: black;
+	margin-top: -2px;
+}
+.tab-content {
+	display: none;
+	padding: 10px;
+}
+.show {
+	display: block;
+	margin-left: 400px;
+	float: left;
+	width: 900px;
+	height: 200px;
+}
 .blog_post_image {
 	width: 200px;
 	height: 150spx;
@@ -67,5 +109,14 @@ ul.list::after {
 
 .blog_post {
 	width: 1000px;
-	height: 170px;
+	height: 200px;
+}
+.tab-content show center-list {
+	width:850px;
+	height:200px;
+}
+#centerTopName {
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
 }
