@@ -137,7 +137,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
 								<br><%=list.get(i).getUse_time().substring(0,5)%><%=list.get(i).getUse_time().substring(list.get(i).getUse_time().lastIndexOf("~"))%>                       
                            </td>
                            <td>예약상태</td>
-                           <td><a href="#">취소</a></td>
+                           <td><a href="deleteReserveService?reserv_seq=<%=list.get(i).getReserv_seq()%>">취소</a></td>
                            <td><%=list.get(i).getApply_date() %></td>
                         </tr>
                         <%} %>

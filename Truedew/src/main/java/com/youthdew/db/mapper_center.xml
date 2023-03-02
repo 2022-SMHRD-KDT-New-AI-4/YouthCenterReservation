@@ -51,5 +51,11 @@
 	and b.user_id=#{user_id}
 	order by apply_date desc
     </select>
+    
+    
+    <!-- 예약 정보 삭제 -->
+    <delete id="deleteReserve">
+    delete from tb_reservation where reserv_seq=#{reserv_seq}
+    </delete>
 
 </mapper>

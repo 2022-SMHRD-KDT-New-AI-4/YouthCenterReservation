@@ -37,6 +37,15 @@ public class reservationInfoDAO {
 		session.close();
 		return (ArrayList<reservationInfoVO>)list;
 	
-}
+	}
+	
+	
+	// 예약정보 삭제
+	public int deleteReserve(int reserv_seq) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.delete("deleteReserve",reserv_seq);
+		session.close();
+		return cnt;
+	}
 
 }
