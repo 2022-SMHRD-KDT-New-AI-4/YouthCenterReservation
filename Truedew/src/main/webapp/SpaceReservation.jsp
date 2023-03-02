@@ -183,9 +183,9 @@ margin-top: 10px;
 	 
    <!-- Footer -->
 
-	<footer id="footers"></footer>
 	
 </div>
+	<footer id="footers"></footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
