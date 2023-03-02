@@ -10,6 +10,7 @@
 	<typeAlias alias="SpaceListVO"  type="com.youthdew.model.SpaceListVO"/>
 	<typeAlias alias="CenterVO"  type="com.youthdew.model.CenterVO"/>
 	<typeAlias alias="MarkVO"  type="com.youthdew.model.MarkVO"/>
+	<typeAlias alias="MessageVO"  type="com.youthdew.model.MessageVO"/>
 </typeAliases>
 
   <environments default="development">
@@ -24,6 +25,9 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/youthdew/db/mapper.xml"/>
+    <!-- <mapper resource="com/youthdew/db/mapper.xml"/> -->
+    <mapper resource="com/youthdew/db/mapper_member.xml"/>
+    <mapper resource="com/youthdew/db/mapper_center.xml"/>
+    <mapper resource="com/youthdew/db/mapper_bookmark.xml"/>
   </mappers>
 </configuration>

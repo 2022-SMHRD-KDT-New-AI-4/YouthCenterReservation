@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youthdew.db.mapper_center">
+	
+	<!--센터 공유공간 조회4  -->
+	<select id="selectspace" resultType="SpaceListVO">
+ 	select * from tb_center, tb_shared_space where tb_center.center_id=tb_shared_space.center_id and tb_center.center_name=#{center_name} and tb_center.local_do like '%'||#{local_do}||'%'
+ 	</select>
+ 	
+ 	
+ 	<!-- 센터정보 조회5 --> <!-- typealias했는지 check하기!!! -->
+	<select id="Searchcenter" resultType="CenterVO">
+	select * from tb_center where local_do like '%'||#{local_do}||'%'
+	</select>
+	
+	<!--한개 센터정보 조회6  -->
+	<select id="selectcenter" resultType="CenterVO" parameterType="String">
+	select * from tb_center where center_name=#{center_name}
+	</select>
+	
+	
+	<!-- 부대시설 필터링 센터정보 조회7 -->
+	<select id="Selectfac" parameterType="CenterVO" resultType="CenterVO">
+	select *
+	from tb_center a, tb_center_facility b
+	where a.center_id=b.center_id
+	and a.local_do like '%'||#{local_do}||'%'
+	and b.fac_code=#{fac_code}
+	and b.fac_cnt>=1
+	</select>
+
+</mapper>

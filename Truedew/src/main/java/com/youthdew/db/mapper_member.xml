@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.youthdew.db.mapper_member">
+
+	<!-- 회원가입1 -->
+	<insert id="join" parameterType="MemberVO">
+		insert into tb_user values(#{user_id} , #{user_pw} , #{user_name} , #{user_birthdate} , #{user_phone} , sysdate, 'M')
+	</insert>
+	
+	<!-- 로그인2 -->
+	<select id="login" resultType="MemberVO"
+		parameterType="MemberVO">
+		select * from tb_user where user_id = #{user_id} and user_pw = #{user_pw}
+	</select>
+	
+	<!-- 회원정보 조회3 -->
+	<select id="userSearch" resultType="MemberVO">
+		select * from tb_user where user_id=#{user_id}
+	</select>
+	
+	
+	
+	<!-- 메세지 조회 -->
+	<select id="selectMessage" resultType="MessageVO">
+	SELECT * FROM TB_MESSAGE where user_id=#{user_id} order by msg_date desc
+	</select>
+	
+	<!-- 읽지 않은 메세지 조회 -->
+	<select id="readNotMessage" resultType="MessageVO">
+	select * from tb_message where user_id=#{user_id} and msg_check='N'
+	</select>
+	
+	<!-- 메세지 읽음 표시 -->
+	<update id="readMessage">
+	update tb_message set msg_check='Y' where user_id=#{user_id}
+	</update>
+	
+	<!-- 메세지 삭제 -->
+	<delete id="deleteMessage">
+	delete from tb_message where msg_seq=#{msg_seq}
+	</delete>
+	
+	
+
+
+</mapper>  
