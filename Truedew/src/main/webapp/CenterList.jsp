@@ -119,7 +119,7 @@
 	<% ArrayList<CenterVO> list = (ArrayList<CenterVO>)request.getAttribute("list");
  		MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 		MemberDAO dao = new MemberDAO(); 
-		List<MarkVO> list2 = dao.selectMark(loginM.getUser_id());
+		/* List<MarkVO> list2 = dao.selectMark(loginM.getUser_id()); */
 		
 		
 	%>
@@ -181,7 +181,7 @@
 								<div class="booking_link"><a href="booking.html">예약하기</a></div>
 							</div>
 							
-							<%if(loginM != null){ %>
+							<%-- <%if(loginM != null){ %> --%>
 									<div id="insert_mark">
 									<a href="insertMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>&local_do=<%=list.get(0).getLocal_do().substring(0,2)%>">
 									
@@ -195,7 +195,7 @@
 									<%} %>
 									</a>
 									</div>
-							<%} %>
+							<%-- <%} %> --%>
 							</div>
 							
 							
