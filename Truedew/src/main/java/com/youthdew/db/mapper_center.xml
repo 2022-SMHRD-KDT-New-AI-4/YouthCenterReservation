@@ -30,5 +30,24 @@
 	and b.fac_code=#{fac_code}
 	and b.fac_cnt>=1
 	</select>
+	
+	<!--내가 선택한 공유공간 정보만 불러오기  -->
+	<select id="selectshared_space" resultType="SpaceListVO" parameterType="int">
+	select * from tb_shared_space where shared_space_seq=#{share_seq}
+	</select>
+	
+	<!--예약하기 -->
+	<insert id="insertreservation" parameterType="reservationInfoVO">
+	insert into tb_reservation values(tb_reservation_SEQ.NEXTVAL,#{user_id},#{shared_space_seq},#{reserv_date},#{use_time}, sysdate)
+	</insert>
+	
+	<!--내 예약 정보 불러오기  -->
+  	<select id="reservationSelect" parameterType="String" resultType ="reservationInfoVO">
+    select c.center_name, b.RESERV_SEQ, b.USER_ID, b.SHARED_SPACE_SEQ, b.RESERV_DATE, b.USE_TIME a.SHARED_SPACE_NAME b.apply_date
+	from tb_shared_space a, tb_reservation b,tb_center c
+	where a.SHARED_SPACE_SEQ = b.SHARED_SPACE_SEQ
+	and a. center_id = c.center_id
+	and b.user_id=#{user_id}
+  	</select>
 
 </mapper>

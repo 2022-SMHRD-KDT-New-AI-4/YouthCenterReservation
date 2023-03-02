@@ -155,7 +155,8 @@
              사용 가능 인원 &nbsp;: &nbsp;<%=list.get(i).getPersons() %><br>
             <%=list.get(i).getSpace_info() %></div><br>
             </div>
-         <div class="button blog_post_button" id="reservation"><a href="#" onClick="location.href='reservation.jsp'">예약하기</a></span> 
+         <div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin();">예약하기</a></span> 
+      		<input id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq()%>">
       </div>
       </div>
       <hr>
@@ -236,6 +237,25 @@
            $('.tab-content').eq(e).addClass('show');
        });
    }
+   
+ //예약하기 버튼 클릭 시 로그인 여부 확인
+	function checkLogin(){
+		//console.log('작동함');
+		var text = $('#loginInfo').val();
+		if(text!="ok"){
+			alert("로그인 후 이용해주세요.");
+			location.href='login.jsp';
+		}else{
+			//alert("로그인 했음");
+			//location.href='Reservation.jsp'
+			var seq = $('#space_seq').val();
+			console.log(seq);
+			location.href="reservation.jsp?share_seq="+seq;
+	
+		}
+	}
+   
+   
 </script>
 
 

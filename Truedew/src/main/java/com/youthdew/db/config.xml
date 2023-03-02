@@ -11,6 +11,7 @@
 	<typeAlias alias="CenterVO"  type="com.youthdew.model.CenterVO"/>
 	<typeAlias alias="MarkVO"  type="com.youthdew.model.MarkVO"/>
 	<typeAlias alias="MessageVO"  type="com.youthdew.model.MessageVO"/>
+	<typeAlias alias="reservationInfoVO"  type="com.youthdew.model.reservationInfoVO"/>
 </typeAliases>
 
   <environments default="development">

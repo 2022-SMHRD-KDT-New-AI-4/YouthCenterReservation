@@ -8,12 +8,12 @@ public class SpaceListVO {
 	int persons;
 	String space_info;
 	String shared_space_pic;
+	int shared_space_seq;
 	
 	//기본 생성자
 	public SpaceListVO() {
 		
 	}
-	
 	//지역이랑 센터명만 받는 vo
 	public SpaceListVO(String center_name, String local_do) {
 		this.center_name = center_name;
@@ -23,7 +23,7 @@ public class SpaceListVO {
 	
 	//생성자
 	public SpaceListVO(String center_id, String center_name, String local_do, String shared_space_name, int persons,
-			String space_info, String shared_space_pic) {
+			String space_info, String shared_space_pic, int shared_space_seq) {
 		super();
 		this.center_id = center_id;
 		this.center_name = center_name;
@@ -32,6 +32,7 @@ public class SpaceListVO {
 		this.persons = persons;
 		this.space_info = space_info;
 		this.shared_space_pic = shared_space_pic;
+		this.shared_space_seq= shared_space_seq;
 	}
 	
 	//getter/setter
@@ -92,6 +93,14 @@ public class SpaceListVO {
 
 	public void setShared_space_pic(String shared_space_pic) {
 		this.shared_space_pic = shared_space_pic;
+	}
+	
+	public int getShared_space_seq() {
+		return shared_space_seq;
+	}
+
+	public void setShared_space_seq(int shared_space_seq) {
+		this.shared_space_seq = shared_space_seq;
 	}
 	
 

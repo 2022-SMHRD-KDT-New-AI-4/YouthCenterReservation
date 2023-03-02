@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.reservationInfoDAO"%>
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -38,6 +39,13 @@
 
 </head>
 <body>
+<!--내가 선택한 공유공간 정보불러오기  -->
+	<%
+	request.setCharacterEncoding("UTF-8");
+	int share_seq= Integer.parseInt(request.getParameter("share_seq"));
+	
+	reservationInfoDAO dao = new reservationInfoDAO();
+	SpaceListVO lvo = dao.selectshared_space(share_seq); %>
 
 <div class="super_container">
 	
@@ -94,11 +102,34 @@
 			</div>
 		</div>
 	</div>
+	
+	<!--선택한 공유공간 정보  -->
+	<form action="reservationService" method="get">
+	<div class="blog_post">
+        <div class="blog_post_image"><img src =<%=lvo.getShared_space_pic()%>>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="blog_post_content">
+            <div class="blog_post_title" id="title"><a href="#"><%=lvo.getShared_space_name()%></a>
+         	   <br id="br">
+         		<br>
+             	<span id="local_ysh">사용 가능 인원 &nbsp;: &nbsp;<%=lvo.getPersons()%><br>
+            		<%=lvo.getSpace_info()%>
+            		<input type="hidden" name="shared_space_seq" value=<%=lvo.getShared_space_seq() %>>
+            	</span>
+            </div>
+            	<br>	
+           </div>
+      	 </div>
+      <hr>
+         
+	<div>
+	
+	</div>
 
 	<!-- 캘린더  -->
 	<div id='calendar' style="width: 50%;"></div>
 	<div>
-	<form action="reservationService" method="get">
+	
 	<input type="hidden" id="dayValue" value="" name="reserv_date">
 	<div id='selectedDate'></div>
 	
@@ -144,9 +175,9 @@
 		<input id="checkRes" type="button" value="예약하기">
 		</div>
 		
+		</div>
 		</form>
 		</div>
-	</div>
 	 
 						
 
@@ -211,7 +242,7 @@
 		}else{
 			/* console.log(checkList); */
 			$('#checkRes').attr('type','submit');
-			alert("예약이 완료되었습니다.")
+			alert("예약하시겠습니까?")
 		}
 	});
 	
