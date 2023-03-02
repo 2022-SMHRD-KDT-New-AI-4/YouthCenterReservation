@@ -1,10 +1,16 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.youthdew.model.reservationInfoVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.youthdew.model.reservationInfoDAO"%>
 <%@page import="com.youthdew.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page errorPage="login.jsp" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>청년이슬 나의 예약</title>
+<title>나의 예약</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
@@ -23,114 +29,131 @@
 
 <%
 MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+
+reservationInfoDAO dao = new reservationInfoDAO();
+ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservationSelect(loginM.getUser_id());   
 %>
 <div class="super_container">
-	
-	<!-- Header -->
-	<header id="headers"></header>
+   
+   <!-- Header -->
 
+   <header id="headers"></header>
 
-	<!-- Home -->
+   <!-- Home -->
 
-	<div class="home">
-		<div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3D)"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center">
-							<div class="home_title">마이페이지</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+   <div class="home">
+      <div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3D)"></div>
+      <div class="home_container">
+         <div class="container">
+            <div class="row">
+               <div class="col">
+                  <div class="home_content text-center">
+                     <div class="home_title">마이페이지</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
-	<!-- Main -->
+   <!-- Main -->
 
-	<div class="blog">
-		<div class="container">
-			<div class="row">
+   <div class="blog">
+      <div class="container">
+         <div class="row">
 
                 <div class="col-lg-3">
                     
-				    <!-- Sidebar -->
-					<div class="sidebar">
-						<!-- 나의 정보 -->
-						<div class="recent_posts">
-							<div class="sidebar_title"><a hred="mypage.jsp"><h3>마이페이지</h3></a></div>
-							<div class="sidebar_list">
-							<ul>
-								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 예약 -->
-								<br>
-								<br>
-								<li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
-								<br>
-								<br>
-								<li><a href="bookmark.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-							</ul>
-							</div>
-							<div class="sidebar_lastinfo">
-								<div><font size="1">광주동구예술길31-15 3~4, 7층</font></div>
-								<div><font size="1">스마트인재개발원</font></div>
-								<div><font size="1">대표전화:062-655-3506</font></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- User_info -->
-				<div class="col-lg-9">
-					<div class="blog_posts">
-						<div class="user_info"><h4>예약확인/취소</h4></div>
-						<div>
-							<hr>
-						</div>
+                <!-- Sidebar -->
+               <div class="sidebar">
+                  <!-- 나의 정보 -->
+                  <div class="recent_posts">
+                     <div class="sidebar_title"><a hred="mypage.jsp"><h3>마이페이지</h3></a></div>
+                     <div class="sidebar_list">
+                     <ul>
+                        <li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 예약 -->
                         <br>
-						<div class="user_info_cond">
-							<br>
-							<h4 id="user_name"><%=loginM.getUser_name() %> 님의 최근 예약 내역입니다.</h4>
-							<br>
-							<div class="res_search_date">
-								<input type="date" id="search_date_1" value="first">
-								<input type="date" id="search_date_2" value="last">
-								<button>조회</button>
-							</div>
-						</div>
-						<br>
-						<div>
-							<table class="res_search_table">
-								<tr id="res_search_table_col">
-									<td>번호</td>
-									<td>예약 번호</td>
-									<td>센터 명</td>
-									<td>공간 명</td>
-									<td>예약 일자</td>
-									<td>예약 상태</td>
-									<td>예약 취소</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				
+                        <br>
+                        <li><a href="myReservation.jsp"> - 나의 예약</a></li> <!-- 즐겨 찾기 -->
+                        <br>
+                        <br>
+                        <li><a href="bookmark.jsp"> - 나의 공간</a></li> <!-- 나의 공간 -->
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                     </ul>
+                     </div>
+                     <div class="sidebar_lastinfo">
+                        <div><font size="1">광주동구예술길31-15 3~4, 7층</font></div>
+                        <div><font size="1">스마트인재개발원</font></div>
+                        <div><font size="1">대표전화:062-655-3506</font></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
 
-			</div>
-		</div>
-	</div>
+            <!-- User_info -->
+            <div class="col-lg-9">
+               <div class="blog_posts">
+                  <div class="user_info"><h4>예약확인/취소</h4></div>
+                  <div>
+                     <hr>
+                  </div>
+                        <br>
+                  <div class="user_info_cond">
+                     <br>
+                     <h4 id="user_name"><%=loginM.getUser_name()%> 님의 최근 예약 내역입니다.</h4>
+                     <br>
+                     <div class="res_search_date">
+                        <input type="date" id="search_date_1" value="first">
+                        <input type="date" id="search_date_2" value="last">
+                        <button>조회</button>
+                     </div>
+                  </div>
+                  <br>
+                  <div>
+                     <table class="res_search_table">
+                        <tr id="res_search_table_col">
+                           <td>번호</td>
+                           <td>센터 명</td>
+                           <td>공간 명</td>
+                           <td>예약 일자</td>
+                           <td>예약 상태</td>
+                           <td>예약 취소</td>
+                           <td>신청일자</td>
+                        </tr>
+                        <%for (int i =0;i<list.size();i++){%>
+                        <tr id="res_search_table_col">
+                           <td><%=i+1%></td>
+                           <td><%=list.get(i).getCenter_name() %></td>
+                           <td><%=list.get(i).getShared_space_name()%></td>
+                           <td><%=list.get(i).getReserv_date().substring(0, 10)%>
+								<br><%=list.get(i).getUse_time().substring(0,5)%><%=list.get(i).getUse_time().substring(list.get(i).getUse_time().lastIndexOf("~"))%>                       
+                           </td>
+                           <td>예약상태</td>
+                           <td><a href="#">취소</a></td>
+                           <td><%=list.get(i).getApply_date() %></td>
+                        </tr>
+                        <%} %>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            
 
-	<!-- Footer -->
-	<footer id="footers"></footer>
+         </div>
+      </div>
+   </div>
+
+   <!-- Footer -->
+
+   <footer id="footers"></footer>
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>

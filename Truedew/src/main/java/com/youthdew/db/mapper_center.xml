@@ -41,13 +41,15 @@
 	insert into tb_reservation values(tb_reservation_SEQ.NEXTVAL,#{user_id},#{shared_space_seq},#{reserv_date},#{use_time}, sysdate)
 	</insert>
 	
-	<!--내 예약 정보 불러오기  -->
-  	<select id="reservationSelect" parameterType="String" resultType ="reservationInfoVO">
-    select c.center_name, b.RESERV_SEQ, b.USER_ID, b.SHARED_SPACE_SEQ, b.RESERV_DATE, b.USE_TIME a.SHARED_SPACE_NAME b.apply_date
+	
+	<!-- 예약 정보 조회 -->	
+	<select id="reservationSelect" parameterType="String" resultType ="reservationInfoVO">
+	select c.center_name, b.RESERV_SEQ, b.USER_ID, b.SHARED_SPACE_SEQ, b.RESERV_DATE, b.USE_TIME, a.SHARED_SPACE_NAME, b.apply_date
 	from tb_shared_space a, tb_reservation b,tb_center c
 	where a.SHARED_SPACE_SEQ = b.SHARED_SPACE_SEQ
 	and a. center_id = c.center_id
 	and b.user_id=#{user_id}
-  	</select>
+	order by apply_date desc
+    </select>
 
 </mapper>
