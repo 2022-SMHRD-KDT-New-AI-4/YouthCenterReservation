@@ -48,6 +48,8 @@
 	
 	
 	
+	
+	
 	<!-- 즐겨찾기 추가 -->
 	<insert id="insertMark" parameterType="MarkVO">
 	insert into tb_bookmark values(tb_bookmark_seq.NEXTVAL,#{user_id},#{center_id}, sysdate)
@@ -65,5 +67,10 @@
 	<delete id="deleteMark" parameterType="MarkVO">
 	delete from tb_bookmark where center_id=#{center_id} and user_id=#{user_id}
 	</delete>
+	
+	<!-- 즐겨찾기 중복조회 -->
+	<select id="overlapMark" resultType="MarkVO" parameterType="MarkVO">
+	select * from tb_bookmark where center_id=#{center_id} and user_id=#{user_id}
+	</select>
 
 </mapper>

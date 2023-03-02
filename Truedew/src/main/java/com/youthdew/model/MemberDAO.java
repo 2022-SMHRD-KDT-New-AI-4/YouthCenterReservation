@@ -62,4 +62,18 @@ public class MemberDAO {
 		return cnt;
 		
 	}
+	
+	// 나의공간(즐겨찾기) 추가
+	public int insertMark(MarkVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		int cnt = session.insert("insertMark",vo);
+		return cnt;
+	}
+
+	//나의공간(즐겨찾기) 중복조회
+	public MarkVO overlapMark(MarkVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		MarkVO mvo = session.selectOne("overlapMark", vo);
+		return mvo;
+	}
 }

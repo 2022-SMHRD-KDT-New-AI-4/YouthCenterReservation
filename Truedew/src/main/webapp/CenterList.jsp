@@ -1,3 +1,7 @@
+<%@page import="com.youthdew.model.MarkVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.youthdew.model.MemberDAO"%>
+<%@page import="com.youthdew.model.MemberVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -39,6 +43,14 @@
 
 	#fac_div{
 		margin-top: 10px;
+	}
+	
+		#insert_mark{
+		left:80%;
+		margin-top: 10px;
+		width: 50px;
+		height: 50px;
+
 	}
 
 </style>
@@ -104,7 +116,13 @@
 
 	<%--청년센터 리스트 --%>
 	
-	<% ArrayList<CenterVO> list = (ArrayList<CenterVO>)request.getAttribute("list"); %>
+	<% ArrayList<CenterVO> list = (ArrayList<CenterVO>)request.getAttribute("list");
+ 		MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+		MemberDAO dao = new MemberDAO(); 
+		List<MarkVO> list2 = dao.selectMark(loginM.getUser_id());
+		
+		
+	%>
 	<!-- Booking -->
 	<div id="localname"><%=list.get(0).getLocal_do().substring(0,2)%></div>
 
@@ -122,7 +140,7 @@
 				<input class="checkGoods" type="checkbox" name="fac_code" value="PC">PC
 				<input class="checkGoods" type="checkbox" name="fac_code" value="프린터">프린터
 				<input class="checkGoods" type="checkbox" name="fac_code" value="마이크">마이크
-				<div>
+				</div>
 				<input id="facsearch" type="button" class="booking_button trans_200" value="검색">
 				</form>
 				<div class="button button_4"><a href="#">지도로 보기</a></div>
@@ -146,6 +164,7 @@
 						<%for(int j=i;j<i+3;j++) {
 							if(j<list.size()){%>
 							<!-- Slide -->
+							<div>
 							<div class="booking_item">
 								<div class="background_image" style="background-image:url(<%=list.get(j).getCenter_pic()%>)"></div>
 								<div class="booking_overlay trans_200"></div>
@@ -161,6 +180,25 @@
 								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
 								<div class="booking_link"><a href="booking.html">예약하기</a></div>
 							</div>
+							
+							<%if(loginM != null){ %>
+									<div id="insert_mark">
+									<a href="insertMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>&local_do=<%=list.get(0).getLocal_do().substring(0,2)%>">
+									
+ 									<%
+ 									MarkVO vo = new MarkVO(list.get(j).getCenter_id(), loginM.getUser_id());
+ 									MarkVO mvo = dao.overlapMark(vo);
+									if(mvo==null) { %>
+									<img src="./images/vac_star.png">
+									<%} else{ %>
+									<img src="./images/full_star.png">
+									<%} %>
+									</a>
+									</div>
+							<%} %>
+							</div>
+							
+							
 				
 					<%} else{ %>
 						<div class="booking_item"></div>

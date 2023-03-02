@@ -28,7 +28,6 @@
 <style>
 #delete_mark{
 		left:80%;
-		margin-top: 10px;
 		width: 50px;
 		height: 50px;
 
@@ -154,7 +153,7 @@
 								<!-- <div class="button button_1"><a href="reservation.jsp">예약하기</a></div> -->
 								<div class="booking_link"><a href="reservation.jsp">예약하기</a></div>
 							</div>
-									<div id="delete_mark"><a href="deleteMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>"><img src="./images/cancel.png"></a></div>
+									<div id="delete_mark"><a href="deleteMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>"><img src="./images/ic_close.svg"></a></div>
 							</div>
 				
 					<%} else{ %>
