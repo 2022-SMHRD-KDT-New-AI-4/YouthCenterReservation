@@ -1,3 +1,6 @@
+<%@page import="com.youthdew.model.MessageVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.youthdew.model.MemberDAO"%>
 <%@page import="com.youthdew.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -39,37 +42,49 @@
 	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
     %>
 	
-        <!-- Header -->
+                <!-- Header -->
         <div id="headers"></div>
     
         <header class="header">
             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                <div class="logo"><a href="#" onClick="location.href='Main.jsp'">청년이슬</a></div>
+                <div class="logo"><a href="Main.jsp">청년이슬</a></div>
                 <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">
-    
+    					
+    					
     					<%if(loginM==null) { %>
                             <li><a href="join.jsp">회원가입</a></li>
                             <li><a href="login.jsp">로그인</a></li>
-                        <%} else { %>
+                        <%} else {
+                            MemberDAO dao = new MemberDAO();
+                            List<MessageVO> msglist = dao.readNotMessage(loginM.getUser_id());
+                        	%>
                         <li><a href="mypage.jsp">마이페이지</a>	</li>					
                         <li><a href="LogoutService">로그아웃</a></li>
+                        
                         <li><a id="msg" href="Message.jsp" onclick="window.open(this.href,'_blank','width=500px, height=500px, toolbars=no, scrollbars=no,left=1100'); return false;">
                                 <div>
-                                    <img  id="lettern" src="./images/letter-n.png">
+                                
+                                	<% if(msglist.toString().equals("[]")) {%>
+                                    <img  id="lettern" src="">
+                                    <%} else {  %>
+                                   <img  id="lettern" src="./images/letter-n.png">
+                                   
+                                    <%} %>
                                     <img src="./images/icon_8.png">
                                 </div>
                                 </a>
                         </li>
 						<%} %>
-                            
+                        
+                        
                         </ul>
                     </nav>
                 <div class="book_button">
                         <a href="#">검색하기</a>
                         <!-- <label for="collapsible"><span id="bookbtn">예약하기</span></label> -->
-                    </ul>
+                    <!-- </ul> -->
                     <div class="locallist">
                     <ul id="menuitems">
 						<li ><a href="#" onclick="local_click(this);">서울</a></li>
@@ -88,27 +103,8 @@
                     </div>
                 </div>
     
-    
-                    <!-- Hamburger Menu -->
-<!--                 <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                </div>
-            </div>
-        </header> -->
-    
-        <!-- Menu -->
-    
-<!--         <div class="menu trans_400 d-flex flex-column align-items-end justify-content-start">
-            <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-            <div class="menu_content">
-                <nav class="menu_nav text-right">
-                    <ul>
-                        <li><a href="blog.html">로그인</a></li>
-                        <li><a href="contact.html">회원가입</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div> -->
    
+</div></div></header>
 
 
 

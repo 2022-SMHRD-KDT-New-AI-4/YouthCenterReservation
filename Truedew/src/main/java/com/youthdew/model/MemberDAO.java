@@ -79,4 +79,39 @@ public class MemberDAO {
 		return mvo;
 		
 	}
+	
+	
+	// 메세지 조회
+	public List<MessageVO> selectMessage(String user_id){
+		SqlSession session = SqlSessionFactory.openSession(true);
+		List<MessageVO> list = session.selectList("selectMessage", user_id);
+		session.close();
+		return list;
+	}
+
+	
+	// 메세지 삭제
+	public int deleteMessage(int msg_seq) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		int cnt = session.delete("deleteMessage",msg_seq);
+		session.close();
+		return cnt;
+	}
+	
+	// 읽지 않은 메세지 조회
+	public List<MessageVO> readNotMessage(String user_id) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		List<MessageVO> list = session.selectList("readNotMessage",user_id);
+		session.close();
+		return list;
+	}
+	
+	// 알림창 선택 시 msg_check를 N->Y로 업데이트
+	public int readMessage(String user_id) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		int cnt = session.update("readMessage",user_id);
+		session.close();
+		return cnt;
+				
+	}
 }
