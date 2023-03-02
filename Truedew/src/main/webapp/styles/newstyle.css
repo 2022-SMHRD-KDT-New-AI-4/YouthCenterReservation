@@ -11,11 +11,6 @@
 	}
 
     /* 메인검색 */
-	#lolist{
+	#lolist,#ctlist{
 		color: rgb(255,163,123);
-		margin:outo;
-	}
-	#ctlist{
-		color: rgb(255,163,123);
-		margin:auto;
 	}
