@@ -14,3 +14,10 @@
 	#lolist,#ctlist{
 		color: rgb(255,163,123);
 	}
+	
+	#lettern{
+        width:10px;
+        height:10px;
+        position: absolute;
+        left:60%;
+    }
