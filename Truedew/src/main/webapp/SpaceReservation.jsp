@@ -1,6 +1,10 @@
+<%@page import="com.youthdew.model.MemberVO"%>
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.youthdew.model.SpaceListDAO"%>
+<%@page import="com.youthdew.model.SpaceListVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page errorPage="error.html" %>
@@ -30,11 +34,37 @@
    height:167px;
 }
 
+   #menuitems{
+      background-color: white;
+   }
+   .locallist{
+      display: none;
+   }
+
+   li:hover {
+      background-color: rgb(183, 186, 231) !important;
+   }
+
+   /* 메인검색 */
+   #lolist,#ctlist{
+      color: rgb(255,163,123);
+   }
+   ul.tabs{
+   margin: 0px;
+   padding: 0px;
+   list-style: none;
+}
 </style>
 
 </head>
 <body>
-
+<%
+   // 로그인 정보
+   MemberVO login = (MemberVO)session.getAttribute("loginM");
+   if(login != null){
+      out.print("<input type='hidden' id='loginInfo' value='ok'>");
+   }
+%>
 <div class="super_container">
    
     <!-- Header -->
