@@ -42,6 +42,11 @@
 	delete from tb_message where msg_seq=#{msg_seq}
 	</delete>
 	
+	<!-- 메세지 추가 -->
+	<insert id="insertMessage" parameterType="MessageVO">
+	insert into tb_message values(msg_seq.nextval,#{user_id},#{msg_usetime},#{msg_content},sysdate,'N')
+	</insert>
+	
 	
 
 

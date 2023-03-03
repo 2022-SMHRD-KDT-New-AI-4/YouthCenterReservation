@@ -114,4 +114,12 @@ public class MemberDAO {
 		return cnt;
 				
 	}
+	
+	// 메시지 추가
+	public int insertMessage(MessageVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		int cnt = session.insert("insertMessage", vo);
+		session.close();
+		return cnt;
+	}
 }

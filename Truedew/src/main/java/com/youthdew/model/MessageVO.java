@@ -43,7 +43,12 @@ public class MessageVO {
 	}
 
 
-
+	public MessageVO(String user_id, String msg_usetime, String msg_content) {
+		super();
+		this.user_id = user_id;
+		this.msg_usetime = msg_usetime;
+		this.msg_content = msg_content;
+	}
 
 	public int getMsg_seq() {
 		return msg_seq;

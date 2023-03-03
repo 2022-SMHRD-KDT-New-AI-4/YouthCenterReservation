@@ -55,6 +55,8 @@
 	<input id="weekday_time" type="hidden" name="local_do" value="<%=weekday_time%>" readonly/>   
    <input id="weekend_time" type="hidden" name="local_do" value="<%=weekend_time%>" readonly/>   
 	<input type="hidden" value="<%=lvo.getShared_space_seq() %>" id="shared_space_seq">
+	<%-- <input type="hidden" name="shared_space_name" value=<%=lvo.getShared_space_name() %>>
+    <input type="hidden" name="center_name" value=<%=svo.getCenter_name() %>> --%>
 
 <div class="super_container">
 	
@@ -124,6 +126,8 @@
              	<span id="local_ysh">사용 가능 인원 &nbsp;: &nbsp;<%=lvo.getPersons()%><br>
             		<%=lvo.getSpace_info()%>
             		<input type="hidden" name="shared_space_seq" value=<%=lvo.getShared_space_seq() %>>
+            		<input type="hidden" name="shared_space_name" value=<%=lvo.getShared_space_name() %>>
+    				<input type="hidden" name="center_name" value=<%=svo.getCenter_name() %>>
             	</span>
             </div>
             	<br>	
