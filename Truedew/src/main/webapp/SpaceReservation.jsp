@@ -107,7 +107,7 @@ margin-top: 10px;
 
 
 	<!-- 탭 메뉴 상단 시작 -->
-<div>
+	<div class="blog">
 	 <ul class="list">
         <li class="tab-button active">공간 예약</li>
         <li class="tab-button">상세 정보</li>
@@ -131,7 +131,7 @@ margin-top: 10px;
 		 <%for (int i = 0; i < list.size();i++) {%>
 		 <div class="blog_post">	
         	<%--청년센터 리스트 --%>
-		 	<div class="blog_post_image"><img src=<%= list.get(i).getShared_space_pic()%> alt=""></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 	<div class="blog_post_image"><img id="space_pic" src=<%= list.get(i).getShared_space_pic()%> alt=""></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		 	
 		 	<div class="blog_post_content">
 			<div class="blog_post_title" id="title"><a href="#"><%=list.get(i).getShared_space_name() %></a>
@@ -140,11 +140,8 @@ margin-top: 10px;
 		 		사용 가능 인원 &nbsp;: &nbsp;<%=list.get(i).getPersons() %><br>
 				<%=list.get(i).getSpace_info() %></div>
 			</div>
-			
-			
-			<div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin('val<%=i%>');">예약하기</a><input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>"></div> 
-			
-				</div>
+			</div>
+				<div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin('val<%=i%>');">예약하기</a><input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>"></div> 
 			 <hr> 
 			</div>
 		<%} %>			
@@ -152,7 +149,7 @@ margin-top: 10px;
 
 			<div class="tab-content">
 		 		<div class="blog_post_text" >
-		 			<img src=<%= center_info.getCenter_pic()%> alt="">
+		 			<img id="space_pic" src=<%= center_info.getCenter_pic()%> alt="">
 		 			<table>
 		 				<tr>
 		 					<td>운영기관 : </td>
@@ -184,8 +181,8 @@ margin-top: 10px;
    <!-- Footer -->
 
 	
-</div>
 	<footer id="footers"></footer>
+</div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
