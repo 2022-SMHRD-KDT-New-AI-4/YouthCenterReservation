@@ -260,7 +260,7 @@
 	});
 	
 	
-	//체크박스 3개 이상 선택시 경고창
+	/* //체크박스 3개 이상 선택시 경고창
 	$(document).ready(function(){
 		$("input[name='checkbox_solid_border']").on("click", function(){
 			var cnt =$("input[name='checkbox_solid_border']:checked").length;
@@ -272,7 +272,7 @@
 			
 			
 			});
-		});
+		}); */
 	
 	let calendar;
 	let prevClickedDayEl; // 이전에 클릭한 날짜 요소
@@ -416,56 +416,23 @@
 
 	            	  }
 	                 
-	                 
-	                 
-	                 
-	                 
-	                 
-	                 
-	                 
-	                 
-	                 
-	                 /* for(var i =0;i<data.length;i++) {
-	                	 var please =[]; 
-	                		 please[i]= data[i].use_time;
-	                	 console.log("please[i]:"+please[i]);
-	                	 
-	                	 var time=[];
-	                	 time[i]= please[i].split("|");     //time[i]도 값이 여러개 들어가 있는 배열					
-	                	 console.log("time[i]:"+time[i]);
-	                	 console.log("time:"+time);
-	                	 
-	                	 for(var j in time[i]){
-	                		 console.log("time[i][j]:"+time[i][j]);
-	                	 }
-	                 	}//for문 끝
-	                	 
-	                	// const arr = [['a', 'b'], ['c', 'd'], ['e', 'f']];
-							
-	                	 var time2 = [];
-	                	 time.forEach((element) => {
-	                	   time2 = time.concat(element);
-	                	 })
 
-	                	 console.log("time2:"+time2);
-
-	                	 	/* for(var j in time){  */
-	                	 		//console.log(time[j]);
-	                	 		/* for(var k in checkBoxV){
-	                	 			var text = checkBoxV[k].getAttribute('value');
-	                	 			if(time[j]==text){
-	                	 				$('.check_re').css("background-color", "red")
-	                	 			}
-	                	 				
-
-	                	 			}//3중 for문 끝 */
-	                //	 	}//2중 for문 끝 */
-	         
 	                 },error : function() {
 	                     alert('URL호출 실패');
 	                 }
 	          
 	              });// 소라의 ajax 닫음
+	            $("input[name='checkbox_solid_border']").on("click", function(){
+	    			var cnt =$("input[name='checkbox_solid_border']:checked").length;
+	    			console.log(cnt);
+	    			if(cnt>3){
+	    				$(this).prop("checked",false);
+	    				alert("최대 3시간까지 예약 가능합니다.");
+	    			}
+	    			
+	    			
+	    		});
+	              
 	         } // 날짜 클릭 엔드
 	      
 	      
