@@ -48,4 +48,20 @@ public class reservationInfoDAO {
 		return cnt;
 	}
 
+		
+		//예약된 시간 확인
+		public ArrayList<reservationInfoVO> selectReserved_time(reservationInfoVO vo) {
+			SqlSession session = sqlSessionFactory.openSession(true);
+			List<reservationInfoVO> timelist = session.selectList("selectReserved_time",vo);
+			session.close();
+			return (ArrayList<reservationInfoVO>)timelist;
+		}
+		   // 선택한 공간의 운영시간 조회
+		   public reservationInfoVO selectRuntime(int shared_space_seq) {
+		      SqlSession session = sqlSessionFactory.openSession(true);
+		      reservationInfoVO vo = session.selectOne("selectRuntime", shared_space_seq);
+		      session.close();
+		      return vo;
+		   }
+
 }

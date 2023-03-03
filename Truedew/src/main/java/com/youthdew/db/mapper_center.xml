@@ -57,5 +57,23 @@
     <delete id="deleteReserve">
     delete from tb_reservation where reserv_seq=#{reserv_seq}
     </delete>
+    
+    <!--이미 예약된 시간 조회  -->
+    <select id="selectReserved_time" parameterType="reservationInfoVO" resultType ="reservationInfoVO">
+    select b.shared_space_seq, b.reserv_date, b.use_time
+    from tb_shared_space a, tb_reservation b,tb_center c
+	where a.SHARED_SPACE_SEQ = b.SHARED_SPACE_SEQ
+	and a. center_id = c.center_id
+	and b.shared_space_seq=#{shared_space_seq}
+	and b.reserv_date=#{reserv_date}
+    </select>
+    
+     <!-- 예약한 공간의 운영시간 조회 -->
+    <select id="selectRuntime" resultType="reservationInfoVO">
+    select a.center_id, b.center_name, a.shared_space_seq, a.shared_space_name, b.center_weekday, b.center_weekend
+   from tb_shared_space a, tb_center b
+   where a.center_id = b.center_id
+   and a.shared_space_seq=#{shared_space_seq}
+    </select>
 
 </mapper>

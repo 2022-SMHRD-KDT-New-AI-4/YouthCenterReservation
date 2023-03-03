@@ -50,6 +50,19 @@ margin-top: 10px;
 </head>
 <body>
 
+<%
+	// 로그인 정보
+	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
+if(loginM != null){
+	out.print("<input type='hidden' id='loginInfo' value='ok'>");
+}
+
+	ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
+	CenterVO center_info=(CenterVO)request.getAttribute("center_info"); 
+
+	
+%>
+
 <div class="super_container">
 	
     <!-- Header -->
@@ -119,9 +132,7 @@ margin-top: 10px;
     <!-- 탭 메뉴 상단 끝 -->
     
     <!-- 탭 메뉴 내용 시작 -->
-   <% ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
-   	MemberVO loginM = (MemberVO)session.getAttribute("loginM");
-		 CenterVO center_info=(CenterVO)request.getAttribute("center_info");%>
+   
 	<div class="tab-content show">
 		 <h2 id="centerTopName"><%=center_info.getCenter_name()%></h2>
 		 <br>
@@ -141,7 +152,7 @@ margin-top: 10px;
 				<%=list.get(i).getSpace_info() %></div>
 			</div>
 			</div>
-				<div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin('val<%=i%>');">예약하기</a><input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>"></div> 
+				<div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin('val<%=i%>');">예약하기</a><input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>"></div>  
 			 <hr> 
 			</div>
 		<%} %>			
@@ -205,21 +216,23 @@ margin-top: 10px;
 
 <script>
  //예약하기 버튼 클릭 시 로그인 여부 확인
-	function checkLogin(){
-		//console.log('작동함');
+	function checkLogin(eleme){
+		console.log('작동함');
 		var text = $('#loginInfo').val();
 		if(text!="ok"){
+			console.log("로그인 안했음");
 			alert("로그인 후 이용해주세요.");
 			location.href='login.jsp';
 		}else{
-			//alert("로그인 했음");
 			console.log("로그인 했음");
+			
 			var shared_space_seq = $("."+eleme).val();
+			
+			
 			location.href="reservation.jsp?shared_space_seq="+shared_space_seq; 
 			
 			}
-	
-		}
+
 	}
    
    

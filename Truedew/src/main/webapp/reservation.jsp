@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.reservationInfoVO"%>
 <%@page import="com.youthdew.model.reservationInfoDAO"%>
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
@@ -45,7 +46,15 @@
 	int shared_space_seq= Integer.parseInt(request.getParameter("shared_space_seq"));
 	
 	reservationInfoDAO dao = new reservationInfoDAO();
-	SpaceListVO lvo = dao.selectshared_space(shared_space_seq); %>
+	SpaceListVO lvo = dao.selectshared_space(shared_space_seq); 
+	reservationInfoVO svo = dao.selectRuntime(shared_space_seq);
+	   
+	String weekday_time = svo.getCenter_weekday();
+	String weekend_time = svo.getCenter_weekend();%>
+	
+	<input id="weekday_time" type="hidden" name="local_do" value="<%=weekday_time%>" readonly/>   
+   <input id="weekend_time" type="hidden" name="local_do" value="<%=weekend_time%>" readonly/>   
+	<input type="hidden" value="<%=lvo.getShared_space_seq() %>" id="shared_space_seq">
 
 <div class="super_container">
 	
@@ -128,7 +137,7 @@
 
 	<!-- 캘린더  -->
 	<div id='calendar' style="width: 50%;"></div>
-	<div>
+	
 	
 	<input type="hidden" id="dayValue" value="" name="reserv_date">
 	<div id='selectedDate'></div>
@@ -136,7 +145,7 @@
 	
 	<div class="col-2">
 	
-		<div class="box-group solid border">
+		<!-- <div class="box-group solid border">
 			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_1" value="9:00~10:00"/>
 			<label for="checkbox_solid_border_1">9:00~10:00</label>
 		</div>
@@ -171,11 +180,11 @@
 		<div class="box-group solid border">
 			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_9" value="17:00~18:00" />
 			<label for="checkbox_solid_border_9">17:00~18:00</label>
-		</div>
-		<input id="checkRes" type="button" value="예약하기">
-		</div>
+		</div> -->
 		
 		</div>
+		<input id="checkRes" type="button" value="예약하기">
+		
 		</form>
 		</div>
 	 
@@ -285,11 +294,183 @@
 				let selectedDateEl = document.getElementById('selectedDate');
 				selectedDateEl.textContent = info.dateStr;
 				$('#dayValue').val(info.dateStr);
-			}
-		
-		});
-		calendar.render();
-	});
+				// 날짜값 저장
+	            var date = $('#dayValue').val();
+	           console.log(date);
+	           var runtime = [];
+	               $.ajax({
+	                   url : "SearchDayService?Date="+date,
+	                   async:false,
+	                   success : function(data){
+	                        if(data == '7' || data== '1' ){ // 주말
+	                             
+	                             var time = $('#weekend_time').val();
+	                           console.log(time);
+	                           
+	                        }else{ // 주중
+	                              var time = $('#weekday_time').val();
+	                           console.log(time);                      
+	                        
+	                        }                 
+	               //console.log(runtime.length);
+	               if(time == "null"){
+	                  $(".col-2").html("<div><span style='color:red;'><b>주말은 휴관입니다</b></span></div>");
+	               } else {
+	                  
+	               var open = Number(time.substring(0,2));
+	               var last = Number(time.substring(6,8));
+
+	             //  var runtime = [];
+
+	               for( var i =0; i<last-open;i++){
+	                   if((open+i)<10) {
+	                   runtime[i]="0"+(open+i)+":00~"+(open+i+1)+":00";   
+	               } else {            
+	               runtime[i]=(open+i)+":00~"+(open+i+1)+":00";
+	               }
+	               
+	               
+	           }
+	               
+	           var html = "";
+	           for(var i=0;i<runtime.length;i++) {
+	               html+="<div class='box-group solid border'>";
+	               html+="<input type='checkbox' class='check_re' name='checkbox_solid_border' id='checkbox_solid_border_"+(i+1)+"' value='"+runtime[i]+"'/>";   
+	               html+="<label for='checkbox_solid_border_"+(i+1)+"'>"+runtime[i]+"</label>"
+	               html+="</div>"
+	           }// html 추가 for문
+
+	           $(".col-2").html(html);
+	            
+	               } // time !=null 닫음
+	                  
+	                   } // success 닫음
+	               }); //ajax 닫음
+	            
+	            //console.log("ajax밖");
+	           
+	            //console.log(runtime[i]);
+	            
+	            // 예약정보 가져오는 비동기통신
+	            
+	            var shared_space_seq = $('#shared_space_seq').val();
+	            var reserv_date = $('#dayValue').val();
+	            var checkBoxV = document.querySelectorAll(".check_re");
+	            
+	            $.ajax({
+	                  type: "POST",
+	                  url: "reservationSchedule",
+	                  data: {
+	                  "shared_space_seq" : shared_space_seq,
+	                  "reserv_date": reserv_date
+	              },
+	              dataType : "JSON",
+	              success: function(data){
+	            	  
+	              
+	                 //console.log(data);
+	            	  var time=[];
+
+	            	  for( var i=0; i<data.length ; i++){
+	            	   //   console.log("data "+i+"번째 : "+data[i].use_time);
+	            	      time[i] = data[i].use_time.split("|");
+//	            	      console.log("time"+i+"번 : "+ time[i]);
+
+	            	  }
+	            	  //console.log(time);
+
+	            	  var time2 = time.reduce(function (acc, cur) {
+	            	    return acc.concat(cur);
+	            	  });
+
+
+	            	  for(var i = 0; i<time2.length;i++){
+
+	            	   //  console.log("time2:"+i+"번째 : "+time2[i]);
+	            	  }
+
+	            	   var cktime = [];
+
+	            	   for (var i=0;i<runtime.length;i++) {
+	            	       cktime[i] = $("label[for='checkbox_solid_border_"+(i+1)+"']").text();
+	            	   //   console.log("체크박스안 시간 출력:"+cktime[i]);
+	            	      }
+
+
+	            	  for( var i = 0 ; i < time2.length;i++){
+	            	      for( var j = 0; j< cktime.length; j++){
+	            	          
+	            	          if(time2[i] == cktime[j]) {
+	            	             // console.log(time2[i]+"가 시간 똑같다");
+	            	              $(`#checkbox_solid_border_${j+1}`).prop("disabled",true);
+	            	              $("label[for='checkbox_solid_border_"+(j+1)+"']").css("background-color","lightgray");
+
+	            	              break;
+	            	          }
+
+	            	      }
+
+	            	  }
+	                 
+	                 
+	                 
+	                 
+	                 
+	                 
+	                 
+	                 
+	                 
+	                 
+	                 /* for(var i =0;i<data.length;i++) {
+	                	 var please =[]; 
+	                		 please[i]= data[i].use_time;
+	                	 console.log("please[i]:"+please[i]);
+	                	 
+	                	 var time=[];
+	                	 time[i]= please[i].split("|");     //time[i]도 값이 여러개 들어가 있는 배열					
+	                	 console.log("time[i]:"+time[i]);
+	                	 console.log("time:"+time);
+	                	 
+	                	 for(var j in time[i]){
+	                		 console.log("time[i][j]:"+time[i][j]);
+	                	 }
+	                 	}//for문 끝
+	                	 
+	                	// const arr = [['a', 'b'], ['c', 'd'], ['e', 'f']];
+							
+	                	 var time2 = [];
+	                	 time.forEach((element) => {
+	                	   time2 = time.concat(element);
+	                	 })
+
+	                	 console.log("time2:"+time2);
+
+	                	 	/* for(var j in time){  */
+	                	 		//console.log(time[j]);
+	                	 		/* for(var k in checkBoxV){
+	                	 			var text = checkBoxV[k].getAttribute('value');
+	                	 			if(time[j]==text){
+	                	 				$('.check_re').css("background-color", "red")
+	                	 			}
+	                	 				
+
+	                	 			}//3중 for문 끝 */
+	                //	 	}//2중 for문 끝 */
+	         
+	                 },error : function() {
+	                     alert('URL호출 실패');
+	                 }
+	          
+	              });// 소라의 ajax 닫음
+	         } // 날짜 클릭 엔드
+	      
+	      
+	      
+	      
+	      });
+	         calendar.render();
+	      });
+	      
 
 </script>
 

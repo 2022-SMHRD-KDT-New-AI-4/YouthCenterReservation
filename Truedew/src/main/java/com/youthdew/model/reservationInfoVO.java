@@ -10,6 +10,10 @@ public class reservationInfoVO {
 	private String center_name;
 	private String shared_space_name;
 	private String apply_date;
+	private String center_weekday;
+	private String center_weekend;
+	private int day;
+	
 	
 	
 	
@@ -19,29 +23,57 @@ public class reservationInfoVO {
 	}
 	
 	//생성자
-		public reservationInfoVO(String user_id, int shared_space_seq, int reserv_seq, String reserv_date, String use_time,
-				String center_id, String center_name, String shared_space_name,String apply_date) {
-			super();
-			this.user_id = user_id;
-			this.shared_space_seq = shared_space_seq;
-			this.reserv_seq =reserv_seq;
-			this.reserv_date = reserv_date;
-			this.use_time = use_time;
-			this.center_id = center_id;
-			this.center_name = center_name;
-			this.shared_space_name = shared_space_name;
-			this.apply_date = apply_date;
-		}
 		
-		//2개짜리 생성자
+		public reservationInfoVO(String user_id, int shared_space_seq, int reserv_seq, String reserv_date, String use_time,
+			String center_id, String center_name, String shared_space_name, String apply_date, String center_weekday,
+			String center_weekend, int day) {
+		super();
+		this.user_id = user_id;
+		this.shared_space_seq = shared_space_seq;
+		this.reserv_seq = reserv_seq;
+		this.reserv_date = reserv_date;
+		this.use_time = use_time;
+		this.center_id = center_id;
+		this.center_name = center_name;
+		this.shared_space_name = shared_space_name;
+		this.apply_date = apply_date;
+		this.center_weekday = center_weekday;
+		this.center_weekend = center_weekend;
+		this.day = day;
+	}
+
+		//4개짜리 생성자
 		public reservationInfoVO(String user_id, int shared_space_seq, String reserv_date, String use_time) {
 			this.user_id = user_id;
 			this.shared_space_seq = shared_space_seq;
 			this.reserv_date = reserv_date;
 			this.use_time=use_time;
 		}
+		
+		
 
+		
+		public reservationInfoVO(int reserv_seq, String reserv_date, String use_time, int day) {
+			super();
+			this.reserv_seq = reserv_seq;
+			this.reserv_date = reserv_date;
+			this.use_time = use_time;
+			this.day = day;
+		}
+
+		public reservationInfoVO(int shared_space_seq) {
+			this.shared_space_seq = shared_space_seq;
+			
+		}
+		
+		//2개짜리 생성자
+		public reservationInfoVO(int shared_space_seq, String reserv_date) {
+			this.shared_space_seq = shared_space_seq;
+			this.reserv_date = reserv_date;
+			
+		}
 		//getter/setter
+
 		public String getUser_id() {
 			return user_id;
 		}
@@ -113,6 +145,33 @@ public class reservationInfoVO {
 		public void setApply_date(String apply_date) {
 			this.apply_date = apply_date;
 		}
+
+		public String getCenter_weekday() {
+			return center_weekday;
+		}
+
+		public void setCenter_weekday(String center_weekday) {
+			this.center_weekday = center_weekday;
+		}
+
+		public String getCenter_weekend() {
+			return center_weekend;
+		}
+
+		public void setCenter_weekend(String center_weekend) {
+			this.center_weekend = center_weekend;
+		}
+
+		public int getDay() {
+			return day;
+		}
+
+		public void setDay(int day) {
+			this.day = day;
+		}
+	
+
+		
 		
 		
 		
