@@ -127,7 +127,7 @@ margin-top: 10px;
 		 <br>
 		 <br>
 		 <br>
-  
+  		<form action="reservation.jsp">
 		 <%for (int i = 0; i < list.size();i++) {%>
 		 <div class="blog_post">	
         	<%--청년센터 리스트 --%>
@@ -141,9 +141,9 @@ margin-top: 10px;
 				<%=list.get(i).getSpace_info() %></div>
 			</div>
 			
-			<% if(loginM!=null) { %>
-			<span class="button blog_post_button" id="reservation"><a href="#" onClick="location.href='reservation.jsp?shared_space_seq=<%=list.get(i).getShared_space_seq() %>'">예약하기</a></span> 
-			<%} %>
+			
+			<div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin('val<%=i%>');">예약하기</a><input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>"></div> 
+			
 				</div>
 			 <hr> 
 			</div>
@@ -216,10 +216,11 @@ margin-top: 10px;
 			location.href='login.jsp';
 		}else{
 			//alert("로그인 했음");
-			//location.href='Reservation.jsp'
-			var seq = $('#space_seq').val();
-			console.log(seq);
-			location.href="reservation.jsp?share_seq="+seq;
+			console.log("로그인 했음");
+			var shared_space_seq = $("."+eleme).val();
+			location.href="reservation.jsp?shared_space_seq="+shared_space_seq; 
+			
+			}
 	
 		}
 	}
