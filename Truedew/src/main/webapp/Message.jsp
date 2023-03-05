@@ -32,7 +32,7 @@
             border: 1px solid rgb(209, 205, 205);
             margin-left: 10px;
             margin-right: 10px;
-            border-radius: 10px;
+            border-radius: 5px;
             margin-top: 10px;
         }
 

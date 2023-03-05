@@ -133,12 +133,12 @@ $(document).ready(function()
 			{
 				items:3,
 				autoplay:false,
-				autoplayHoverPause:true,
+				autoplayHoverPause:false,
 				loop:false,
 				smartSpeed:1200,
 				dots:false,
 				nav:false,
-				margin:30,
+				margin:40,
 				/*responsive:
 				{
 					0:{items:1},
