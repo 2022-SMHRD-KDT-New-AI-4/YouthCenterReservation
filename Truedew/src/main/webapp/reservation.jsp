@@ -1,6 +1,8 @@
 <%@page import="com.youthdew.model.reservationInfoVO"%>
 <%@page import="com.youthdew.model.reservationInfoDAO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.youthdew.model.CenterVO"%>
+<%@page import="com.youthdew.model.SpaceListDAO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -36,6 +38,18 @@
 <style>
 #d-flex {
 	
+}
+#selectedDate{
+font-size : 30px;
+text-align :center;
+}
+#space_img{
+width: 275px;
+height: 200px;
+object-fit: cover;
+}
+.blog_post_content{
+margin-left : 100px;
 }
 </style>
 
@@ -117,87 +131,57 @@
 	
 	<!--선택한 공유공간 정보  -->
 	<form action="reservationService" method="get">
+	<br><br><br>
+	<div class="container">
 	<div class="blog_post">
-        <div class="blog_post_image"><img src =<%=lvo.getShared_space_pic()%>>
-        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="blog_post_image"><img id="space_img" src =<%=lvo.getShared_space_pic()%>>
+        </div>
           <div class="blog_post_content">
             <div class="blog_post_title" id="title"><a href="#"><%=lvo.getShared_space_name()%></a>
          	   <br id="br">
          		<br>
-             	<span id="local_ysh">사용 가능 인원 &nbsp;: &nbsp;<%=lvo.getPersons()%><br>
+             	<div id="local_ysh">사용 가능 인원 &nbsp;: &nbsp;<%=lvo.getPersons()%><br>
             		<%=lvo.getSpace_info()%>
             		<input type="hidden" name="shared_space_seq" value=<%=lvo.getShared_space_seq() %>>
             		<input type="hidden" name="shared_space_name" value=<%=lvo.getShared_space_name() %>>
     				<input type="hidden" name="center_name" value=<%=svo.getCenter_name() %>>
-            	</span>
+            	</div>
             </div>
             	<br>	
            </div>
       	 </div>
+      	</div>
       <hr>
-         
-	<div>
-	
+      
+      <!-- 예약하기 창 -->
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<!-- 캘린더  -->
+				<div class="col-lg-6">
+					<div class="contact_content">
+						<div class="contact_form_container">
+							<div id='calendar'></div>
+							<input type="hidden" id="dayValue" value="" name="reserv_date">
+						</div>
+					</div>
+				</div>
+				<!--오른쪽 창  -->
+				<div class="col-lg-6">
+					<div class="contact_content" >
+						<div class="contact_title" id='selectedDate'></div>
+							<div class="cf">
+								<div class="col-2"></div>
+							</div>
+					</div>
+					<input id="checkRes" type="button" value="예약하기">
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<!-- 캘린더  -->
-	<div id='calendar' style="width: 50%;"></div>
-	
-	
-	<input type="hidden" id="dayValue" value="" name="reserv_date">
-	<div id='selectedDate'></div>
-	
-	
-	<div class="col-2">
-	
-		<!-- <div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_1" value="9:00~10:00"/>
-			<label for="checkbox_solid_border_1">9:00~10:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_2" value="10:00~11:00"/>
-			<label for="checkbox_solid_border_2">10:00~11:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_3" value="11:00~12:00"/>
-			<label for="checkbox_solid_border_3">11:00~12:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_4" value="12:00~13:00"/>
-			<label for="checkbox_solid_border_4">12:00~13:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_5" value="13:00~14:00"/>
-			<label for="checkbox_solid_border_5">13:00~14:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_6" value="14:00~15:00"/>
-			<label for="checkbox_solid_border_6">14:00~15:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_7" value="15:00~16:00"/>
-			<label for="checkbox_solid_border_7">15:00~16:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_8" value="16:00~17:00" />
-			<label for="checkbox_solid_border_8">16:00~17:00</label>
-		</div>
-		<div class="box-group solid border">
-			<input type="checkbox" class="check_re" name="checkbox_solid_border" id="checkbox_solid_border_9" value="17:00~18:00" />
-			<label for="checkbox_solid_border_9">17:00~18:00</label>
-		</div> -->
-		
-		</div>
-		<input id="checkRes" type="button" value="예약하기">
-		
-		</form>
-		</div>
-	 
-						
-
-				
-	
-	
+	</form>
+	<!--슈퍼컨테이너  -->
+</div>
    <!-- Footer -->
 
 	<footer id="footers"></footer>
@@ -219,6 +203,7 @@
 <script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
 <script src="js/space.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
 <script>
 	
