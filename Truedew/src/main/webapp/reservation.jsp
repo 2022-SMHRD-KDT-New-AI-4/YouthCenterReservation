@@ -140,7 +140,7 @@ margin-left : 100px;
             <div class="blog_post_title" id="title"><a href="#"><%=lvo.getShared_space_name()%></a>
          	   <br id="br">
          		<br>
-             	<div id="local_ysh">사용 가능 인원 &nbsp;: &nbsp;<%=lvo.getPersons()%><br>
+             	<div id="local_ysh">사용 가능 인원 &nbsp;: &nbsp;<%=lvo.getPersons()%> 명<br>
             		<%=lvo.getSpace_info()%>
             		<input type="hidden" name="shared_space_seq" value=<%=lvo.getShared_space_seq() %>>
             		<input type="hidden" name="shared_space_name" value=<%=lvo.getShared_space_name() %>>
@@ -174,7 +174,7 @@ margin-left : 100px;
 								<div class="col-2"></div>
 							</div>
 					</div>
-					<input id="checkRes" type="button" value="예약하기">
+					<input class="booking_button trans_200" id="checkRes" type="button" value="예약하기">
 				</div>
 			</div>
 		</div>
