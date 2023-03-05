@@ -72,7 +72,7 @@ p a
 	display: inline;
 	position: relative;
 	color: inherit;
-	border-bottom: solid 1px #549eed;
+	border-bottom: solid 1px rgb(6,163,218);
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -101,12 +101,12 @@ a, a:hover, a:visited, a:active, a:link
 p a:active
 {
 	position: relative;
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 p a:hover
 {
 	color: #FFFFFF;
-	background: #549eed;
+	background: rgb(6,163,218);
 }
 p a:hover::after
 {
@@ -114,8 +114,8 @@ p a:hover::after
 }
 ::selection
 {
-	background: rgba(255,163,123,1);
-	color: #549eed;
+	background: rgb(6,163,218);
+	color: rgb(6,163,218);
 }
 p::selection
 {
@@ -296,7 +296,7 @@ section
 {
 	width: 152px;
 	height: 54px;
-	background: #549eed;
+	background: rgb(6,163,218);
 	text-align: center;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -394,13 +394,13 @@ section
 .main_nav ul li a:hover,
 .main_nav ul li.active a
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 .book_button   /* 검색버튼 색깔조정 */
 {
 	width: 152px;
 	height: 54px;
-	background: #549eed;
+	background: rgb(6,163,218);
 	margin-left: 45px;
 	text-align: center;
 	-webkit-transition: all 200ms ease;
@@ -415,7 +415,7 @@ section
 }
 .book_button:hover a
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 .book_button a
 {
@@ -431,7 +431,7 @@ section
 {
 	width: 190px;
 	height: 54px;
-	background: #549eed;
+	background: rgb(6,163,218);
 	margin-left: 14px;
 }
 .header_phone span
@@ -444,7 +444,7 @@ section
 .header_phone span::selection
 {
 	background: #ffffff;
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 .hamburger
 {
@@ -464,7 +464,7 @@ section
 }
 .hamburger:hover i
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 
 /*********************************
@@ -508,7 +508,7 @@ section
 }
 .menu_close:hover i
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 .menu_nav ul li:not(:last-of-type)
 {
@@ -523,7 +523,7 @@ section
 }
 .menu_nav ul li a:hover
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 .menu_nav ul li a span
 {
@@ -566,11 +566,11 @@ section
 }
 .menu_book a:hover
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 .menu_book a:hover::after
 {
-	background: #549eed;
+	background: rgb(6,163,218);
 }
 .menu_phone
 {
@@ -718,7 +718,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 152px;
 	height: 54px;
-	background: #549eed;
+	background: rgb(6,163,218);
 	font-size: 14px;
 	font-weight: 500;
 	color: #ffffff;
@@ -767,7 +767,7 @@ hr {
 	margin-top: -30px;
 	border-radius: 12px;
 	height: 110px;
-	background-color: #549eed;
+	background-color: rgb(6,163,218);
 }
 #user_name {
 	font-size: 24px;
@@ -853,7 +853,7 @@ th, td {
 	right: 0;
 	width: 100px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	color: #ffffff;
 	border: none;
 	outline: none;
@@ -886,7 +886,7 @@ th, td {
 }
 .sidebar_list ul li a:hover
 {
-	color: #549eed;
+	color: rgb(6,163,218);
 }
 
 /*********************************
