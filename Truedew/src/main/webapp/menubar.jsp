@@ -30,6 +30,11 @@
         position: absolute;
         left:60%;
     }
+    
+        #truelogo{
+        width: 107px !important;
+		height: 50px !important;
+    }
 
 </style>
 
@@ -47,7 +52,7 @@
     
         <header class="header">
             <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                <div class="logo"><a href="Main.jsp">청년이슬</a></div>
+                <div id="truelogo"><a href="Main.jsp"><img src="./images/truelog.png"></a></div>
                 <div class="ml-auto d-flex flex-row align-items-center justify-content-start">
                     <nav class="main_nav">
                         <ul class="d-flex flex-row align-items-start justify-content-start">

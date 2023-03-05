@@ -25,14 +25,10 @@
 <link rel="stylesheet" type="text/css" href="styles/booking.css">
 <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/linefont.css">
+<link rel="stylesheet" type="text/css" href="styles/centerlist.css">
 
 <style>
-#delete_mark{
-		left:80%;
-		width: 50px;
-		height: 50px;
 
-	}
 </style>
 
 </head>
@@ -127,35 +123,30 @@
 						<div>
 						
 						
-							<% for(int i=0; i< list.size();i=i+3){ %>
+										<%for(int i=0; i< list.size();i=i+3){ %>
 					<!-- Booking Slider -->
-					
-					<div> <!-- class="booking_slider_container" -->
+					<div > <!-- class="booking_slider_container" -->
 						<div class="owl-carousel owl-theme booking_slider">
+					
 						
 						<%for(int j=i;j<i+3;j++) {
 							if(j<list.size()){%>
 							<!-- Slide -->
 							<div>
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(<%=list.get(j).getCenter_pic()%>)"></div>
-								
-								<div class="booking_overlay trans_200"></div>
-								<div class="booking_item_content">
-									<div class="booking_item_list">
-										<ul>
-											<li><%=list.get(j).getCenter_tel()%></li>
-											<li><%=list.get(j).getLocal_gu()%></li>
-											<li><%=list.get(j).getCenter_runtime()%></li>
-										</ul>
-									</div>
-								</div>
-								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
-								<!-- <div class="button button_1"><a href="reservation.jsp">예약하기</a></div> -->
-								<div class="booking_link"><a href="reservation.jsp">예약하기</a></div>
-							</div>
-									<div id="delete_mark"><a href="deleteMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>"><img src="./images/ic_close.svg"></a></div>
-							</div>
+								<div class="localcenter">
+								<a href="SpaceList?local_do=<%=list.get(0).getLocal_do().substring(0,2)%>&center_list=<%=list.get(j).getCenter_name()%>">
+								<img class="centerimg" src="<%=list.get(j).getCenter_pic()%>"></a>
+	                      		</div>
+								<hr>
+                     			 <span class="ctname"><b><%=list.get(j).getCenter_name()%></b></span>
+								  
+								  <div class="insert_mark">
+		                          <a href="deleteMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>"><img src="./images/ic_close.svg"></a>
+			                      </div>
+			                 
+			                 </div><!--booking_item div 끝-->
+			                 </div><!--센터목록 div끝-->
 				
 					<%} else{ %>
 						<div class="booking_item"></div>
@@ -164,6 +155,9 @@
 					</div>
 					<br><br>
 				<%} %>
+						
+						
+				
 					
 				
 						</div>
