@@ -73,7 +73,7 @@ p a
 	display: inline;
 	position: relative;
 	color: inherit;
-	border-bottom: solid 1px #ffa07f;
+	border-bottom: solid 1px rgb(6,163,218);
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -107,7 +107,7 @@ p a:active
 p a:hover
 {
 	color: #FFFFFF;
-	background: #ffa07f;
+	background: rgb(6,163,218);
 }
 p a:hover::after
 {
@@ -115,7 +115,7 @@ p a:hover::after
 }
 ::selection
 {
-	background: rgba(255,163,123,1);
+	background: rgb(6,163,218);
 	color: #ffffff;
 }
 p::selection
@@ -370,13 +370,13 @@ section
 .main_nav ul li a:hover,
 .main_nav ul li.active a
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .book_button
 {
 	width: 152px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	margin-left: 45px;
 	text-align: center;
 	-webkit-transition: all 200ms ease;
@@ -391,7 +391,7 @@ section
 }
 .book_button:hover a
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .book_button a
 {
@@ -407,7 +407,7 @@ section
 {
 	width: 190px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	margin-left: 14px;
 }
 .header_phone span
@@ -420,7 +420,7 @@ section
 .header_phone span::selection
 {
 	background: #ffffff;
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .hamburger
 {
@@ -440,7 +440,7 @@ section
 }
 .hamburger:hover i
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 
 /*********************************
@@ -484,7 +484,7 @@ section
 }
 .menu_close:hover i
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .menu_nav ul li:not(:last-of-type)
 {
@@ -499,7 +499,7 @@ section
 }
 .menu_nav ul li a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .menu_nav ul li a span
 {
@@ -542,11 +542,11 @@ section
 }
 .menu_book a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .menu_book a:hover::after
 {
-	background: #ffa37b;
+	background: rgb(6,163,218);
 }
 .menu_phone
 {
@@ -694,7 +694,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 152px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	font-size: 14px;
 	font-weight: 500;
 	color: #ffffff;
@@ -746,7 +746,7 @@ input[type=number]::-webkit-outer-spin-button
 	left: 15px;
 	width: calc(100% - 30px);
 	height: 65px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	text-align: center;
 	cursor: pointer;
 }
@@ -901,7 +901,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 152px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	text-align: center;
 	margin-top: 26px;
 	-webkit-transition: all 200ms ease;
@@ -1083,7 +1083,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 152px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	margin-top: 23px;
 	border: none;
 	outline: none;

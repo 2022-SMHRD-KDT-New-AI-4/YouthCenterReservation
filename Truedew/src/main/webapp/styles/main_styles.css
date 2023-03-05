@@ -76,7 +76,7 @@ p a
 	display: inline;
 	position: relative;
 	color: inherit;
-	border-bottom: solid 1px #ffa07f;
+	border-bottom: solid 1px rgb(6,163,218);
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -110,7 +110,7 @@ p a:active
 p a:hover
 {
 	color: #FFFFFF;
-	background: #ffa07f;
+	background: rgb(6,163,218);
 }
 p a:hover::after
 {
@@ -118,7 +118,7 @@ p a:hover::after
 }
 ::selection
 {
-	background: rgba(255,163,123,1);
+	background: rgb(6,163,218);
 	color: #ffffff;
 }
 p::selection
@@ -357,13 +357,13 @@ section
 .main_nav ul li a:hover,
 .main_nav ul li.active a
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .book_button
 {
 	width: 152px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	margin-left: 45px;
 	text-align: center;
 	-webkit-transition: all 200ms ease;
@@ -378,7 +378,7 @@ section
 }
 .book_button:hover a
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .book_button a
 {
@@ -394,7 +394,7 @@ section
 {
 	width: 190px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	margin-left: 14px;
 }
 .header_phone span
@@ -407,7 +407,7 @@ section
 .header_phone span::selection
 {
 	background: #ffffff;
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .hamburger
 {
@@ -427,7 +427,7 @@ section
 }
 .hamburger:hover i
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 
 /*********************************
@@ -471,7 +471,7 @@ section
 }
 .menu_close:hover i
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .menu_nav ul li:not(:last-of-type)
 {
@@ -486,7 +486,7 @@ section
 }
 .menu_nav ul li a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .menu_nav ul li a span
 {
@@ -529,11 +529,11 @@ section
 }
 .menu_book a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .menu_book a:hover::after
 {
-	background: #ffa37b;
+	background: rgb(6,163,218);
 }
 .menu_phone
 {
@@ -590,7 +590,7 @@ section
 .home_slider_custom_dots li.active,
 .home_slider_custom_dots li:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .home_slider .slide
 {
@@ -711,7 +711,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 150px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	font-size: 14px;
 	font-weight: 500;
 	color: #ffffff;
@@ -766,7 +766,7 @@ input[type=number]::-webkit-outer-spin-button
 .icon_box:hover .svg rect,
 .icon_box:hover .svg polygon
 {
-	fill: #ffa37b;
+	fill: rgb(6,163,218);
 }
 .icon_box_title
 {
@@ -890,7 +890,7 @@ input[type=number]::-webkit-outer-spin-button
 }
 .testimonial_title a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 .testimonial_text
 {
@@ -921,7 +921,7 @@ input[type=number]::-webkit-outer-spin-button
 }
 .testimonial_author a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 
 /*********************************
@@ -967,7 +967,7 @@ input[type=number]::-webkit-outer-spin-button
 	left: 15px;
 	width: calc(100% - 30px);
 	height: 65px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	text-align: center;
 }
 .booking_link a
@@ -1032,7 +1032,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 116px;
 	height: 26px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	text-align: center;
 }
 .blog_date a
@@ -1057,7 +1057,7 @@ input[type=number]::-webkit-outer-spin-button
 }
 .blog_title a:hover
 {
-	color: #ffa37b;
+	color: rgb(6,163,218);
 }
 
 /*********************************
@@ -1185,7 +1185,7 @@ input[type=number]::-webkit-outer-spin-button
 {
 	width: 152px;
 	height: 54px;
-	background: #ffa37b;
+	background: rgb(6,163,218);
 	margin-top: 23px;
 	border: none;
 	outline: none;
