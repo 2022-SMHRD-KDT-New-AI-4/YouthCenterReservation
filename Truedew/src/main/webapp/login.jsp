@@ -12,100 +12,82 @@
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
+<link rel="stylesheet" type="lllltext/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/blog.css">
-<link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles/linefont.css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
+
+<style>
+
+#logintitle{
+	position:relative;
+	bottom:20%;
+
+}
+
+</style>
 </head>
 <body>
 
 <div class="super_container">
 	
-	<!-- Header -->
+
+	
 	<header id="headers"></header>
 
+	   <!-- Home -->
 
-	<!-- Home -->
-	<div class="home" id="homehome">
-		<div class="background_image" id="bg_img" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
-		<div class="home_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="home_content text-center"><br><br><br><br><br><br><br><br><br><br><br><br>
-							
-							<div class="booking_form_container">
-								<form action="#" class="booking_form" id="booking_form">
-									<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
-										<div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap" id="res_search">
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+	   <div class="home">
+		<div class="home_slider_container">
+		   <div class="owl-carousel owl-theme home_slider">
+			  
+			  <!-- Slide -->
+			  <div class="slide">
+				 <div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3D)"></div>
+				 <div class="home_container">
+					<div class="container">
+					   <div class="row">
+						  <div class="col">
+							 <div id="logintitle" class="home_content text-center">
+								<div  class="home_title">로그인</div>
+								<div class="booking_form_container">
+								  
+
+
+				 <form action="loginService_gen" method="post">
+                <div><input name="user_id" type="text" placeholder="아이디" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
+                <div><input name="user_pw" type="password" placeholder="비밀번호" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
+                <div><button type="submit" class="booking_button trans_200">로그인</button></div>
+            	</form>
+
+				<br>
+				<div>
+				<span style="color:white">계정이 없으신가요? &nbsp;<a style="color:rgb(225, 247, 254)" href="join.jsp">회원가입</a></span>
 				</div>
-			</div>
+
+
+								</div>
+							 </div>
+						  </div>
+					   </div>
+					</div>
+				 </div>
+			  </div>
+			  
+		   </div>
+		   
 		</div>
-
-	<div class="home">
-		
-		<div class="home_container" style="color:black">
-			
-				
-						<div class="home_content text-center">
-							<div class="home_title" style="color:black" margin="text-center;" >로그인</div>
-							
-									<br>
-			<br>
-			<br>
-			<form action="loginService_gen" method="post">
-				<div><input name="user_id" type="text" placeholder="아이디를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
-				<div><input name="user_pw" type="password" placeholder="비밀번호를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:600px;height:70px;font-size:30px;"></div><br>
-				<div><button type="submit" class="booking_button trans_200">로그인</button></div>
-			</form>
-        <br><br><br><br><br><br><br><br><br><br>
-        
-        
-        <p style="font-size : 30px; color:white">계정이 없으신가요 ? <a href="join.jsp" style="color:skyblue">회원가입</a></p>
-        <script>
-								
+	 </div>
 	
-     // 메뉴바 import 시작
+	
 
-        async function fetchHtmlAsText(url) {
-            return await (await fetch(url)).text();
-            }
+	<!-- Footer -->
 
-        async function importPage(target) {
-            document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.jsp');
-            }
-
-        importPage('menubar');
-
-        // 메뉴바 import 끝
-        </script>
-        </div>
-        <div class="social-login">
-          <div class="clearfix"></div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-	<!-- Blog -->
-    <footer id="footers"></footer>
+	<footer id="footers"></footer>
+	
 </div>
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -120,8 +102,12 @@
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="js/custom.js"></script>
 <script src="js/listevent.js"></script>
-<script src="js/blog.js"></script>
 <script src="js/htmlplus.js"></script>
+
+
 </body>
 </html>
