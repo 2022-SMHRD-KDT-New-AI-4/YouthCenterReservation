@@ -24,6 +24,7 @@
 <link rel="stylesheet" type="text/css" href="styles/myreserv.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
 </head>
 <body>
 

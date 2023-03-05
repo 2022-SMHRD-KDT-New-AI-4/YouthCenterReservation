@@ -24,6 +24,7 @@
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/booking.css">
 <link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
 #delete_mark{

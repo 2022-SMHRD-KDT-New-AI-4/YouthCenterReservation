@@ -27,6 +27,7 @@
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/tabstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
 #local_ysh{	

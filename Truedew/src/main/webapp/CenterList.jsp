@@ -26,8 +26,13 @@
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/elements.css">
 <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
+<link rel="stylesheet" type="text/css" href="styles/centerlist.css">
+<link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/white-theme.css">
 
 <style>
+
 
 	#localname{
 		font-size: 70px;
@@ -37,7 +42,7 @@
 	}
 	
 	#fac{
-		text-align: center;
+		margin: center;
 		left:17%;
 	}
 
@@ -45,13 +50,40 @@
 		margin-top: 10px;
 	}
 	
-		#insert_mark{
-		left:80%;
-		margin-top: 10px;
-		width: 50px;
-		height: 50px;
-
+	#peoplelogo{
+	
+	width:70px;
+	height:70px;
+	margin-bottom:20px;
+	
+	
 	}
+	
+	#mapbtn{
+    position: relative;
+    margin-left: 90%;
+    margin-bottom:10px;
+   }
+ 	
+ 	.ckboxborder{
+ 	border: 1px solid rgb(6,163,218);
+ 	border-radius: 5px;
+ 	display: inline-block; /* 가로로 나열하기 위해 block레벨 요소를 inline-block레벨로 전환 */
+    width: 150px;  /*영역 크기 지정 안해주면 inline 레벨처럼 내용물 만큼만 차지하기 때문에 크기 지정 */
+    height: 50px;  /*영역 크기 지정 안해주면 inline 레벨처럼 내용물 만큼만 차지하기 때문에 크기 지정 */
+   /*  background-color:rgb(225, 247, 254); */
+    margin-left:10px;
+ 	}
+
+        #facontainer {
+           
+            width: 800px;
+            height: 70px;
+            margin: 0 auto; /* container 영역을 브라우저에서 가운데 정렬하기 위해 auto설정 */
+            text-align: center; /* inline-block화 된 div들을 텍스트 마냥 center로 정렬*/
+        }
+
+
 
 </style>
 </head>
@@ -124,8 +156,14 @@
 		
 	%>
 	<!-- Booking -->
-	<div id="localname"><%=list.get(0).getLocal_do().substring(0,2)%></div>
+		
+	<div id="localname">
+	<img id="peoplelogo" src="./images/peoplelogo.png">
+	<span><%=list.get(0).getLocal_do().substring(0,2)%></span>
+	</div>
 
+	
+	
 	<div class="col-lg-8" id="fac">
 	<!-- Accordion -->
 	<div class="accordions">
@@ -135,15 +173,43 @@
 			<div id="fac_div" class="elements_title" style="color:black; text-align: center; font-size: 20px">
 				<form action="FacService" method="post" onsubmit="return facCheck();">
 				<div id="fac_div2">
+				<hr>
 				<input class="checkGoods" type="hidden" name="local_do" value="<%=list.get(0).getLocal_do().substring(0,2)%>" readonly/>
+				
+				<div id="facontainer" class='box-group solid'>
+				<div class="ckboxborder">
+				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_1 value="빔프로젝트">
+				<label for='checkbox_solid_border_1'>빔프로젝트</label>
+				</div>
+				
+				<div class="ckboxborder">
+				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_2 value="PC">
+				<label for='checkbox_solid_border_2'>PC</label>
+				</div>
+				
+				<div class="ckboxborder">
+				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_3 value="프린터">
+				<label for='checkbox_solid_border_3'>프린터</label>
+				</div>
+				
+				<div class="ckboxborder">
+				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_4 value="마이크">
+				<label for='checkbox_solid_border_4'>마이크</label>
+				</div>
+				
+				</div><!-- box-group solid border 닫음 -->
+				
+				</div><!-- fac_div2 닫음 -->
+				<input id="facsearch" type="button" class="booking_button trans_200" value="검색">
+				<hr>
+				</form>
+
+<%-- 				<input class="checkGoods" type="hidden" name="local_do" value="<%=list.get(0).getLocal_do().substring(0,2)%>" readonly/>
 				<input class="checkGoods" type="checkbox" name="fac_code" value="빔프로젝트">빔프로젝트
+				
 				<input class="checkGoods" type="checkbox" name="fac_code" value="PC">PC
 				<input class="checkGoods" type="checkbox" name="fac_code" value="프린터">프린터
-				<input class="checkGoods" type="checkbox" name="fac_code" value="마이크">마이크
-				</div>
-				<input id="facsearch" type="button" class="booking_button trans_200" value="검색">
-				</form>
-				<div class="button button_4"><a href="#">지도로 보기</a></div>
+				<input class="checkGoods" type="checkbox" name="fac_code" value="마이크">마이크 --%>
 
 
 			</div>
@@ -152,6 +218,10 @@
 	</div>
 
 	<div class="booking">
+	    <div id="mapbtn">
+    	<a href="#"><img style="height:50px;width:50px" src="./images/location.png"></a>
+    	</div>
+    	
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -160,30 +230,22 @@
 					<!-- Booking Slider -->
 					<div > <!-- class="booking_slider_container" -->
 						<div class="owl-carousel owl-theme booking_slider">
+					
 						
 						<%for(int j=i;j<i+3;j++) {
 							if(j<list.size()){%>
 							<!-- Slide -->
 							<div>
 							<div class="booking_item">
-								<div class="background_image" style="background-image:url(<%=list.get(j).getCenter_pic()%>)"></div>
-								<div class="booking_overlay trans_200"></div>
-								<div class="booking_item_content">
-									<div class="booking_item_list">
-										<ul>
-											<li><%=list.get(j).getCenter_tel()%></li>
-											<li><%=list.get(j).getLocal_gu()%></li>
-											<li><%=list.get(j).getCenter_runtime()%></li>
-										</ul>
-									</div>
-								</div>
-								<div class="booking_price"><%=list.get(j).getCenter_name()%></div>
-								<div class="booking_link"><a href="SpaceList?local_do=<%=list.get(0).getLocal_do().substring(0,2)%>&center_list=<%=list.get(j).getCenter_name()%>">예약하기</a></div>
-							</div>
-							
-							<%-- <%if(loginM != null){ %> --%>
-									<div id="insert_mark">
-									<a href="insertMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>&local_do=<%=list.get(0).getLocal_do().substring(0,2)%>">
+								<div class="localcenter">
+								<a href="SpaceList?local_do=<%=list.get(0).getLocal_do().substring(0,2)%>&center_list=<%=list.get(j).getCenter_name()%>">
+								<img class="centerimg" src="<%=list.get(j).getCenter_pic()%>"></a>
+	                      		</div>
+								<hr>
+                     			 <span class="ctname"><b><%=list.get(j).getCenter_name()%></b></span>
+								  
+								  <div class="insert_mark">
+		                          <a href="insertMarkService?center_id=<%=list.get(j).getCenter_id()%>&user_id=<%=loginM.getUser_id()%>&local_do=<%=list.get(0).getLocal_do().substring(0,2)%>">
 									
  									<%
  									MarkVO vo = new MarkVO(list.get(j).getCenter_id(), loginM.getUser_id());
@@ -194,11 +256,10 @@
 									<img src="./images/full_star.png">
 									<%} %>
 									</a>
-									</div>
-							<%-- <%} %> --%>
-							</div>
-							
-							
+			                      </div>
+			                 
+			                 </div><!--booking_item div 끝-->
+			                 </div><!--센터목록 div끝-->
 				
 					<%} else{ %>
 						<div class="booking_item"></div>
@@ -212,75 +273,11 @@
 			</div>
 		</div>
 	</div>
-<%--		 
-		 <div class="blog_post">
-		 	<div class="blog_post_image">
-		 		<img src=<%= list.get(i).getShared_space_pic()%> alt="">
-		 	</div>
-			<div class="blog_post_content">
-		 		<div class="blog_post_title"><a href="#"><%=list.get(i).getShared_space_name() %></a></div>
-		 		<div class="blog_post_info">
-		 	</div>
-		 	<div class="blog_post_text">
-		 		<p><%=list.get(i).getLocal_do() %></p>
-		 		<p>사용 가능 인원 : <%=list.get(i).getPersons() %></p>
-				<p><%=list.get(i).getSpace_info() %></p>
-			</div>
-			<div class="button blog_post_button"><a href="#">예약하기</a></div> 
-		</div>
-			<%} %> --%>
 
 
 
 
-							<!-- Slide -->
-							<!-- <div class="booking_item">
-								<div class="background_image" style="background-image:url(images/booking_2.jpg)"></div>
-								<div class="booking_overlay trans_200"></div>
-								<div class="booking_item_content">
-									<div class="booking_item_list">
-										<ul>
-											<li>27 m² Patio</li>
-											<li>Balcony with view</li>
-											<li>Garden / Mountain view</li>
-											<li>Flat-screen TV</li>
-											<li>Air conditioning</li>
-											<li>Soundproofing</li>
-											<li>Private bathroom</li>
-											<li>Free WiFi</li>
-										</ul>
-									</div>
-								</div>
-								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="booking.html">Deluxe Room</a></div>
-							</div> -->
-
-							<!-- Slide -->
-							<!-- <div class="booking_item">
-								<div class="background_image" style="background-image:url(images/booking_3.jpg)"></div>
-								<div class="booking_overlay trans_200"></div>
-								<div class="booking_item_content">
-									<div class="booking_item_list">
-										<ul>
-											<li>27 m² Patio</li>
-											<li>Balcony with view</li>
-											<li>Garden / Mountain view</li>
-											<li>Flat-screen TV</li>
-											<li>Air conditioning</li>
-											<li>Soundproofing</li>
-											<li>Private bathroom</li>
-											<li>Free WiFi</li>
-										</ul>
-									</div>
-								</div>
-								<div class="booking_price">$120/Night</div>
-								<div class="booking_link"><a href="booking.html">Single Room</a></div>
-							</div> -->
-
-
-
-
-
+</div>
 	<footer id="footers"></footer>
 
 </div>

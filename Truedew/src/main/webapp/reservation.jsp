@@ -31,6 +31,7 @@
 <link rel="stylesheet" type="text/css" href="styles/common.css">
 <link rel="stylesheet" type="text/css" href="styles/white-theme.css">
 <link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
 #d-flex {

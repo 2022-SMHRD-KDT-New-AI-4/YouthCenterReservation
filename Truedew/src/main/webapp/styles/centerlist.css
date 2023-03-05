@@ -1,0 +1,22 @@
+   /* 민지가 수정한 부분 */
+   .localcenter{
+    height:300px;
+   }
+
+   .centerimg{
+    height:100%;
+
+   }
+
+   .ctname{
+    font-size: 15px;
+    color:black;
+   }
+
+   .insert_mark{
+    position: absolute;
+    top:81%;  
+    left:85%;
+      width: 40px;
+      height: 40px;
+   }
