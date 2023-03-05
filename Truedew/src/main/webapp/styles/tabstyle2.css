@@ -1,0 +1,152 @@
+/*탭 스타일  */
+/*
+ul.list {
+	list-style-type: none;
+	margin: 60px;
+	margin-right: -20px;
+	padding-left: 360px;
+	border-bottom: 1px solid #ccc;
+}
+
+ul.list::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.tab-button {
+	display: block;
+	padding: 10px 70px 10px 20px;
+	float: left;
+	margin-right: -10px;
+	margin-bottom: -10px;
+	color: grey;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ .active {
+	border-top: 3px solid orange;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid white;
+	border-left: 1px solid #ccc;
+	color: black;
+	margin-top: -12px;
+} 
+
+.tab-content {
+	display: none;
+	padding: 10px;
+	float: left;
+}
+
+.show {
+	display: block;
+	margin-left: 400px;
+	float: left;
+	width: 900px;
+	height: 200px;
+} */
+ul.list {
+	list-style-type: none;
+	margin-left: 10%;
+	margin-top : 20px;
+	padding: 0;
+	width: 80%;
+	border-bottom: 1px solid #000000;
+}
+ul.list::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.tab-button {
+	display: block;
+	padding: 10px 20px 10px 20px;
+	float: left;
+	/* margin-right: -1px; */
+	margin-bottom: -1px;
+	color: rgb(166, 163, 163);
+	text-decoration: none;
+	cursor: pointer;
+	width:150px;
+	text-align: center;
+
+	border-top: 1px solid rgb(166, 163, 163);
+	border-right: 1px solid rgb(166, 163, 163);
+	border-left: 1px solid rgb(166, 163, 163);
+	z-index: 1;
+	position: relative;
+}
+
+#spacebtn {
+	
+	margin-right:-1px;
+}
+
+
+#reviewbtn {
+	margin-left:-1px;
+
+}
+
+.active {
+	border-top: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid white;
+	border-left: 1px solid #000000;
+	color: black;
+	z-index: 2;
+	position: relative;
+	/* margin-top: -2px; */
+}
+.tab-content {
+	margin-top: 20px;
+	display: none;
+	padding: 20px;
+}
+.show {
+	display: block;
+	margin-left: 10%;
+	float: left;
+ 	width: 80%;
+/*	height: 200px; */
+}
+.blog_post_image {
+	width: 400px;
+	height: 300px;
+	border: 1px;
+	float: left;
+	margin-right:40px;
+}
+
+#title.blog_post_title {
+	margin-right: 50px;
+	display: inline-block;
+	width: 450px;
+	height: 167px;
+}
+
+#br {
+	margin-top: 10px;
+}
+
+.blog_post {
+	width: 100%;
+	height: 300px;
+	margin-top:80px;
+}
+.tab-content show center-list {
+	width:850px;
+	height:200px;
+}
+#centerTopName {
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.spacename{
+	color:black;
+	font-size: 40px;
+}

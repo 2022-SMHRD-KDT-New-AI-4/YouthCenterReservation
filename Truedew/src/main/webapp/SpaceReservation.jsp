@@ -23,18 +23,20 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/blog2.css">
+<link rel="stylesheet" type="text/css" href="styles/spaceblog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
-<link rel="stylesheet" type="text/css" href="styles/tabstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/tabstyle2.css">
 <link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
 #local_ysh{	
-	width:400px;
-	height:167px;
+	width:700px;
+	height:200px;
+    color:black;
+    font-size:20px;
+    margin-top:10px;
 }
-
 /* .show{
 border: 1px solid rgb(209, 205, 205);
 margin-top: 10px;
@@ -46,6 +48,28 @@ margin-top: 10px;
  bottom: 150px;
  
 }
+
+#localname{
+		font-size: 50px;
+		text-align: center;
+		margin-top: 50px;
+		color: black;
+	}
+
+#peoplelogo{
+	
+	width:70px;
+	height:70px;
+	margin-bottom:20px;
+	
+	}
+
+#chklogin{
+    position:absolute;
+    left:85%;
+    bottom:10px;
+}
+
 </style>
 
 </head>
@@ -120,12 +144,16 @@ if(loginM != null){
 	</div>
 
 
+    <div id="localname">
+        <img id="peoplelogo" src="./images/peoplelogo.png">
+        <span><%=center_info.getCenter_name()%></span>
+    </div>
 	<!-- 탭 메뉴 상단 시작 -->
 	<div class="blog">
 	 <ul class="list">
-        <li class="tab-button active">공간 예약</li>
-        <li class="tab-button">상세 정보</li>
-        <li class="tab-button">리뷰</li>
+        <li class="tab-button active" id="spacebtn">공간 예약</li>
+        <li class="tab-button" id="detailbtn">상세 정보</li>
+        <li class="tab-button" id="reviewbtn">리뷰</li>
       </ul>  
 
     
@@ -133,32 +161,38 @@ if(loginM != null){
     <!-- 탭 메뉴 상단 끝 -->
     
     <!-- 탭 메뉴 내용 시작 -->
-   
-	<div class="tab-content show">
-		 <h2 id="centerTopName"><%=center_info.getCenter_name()%></h2>
-		 <br>
-		 <br>
-		 <br>
-  		<form action="reservation.jsp">
-		 <%for (int i = 0; i < list.size();i++) {%>
+   <div class="tab-content show">
+
+<%for (int i = 0; i < list.size();i++) {%>
 		 <div class="blog_post">	
-        	<%--청년센터 리스트 --%>
-		 	<div class="blog_post_image"><img id="space_pic" src=<%= list.get(i).getShared_space_pic()%> alt=""></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<!--청년센터 리스트 -->
+		 	<div class="blog_post_image"><img id="space_pic" src=<%= list.get(i).getShared_space_pic()%> alt=""></div>
 		 	
 		 	<div class="blog_post_content">
-			<div class="blog_post_title" id="title"><a href="#"><%=list.get(i).getShared_space_name() %></a>
-			<br id="br">
-		 		<div id="local_ysh"><%=list.get(i).getLocal_do() %><br>
-		 		사용 가능 인원 &nbsp;: &nbsp;<%=list.get(i).getPersons() %><br>
-				<%=list.get(i).getSpace_info() %></div>
-			</div>
-			</div>
-				<div class="button blog_post_button" id="chklogin"><a href="javascript:checkLogin('val<%=i%>');">예약하기</a><input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>"></div>  
-			 <hr> 
-			</div>
-		<%} %>			
+			<div class="blog_post_title"><span class="spacename"><%=list.get(i).getShared_space_name() %></span>
+            </div>
+			
+		 		<div id="local_ysh">
+                <span><%=list.get(i).getSpace_info() %></span>
+                <br>
+                <br>
+                <span>사용 가능 인원 &nbsp;: &nbsp;<%=list.get(i).getPersons() %>명</span>
+                </div>
+			
+            </div>
+				<div class="button blog_post_button" id="chklogin">
+                    <a href="javascript:checkLogin('val<%=i%>');">예약하기</a>
+                    <input class="val<%= i %>" id="space_seq" type="hidden" name="shared_space_seq" value="<%=list.get(i).getShared_space_seq() %>">
+                </div>  
+			 <div><br><hr><br><br></div> 
 		</div>
-
+		<%} %>				
+	</div>
+   
+   
+   
+   
+   
 			<div class="tab-content">
 		 		<div class="blog_post_text" >
 		 			<img id="space_pic" src=<%= center_info.getCenter_pic()%> alt="">
