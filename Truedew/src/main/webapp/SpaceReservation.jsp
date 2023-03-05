@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Blog</title>
+<title>청년이슬 공간예약</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="The River template project">
@@ -70,6 +70,24 @@ margin-top: 10px;
     bottom:10px;
 }
 
+#detailct{
+    color:black;
+    font-size:25px;
+    
+}
+#detailinfo{
+    border: 1px solid rgb(166, 163, 163);
+    height:250px;
+    width:900px;
+    text-align:center;
+    margin-top:20px;
+    margin-left:40px;
+}
+
+td{
+    border: 1px solid rgb(166, 163, 163);
+    
+}
 </style>
 
 </head>
@@ -190,35 +208,43 @@ if(loginM != null){
 	</div>
    
    
-   
-   
-   
-			<div class="tab-content">
+   <div class="tab-content">
+                <div class="blog_post_title"><span class="spacename"><%=center_info.getCenter_name()%></span>
+                <br><br>
 		 		<div class="blog_post_text" >
-		 			<img id="space_pic" src=<%= center_info.getCenter_pic()%> alt="">
-		 			<table>
+                    <div class="blog_post_image"><img id="space_pic" src=<%= center_info.getCenter_pic()%> alt=""></div>
+                    <div class="blog_post_content" id="detailct">
+                    <table id="detailinfo">
 		 				<tr>
-		 					<td>운영기관 : </td>
+		 					<td>운영기관 </td>
 		 					<td><%=center_info.getCenter_name()%></td>
 		 				</tr>
 		 				<tr>
-		 					<td>공간이용시간 : </td>
+		 					<td>공간이용시간 </td>
 		 					<td><%=center_info.getCenter_runtime()%></td>
 		 				</tr>
 		 				<tr>
-		 					<td>주소 : </td>
-		 					<td><%=center_info.getLocal_gu()%></td>
+		 					<td>주소 </td>
+		 					<td><%=center_info.getLocal_do()%> <%=center_info.getLocal_gu()%></td>
 		 				</tr>
 		 				<tr>
-		 					<td>전화번호 : </td>
+		 					<td>전화번호 </td>
 		 					<td><%=center_info.getCenter_tel()%></td>
 		 				</tr>
 		 			</table>
-			</div>
-			</div>
+                    </div>
+			    </div>
+   
+   
+   
+			
+			
+			
+			
+			
 
       <div class="tab-content">
-        <p>리뷰정보입니다</p>
+        <span>리뷰정보입니다</span>
 	</div>
 </div>	
 	
