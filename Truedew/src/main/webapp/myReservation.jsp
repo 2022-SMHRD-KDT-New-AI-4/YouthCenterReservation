@@ -113,11 +113,6 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                      <br>
                      <h4 id="user_name"><%=loginM.getUser_name()%> 님의 최근 예약 내역입니다.</h4>
                      <br>
-                     <div class="res_search_date">
-                        <input type="date" id="search_date_1" value="first">
-                        <input type="date" id="search_date_2" value="last">
-                        <button>조회</button>
-                     </div>
                   </div>
                   <br>
                   <div>
