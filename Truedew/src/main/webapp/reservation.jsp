@@ -51,6 +51,26 @@ object-fit: cover;
 .blog_post_content{
 margin-left : 100px;
 }
+.ckboxborder{
+ 	border: 1px solid rgb(6,163,218);
+ 	border-radius: 5px;
+ 	display: inline-block; /* 가로로 나열하기 위해 block레벨 요소를 inline-block레벨로 전환 */
+    width: 150px;  /*영역 크기 지정 안해주면 inline 레벨처럼 내용물 만큼만 차지하기 때문에 크기 지정 */
+    height: 50px;  /*영역 크기 지정 안해주면 inline 레벨처럼 내용물 만큼만 차지하기 때문에 크기 지정 */
+   /*  background-color:rgb(225, 247, 254); */
+    margin-left:10px;
+ 	}
+
+        #facontainer {
+           
+            width: 800px;
+            height: 70px;
+            margin: 0 auto; /* container 영역을 브라우저에서 가운데 정렬하기 위해 auto설정 */
+            text-align: center; /* inline-block화 된 div들을 텍스트 마냥 center로 정렬*/
+        }
+       .clo-2{
+       background : red;
+       }
 </style>
 
 </head>

@@ -30,6 +30,7 @@
 <link rel="stylesheet" type="text/css" href="styles/centerlist.css">
 <link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/white-theme.css">
+<link rel="stylesheet" type="text/css" href="styles/common.css">
 
 <style>
 
