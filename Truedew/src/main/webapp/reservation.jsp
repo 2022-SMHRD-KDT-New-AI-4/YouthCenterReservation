@@ -116,6 +116,9 @@
    <!--선택한 공유공간 정보  -->
    <form action="reservationService" method="get">
    <div class="blog_post">
+   <div id="center_name">
+		<span ><%=svo.getCenter_name() %></span></div>
+        <div class="blog_post_image"><img id="space_img" src =<%=lvo.getShared_space_pic()%>>
         <div class="blog_post_image"><img src =<%=lvo.getShared_space_pic()%>>
         </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div class="blog_post_content">

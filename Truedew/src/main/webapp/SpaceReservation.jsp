@@ -97,6 +97,28 @@ color:white;
 	height:50px;
 	
 }
+
+
+#facinfo{
+
+width:80%;
+height:400px;
+font-size:25px;
+color:black;
+margin-top:10px;
+}
+
+
+#factb{
+    border: 1px solid rgb(166, 163, 163);
+    height:250px;
+    width:900px;
+    text-align:center;
+/*     margin-top:20px;
+    margin-left:40px; */
+}
+
+
 </style>
 
 </head>
@@ -217,7 +239,7 @@ if(loginM != null){
 			 <div><br><hr><br><br></div> 
 		</div>
 		<%} %>				
-	</div>
+	</div> <!-- tab-content1 끝 -->
    
    
    <div class="tab-content">
@@ -244,9 +266,18 @@ if(loginM != null){
 		 					<td><%=center_info.getCenter_tel()%></td>
 		 				</tr>
 		 			</table>
+		 			
+
+                    </div>
+			    </div>
+			    
+			    </div>
 		 			<hr>
-		 			<div>
-		 			<table id="detailinfo">
+   
+   		 			<div class="blog_post">
+   		 			<div class="blog_post_title"><span class="spacename">부대시설</span>	
+		 			<div id="facinfo">
+		 			<table id="factb">
 		 			<tr>
 		 			<%for(int i =0; i<list2.size();i++){%>
 		 			<td><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png">
@@ -256,24 +287,20 @@ if(loginM != null){
 		 			<%} %>
 		 			</table>	
 		 			</div>
-                    </div>
-			    </div>
-			    
-			    </div>
-   
-   
+        
+					</div>
    
 			
 			
-			
-			
-			
+				</div>	
+
+</div> <!-- tab-content2 끝 -->
+
+
 
       <div class="tab-content">
         <span>리뷰정보입니다</span>
-	</div>
-</div>	
-</div>
+	</div> <!-- tab-content3 끝 -->
 	
 <!-- 탭 메뉴 내용 끝 -->
 	 
