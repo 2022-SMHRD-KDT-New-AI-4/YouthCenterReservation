@@ -139,7 +139,6 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 							</tr>
 						</table>
 						<div class="info_detail_button">
-							<button class="change_button"><a href="#">회원 정보 수정</a></button>
 							<button class="out_button"><a href="#">회원 탈퇴</a></button>
 						</div>
 					</div>
