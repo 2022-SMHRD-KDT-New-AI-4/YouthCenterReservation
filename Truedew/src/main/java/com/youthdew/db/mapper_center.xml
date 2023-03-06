@@ -31,6 +31,11 @@
 	and b.fac_cnt>=1
 	</select>
 	
+	<!-- 센터정보 조회8 --> <!-- map에 필요한 정보 -->
+	<select id="SearchMap" resultType="CenterVO">
+		select * from tb_center
+	</select>
+	
 	<!--내가 선택한 공유공간 정보만 불러오기  -->
 	<select id="selectshared_space" resultType="SpaceListVO" parameterType="int">
 	select * from tb_shared_space where shared_space_seq=#{share_seq}

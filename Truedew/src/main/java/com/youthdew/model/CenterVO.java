@@ -128,8 +128,9 @@ public class CenterVO {
 
 	@Override
 	public String toString() {
-		return "CenterVO [center_name=" + center_name + ", local_gu=" + local_gu + ", center_tel=" + center_tel
-				+ ", center_pic=" + center_pic + "]";
+		return "CenterVO [center_id=" + center_id + ", center_name=" + center_name + ", local_do=" + local_do
+				+ ", local_gu=" + local_gu + ", center_runtime=" + center_runtime + ", center_tel=" + center_tel
+				+ ", lat=" + lat + ", lng=" + lng + ", center_pic=" + center_pic + "]";
 	}
 	
 	

@@ -45,4 +45,12 @@ public class SpaceListDAO {
 		session.close();
 		return (ArrayList<CenterVO>) list;
 	}
+	
+	// 센터 지도 리스트
+	public List<CenterVO> SearchMap() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<CenterVO> list = session.selectList("SearchMap");
+		session.close();
+		return (List<CenterVO>)list;
+	}
 }
