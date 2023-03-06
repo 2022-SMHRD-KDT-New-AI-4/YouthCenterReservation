@@ -160,6 +160,8 @@
 	<!-- map list 가져오기 -->
 	<form action="mapCenterService" id="mapform">
 		<input type="hidden" value="<%=list.get(0).getCenter_name()%>" id="center_name">
+		<input type="hidden" value="<%=list.get(0).getLocal_do()%>" id="local_do">
+		<input type="hidden" value="<%=list.get(0).getLocal_gu()%>" id="local_gu">
 	</form>
 	
 	

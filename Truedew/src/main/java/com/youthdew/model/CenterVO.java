@@ -19,6 +19,13 @@ public class CenterVO {
 	public CenterVO() {
 		super();
 	}
+	
+	public CenterVO(String center_name, String local_do, String local_gu) {
+		
+		this.center_name = center_name;
+		this.local_do = local_do;
+		this.local_gu = local_gu;
+	}
 
 	public CenterVO(String local_do) {
 		super();
