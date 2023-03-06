@@ -36,9 +36,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="styles/linefont.css"> -->
 
 <style>
-#d-flex {
-	
-}
+
 #selectedDate{
 font-size : 30px;
 text-align :center;

@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
+
 #container_d-flex {
 	width:1100px;
 	margin-left: 150px;

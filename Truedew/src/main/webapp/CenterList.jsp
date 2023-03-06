@@ -112,7 +112,7 @@
 										<div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap">
 											<div>
 												<select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
-													<option>지역(시/도)</option>
+													<option value="">지역(시/도)</option>
 													<option value="서울">서울</option>
 													<option value="인천">인천</option>
 													<option value="경기">경기</option>
