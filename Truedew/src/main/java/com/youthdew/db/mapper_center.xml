@@ -80,5 +80,13 @@
    where a.center_id = b.center_id
    and a.shared_space_seq=#{shared_space_seq}
     </select>
+   
+    <!--센터 부대시설 조회  -->
+	<select id="SelectcenterFacility" resultType="CenterVO" parameterType="String">
+	select a.center_id, a.center_name, b.center_fac_seqc, b.fac_code, b.fac_cnt 
+	from tb_center a, tb_center_facility b 
+	where a.center_id=b.center_id
+	and a.center_id=#{center_id} 
+	</select>
 
 </mapper>

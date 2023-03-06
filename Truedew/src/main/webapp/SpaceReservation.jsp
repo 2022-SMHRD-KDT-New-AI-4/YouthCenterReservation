@@ -88,6 +88,15 @@ td{
     border: 1px solid rgb(166, 163, 163);
     
 }
+/* #first{
+background-color:rgb(6,163,218);
+color:white;
+} */
+#facility_img{
+	width:50px;
+	height:50px;
+	
+}
 </style>
 
 </head>
@@ -102,6 +111,9 @@ if(loginM != null){
 
 	ArrayList<SpaceListVO> list=(ArrayList<SpaceListVO>)request.getAttribute("list");
 	CenterVO center_info=(CenterVO)request.getAttribute("center_info"); 
+	String Center_id = center_info.getCenter_id();
+	SpaceListDAO dao = new SpaceListDAO();
+	ArrayList<CenterVO> list2 = dao.SelectcenterFacility(Center_id);
 
 	
 %>
@@ -232,7 +244,21 @@ if(loginM != null){
 		 					<td><%=center_info.getCenter_tel()%></td>
 		 				</tr>
 		 			</table>
+		 			<hr>
+		 			<div>
+		 			<table id="detailinfo">
+		 			<tr>
+		 			<%for(int i =0; i<list2.size();i++){%>
+		 			<td><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png">
+		 			<td id="first"><%=list2.get(i).getFac_code()%></td>
+		 			<td><%=list2.get(i).getFac_cnt()%>개</td>
+		 			</tr>
+		 			<%} %>
+		 			</table>	
+		 			</div>
                     </div>
+			    </div>
+			    
 			    </div>
    
    
@@ -247,6 +273,7 @@ if(loginM != null){
         <span>리뷰정보입니다</span>
 	</div>
 </div>	
+</div>
 	
 <!-- 탭 메뉴 내용 끝 -->
 	 
