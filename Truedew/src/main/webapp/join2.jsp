@@ -85,7 +85,7 @@
         // callbackUrl = 메인페이지 , 클라이언트 아이디 바꾸지말기. 
         var naverLogin = new naver.LoginWithNaverId(
                 {
-                    clientId: "LlSvD47T4y2jbzBt5MZ3", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
+                    clientId: "QP0QMGrvcWsotET3DOQ1", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
                     callbackUrl: "http://localhost:8081/Truedew/join.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
                     isPopup: false,
                     callbackHandle: true
