@@ -136,7 +136,36 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
 								<br><%=list.get(i).getUse_time().substring(0,5)%><%=list.get(i).getUse_time().substring(list.get(i).getUse_time().lastIndexOf("~"))%>                       
                            </td>
                            <td>예약상태</td>
-                           <td><a href="deleteReserveService?reserv_seq=<%=list.get(i).getReserv_seq()%>">취소</a></td>
+                           <td>
+                           <%
+                           		LocalDate now1 = LocalDate.now();
+                           		String formatedNow1 = now1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                           		
+                           		String[] revArrDate1 = (list.get(i).getReserv_date().substring(0, 10)).split("-");
+                       			String[] revNowDate1 = formatedNow1.split("-");
+                       			
+                       				// 1 이후 날짜
+                                    // -1 이전 날짜
+                                    // 0 동일날짜
+                       				int revYY = Integer.parseInt(revArrDate1[0]);
+                       				int revMM = Integer.parseInt(revArrDate1[1]);
+                       				int revDD = Integer.parseInt(revArrDate1[2]);
+                       				
+                       				LocalDate date3 = LocalDate.of(revYY, revMM, revDD);
+                           			
+                       				int nowYY = Integer.parseInt(revNowDate1[0]);
+                       				int nowMM = Integer.parseInt(revNowDate1[1]);
+                       				int nowDD = Integer.parseInt(revNowDate1[2]);
+                       				LocalDate date4 = LocalDate.of(nowYY, nowMM, nowDD);
+                       				
+                           			int resultC = date3.compareTo(date4);                           		
+                           %>
+                           		<% if(resultC < 0) {%>                       				
+                    				취소 불가
+                           		<% } else { %>
+                           			<a href="deleteReserveService?reserv_seq=<%=list.get(i).getReserv_seq()%>">취소</a>
+                           		<%} %>
+                           </td>
                            <td><%=list.get(i).getApply_date() %></td>
                            <td>
                            		<% 
