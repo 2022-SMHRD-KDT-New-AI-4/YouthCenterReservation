@@ -8,7 +8,7 @@
 		var lolist_gwangwon = ["삼척청년센터", "강릉시청년센터 두루"];
 		var lolist_chungcheong = ["당진청년센터나래","천안청년센터 불당이음"];
 		var lolist_sejong =["세종시청년센터"];
-		var lolist_gwangju = ["광주청년센터"];
+		var lolist_gwangju = ["광주청년센터","청춘이랑"];
 		var lolist_jeonla = ["청년이음전주", "군산시청년뜰청년센터창업센터","보성군 청년센터", "영광군 청년센터 청춘공방", "진도군 청년센터", "청춘이랑"];
 		var lolist_jeju = ["제주청년센터", "청년다락 1호점", "청년다락 2호점", "청년다락3호점", "청년다락4호점"];
 		

@@ -182,7 +182,7 @@ margin:auto;
 					<div class="contact_content" >
 						<div class="contact_title" id='selectedDate'></div>
 							<div class="cf">
-								<div class="col-2" id="check_box-col-2"></div>
+								<div id="check_box-col-2"></div>
 							</div>
 					</div>
 					<div class= "button_div">
@@ -317,7 +317,7 @@ margin:auto;
 	                        }                 
 	               //console.log(runtime.length);
 	               if(time == "null"){
-	                  $(".col-2").html("<div><span style='color:red;'><b>주말은 휴관입니다</b></span></div>");
+	                  $("#check_box-col-2").html("<div style='text-align:center;'><span style='color:red;'><b>주말은 휴관입니다</b></span></div>");
 	               } else {
 	                  
 	               var open = Number(time.substring(0,2));
@@ -343,7 +343,7 @@ margin:auto;
 	               html+="</div>"
 	           }// html 추가 for문
 
-	           $(".col-2").html(html);
+	           $("#check_box-col-2").html(html);
 	            
 	               } // time !=null 닫음
 	                  

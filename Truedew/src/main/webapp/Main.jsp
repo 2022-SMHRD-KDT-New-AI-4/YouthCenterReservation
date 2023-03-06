@@ -29,6 +29,14 @@
 #reserve {
 	margin:auto;
 }
+.home_title{
+text-align: center;
+}
+#logo_main{
+width: 40%;
+margin: auto; 
+    display: block; 
+}
 </style>
 
 </head>
@@ -55,7 +63,7 @@
                      <div class="row">
                         <div class="col">
                            <div class="home_content text-center">
-                              <div class="home_title">청년공감 공유공간</div>
+                              <div class="home_title"><img id="logo_main" src="./images/truelog_main.png"></div>
                               <div class="booking_form_container">
                                  <form action="SpaceList" class="booking_form" name="insertForm" onsubmit="return formCheck();">
                                     <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
