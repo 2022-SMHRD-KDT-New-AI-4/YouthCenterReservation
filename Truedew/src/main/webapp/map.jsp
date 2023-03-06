@@ -1,17 +1,93 @@
+<%@page import="com.youthdew.model.MarkVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.youthdew.model.MemberDAO"%>
+<%@page import="com.youthdew.model.MemberVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.youthdew.model.CenterVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="java.util.List"%>
-    <%@page import="java.util.ArrayList"%>
-<%@page import="com.youthdew.model.CenterVO"%>
+<%@ page errorPage="login.jsp" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>여러개 마커에 이벤트 등록하기1</title>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <style>
-    
-    .wrap {position: absolute;left: 0;bottom: -26px;width: 288px;height: 132px;margin-left: -69.2px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+<title>청년이슬 센터목록</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="The River template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
+<link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/booking.css">
+<link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/newstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/elements.css">
+<link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
+<link rel="stylesheet" type="text/css" href="styles/centerlist.css">
+<link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
+<link rel="stylesheet" type="text/css" href="styles/white-theme.css">
+<link rel="stylesheet" type="text/css" href="styles/common.css">
+<script src="js/listevent.js"></script>
+<script src="js/htmlplus.js"></script>
+
+<style>
+
+
+	#localname{
+		font-size: 70px;
+		text-align: center;
+		margin-top: 50px;
+		color: black;
+	}
+	
+	#fac{
+		margin: center;
+		left:17%;
+	}
+
+	#fac_div{
+		margin-top: 10px;
+	}
+	
+	#peoplelogo{
+	
+	width:70px;
+	height:70px;
+	margin-bottom:20px;
+	
+	
+	}
+	
+	#mapbtn{
+    position: relative;
+    margin-left: 90%;
+    margin-bottom:10px;
+   }
+ 	
+ 	.ckboxborder{
+ 	border: 1px solid rgb(6,163,218);
+ 	border-radius: 5px;
+ 	display: inline-block; /* 가로로 나열하기 위해 block레벨 요소를 inline-block레벨로 전환 */
+    width: 150px;  /*영역 크기 지정 안해주면 inline 레벨처럼 내용물 만큼만 차지하기 때문에 크기 지정 */
+    height: 50px;  /*영역 크기 지정 안해주면 inline 레벨처럼 내용물 만큼만 차지하기 때문에 크기 지정 */
+   /*  background-color:rgb(225, 247, 254); */
+    margin-left:10px;
+ 	}
+
+        #facontainer {
+           
+            width: 800px;
+            height: 70px;
+            margin: 0 auto; /* container 영역을 브라우저에서 가운데 정렬하기 위해 auto설정 */
+            text-align: center; /* inline-block화 된 div들을 텍스트 마냥 center로 정렬*/
+        }
+
+.wrap {position: absolute;left: 0;bottom: -26px;width: 288px;height: 132px;margin-left: -69.2px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 300px;height: 130px;border-radius: 0px;border-bottom: 0px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 20px;font-weight: bold;}
@@ -30,18 +106,102 @@
     .link {
     	width:160px;
     }
-    </style>
+    #map {
+    	margin-left : 10%;
+    }
+    #listbtn {
+    	left:90%;
+    }
 
+</style>
 </head>
 <body>
 
-<script type="text/javascript">
+<div class="super_container">
+	<header id="headers"></header>
+	
+
+	<!-- Home -->
+
+		<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url(https://www.youthcenter.go.kr/framework/filedownload/getImage.do?filePathName=K43kYCzEpw54N3DsTLz6bCbqLMNkmNrFX8SJ2a%2F8F9pB7HUHHtIbNJnpKz1TxX7%2FtWBDU34mAyiLcA53hoq2zQ%3D%3Dking.jpg)"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_title">공간예약</div>
+							<div class="booking_form_container">
+								<form action="SpaceList" class="booking_form" id="booking_form">
+									<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
+										<div class="booking_input_container d-flex flex-row align-items-start justify-content-start flex-wrap">
+											<div>
+												<select name="local_do" id="lolist" class="booking_input booking_input_b" onchange="categoryChange(this)">
+													<option value="">지역(시/도)</option>
+													<option value="서울">서울</option>
+													<option value="인천">인천</option>
+													<option value="경기">경기</option>
+													<option value="대구">대구</option>
+													<option value="울산">울산</option>
+													<option value="경상">경상</option>
+													<option value="강원">강원</option>
+													<option value="충청">충청</option>
+													<option value="세종">세종</option>
+													<option value="광주">광주</option>
+													<option value="전라">전라</option>
+													<option value="제주">제주</option>
+												</select>
+											</div>
+											<div>
+											<select name="center_list" id="ctlist" class="booking_input booking_input_b">
+												<option>센터명</option>															
+											 </select>
+											</div>
+											<div>
+												<input type="submit" class="booking_button trans_200" value="다시예약하기">
+											</div>
+											</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<% List<CenterVO> list = (List<CenterVO>)request.getAttribute("list"); %>
+<div id="localname">
+	<img id="peoplelogo" src="./images/peoplelogo.png">
+	<span><%=list.get(0).getLocal_do().substring(0,2)%></span>
+	</div>
+	
+	<div class="listing">
+	    <div id="listbtn">
+    	<a href="CenterListService?local_do=<%=list.get(1).getLocal_do() %>" style="height:50px;width:50px;"><img style="height:50px;width:50px" src="./images/list.png"></a>
+    	</div>
+
+<div id="map" style="width:80%;height:700px;"></div>
+<script>
 	var seq = 0;
 	var positions = new Array();
 </script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a6f86c5de53b01691eddf232e3036c8"></script>
+	<script type="text/javascript">
+	var mapContainer = document.getElementById('map'), //지도를 표시
+    mapOption = { 
+        center: new kakao.maps.LatLng(<%= list.get(0).getLat()%>,<%= list.get(0).getLng()%>), // 지도의 중심좌표
+        level: 8 // 지도의 확대 레벨
+    };
+	var map = new kakao.maps.Map(mapContainer , mapOption); //지도를 생성합니다
+	
+</script>
 	
 
- <% List<CenterVO> list = (List<CenterVO>)request.getAttribute("list"); %>
+ 
 
 
 <%for(int i =0; i<list.size();i++) {%>
@@ -53,9 +213,7 @@
 	<input type="hidden" value="<%=list.get(i).getCenter_tel()%>" class="center_tel<%=i%>">
 	<input type="hidden" value="<%=list.get(i).getLat()%>" class="lat<%=i%>">
 	<input type="hidden" value="<%=list.get(i).getLng()%>" class="lng<%=i%>">
-
-<div id="map" style="width:50%;height:500px;" margin="center;"></div>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a6f86c5de53b01691eddf232e3036c8"></script>
+ 
 <script type="text/javascript">
 
 /* 청년센터 list */
@@ -68,25 +226,6 @@
 		var local_gu = $('.local_gu'+seq).val();
 		var center_runtime = $('.center_runtime'+seq).val();
 		var center_tel = $('.center_tel'+seq).val(); 
-		
-		console.log(seq);
-		console.log(lat);
-		console.log(lng);
-		console.log(center_name);
-		console.log(center_pic);
-		console.log(local_do);
-		console.log(local_gu);
-		console.log(center_runtime);
-		console.log(center_tel);
-		
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-    mapOption = { 
-        center: new kakao.maps.LatLng(<%=list.get(0).getLat()%>, <%=list.get(0).getLng()%>), // 지도의 중심좌표
-        /* center: new kakao.maps.LatLng(37.5666805, 126.9784147), */ // 지도의 중심좌표
-        level: 8 // 지도의 확대 레벨
-    };
-
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 var mapdata = {
         content: '<div class="wrap">' + 
@@ -181,6 +320,6 @@ for (var i = 0; i < positions.length; i ++) {
 */
 
 </script>
-
+<footer id="footers"></footer>
 </body>
 </html>
