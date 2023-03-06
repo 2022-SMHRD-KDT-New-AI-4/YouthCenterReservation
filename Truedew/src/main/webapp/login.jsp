@@ -66,6 +66,8 @@
 				<br>
 				<div>
 				<span style="color:white">계정이 없으신가요? &nbsp;<a style="color:rgb(225, 247, 254)" href="join.jsp">회원가입</a></span>
+				<br>
+				<span style="color:white">아이디/비밀번호를 잊으셨나요? &nbsp;<a style="color:rgb(225, 247, 254)" href="IdPassword.jsp">ID/PW 찾기</a></span>
 				</div>
 
 

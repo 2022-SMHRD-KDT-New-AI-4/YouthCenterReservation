@@ -70,6 +70,10 @@ margin:auto;
 body{
     font-family: 'LINESeedKR-Bd' !important;
 }
+#center_name{
+font-size : 30px;
+margin-bottom:20px;
+}
 </style>
 
 </head>
@@ -153,6 +157,8 @@ body{
 	<br><br><br>
 	<div class="container">
 	<div class="blog_post">
+	<div id="center_name">
+		<span ><%=svo.getCenter_name() %></span></div>
         <div class="blog_post_image"><img id="space_img" src =<%=lvo.getShared_space_pic()%>>
         </div>
           <div class="blog_post_content">
@@ -170,6 +176,7 @@ body{
            </div>
       	 </div>
       	</div>
+      	<br><br><br><br>
       <hr>
       
       <!-- 예약하기 창 -->
