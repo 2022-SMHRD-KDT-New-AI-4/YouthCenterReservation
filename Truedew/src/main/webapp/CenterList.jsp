@@ -229,7 +229,7 @@
 
 	<div class="booking">
 	    <div id="mapbtn">
-    	<a href="map.jsp" style="height:50px;width:50px;"><img style="height:50px;width:50px" src="./images/location.png"></a>
+    	<a href="mapCenterService" style="height:50px;width:50px;"><img style="height:50px;width:50px" src="./images/location.png"></a>
     	</div>
     	
 		<div class="container">
