@@ -54,7 +54,7 @@
 	<input type="hidden" value="<%=list.get(i).getLat()%>" class="lat<%=i%>">
 	<input type="hidden" value="<%=list.get(i).getLng()%>" class="lng<%=i%>">
 
-<div id="map" style="width:50%;height:500px;" margin:center;></div>
+<div id="map" style="width:100%;height:950px;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a6f86c5de53b01691eddf232e3036c8"></script>
 <script type="text/javascript">
 
