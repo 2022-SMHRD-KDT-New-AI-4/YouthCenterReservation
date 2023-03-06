@@ -1,3 +1,5 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDate"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.youthdew.model.reservationInfoVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -128,6 +130,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            <td>예약 상태</td>
                            <td>예약 취소</td>
                            <td>신청일자</td>
+                           <td>리뷰</td>
                         </tr>
                         <%for (int i =0;i<list.size();i++){%>
                         <tr id="res_search_table_col">
@@ -140,6 +143,38 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            <td>예약상태</td>
                            <td><a href="deleteReserveService?reserv_seq=<%=list.get(i).getReserv_seq()%>">취소</a></td>
                            <td><%=list.get(i).getApply_date() %></td>
+                           <td>
+                           		<% 
+                           	        LocalDate now = LocalDate.now();
+	                           		String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+	                           		
+	                           		String[] revArrDate = (list.get(i).getReserv_date().substring(0, 10)).split("-");
+                           			String[] revNowDate = formatedNow.split("-");
+                           			
+                           				
+                           				// 1 이후 날짜
+	                                    // -1 이전 날짜
+	                                    // 0 동일날짜
+                           				int revY = Integer.parseInt(revArrDate[0]);
+                           				int revM = Integer.parseInt(revArrDate[1]);
+                           				int revD = Integer.parseInt(revArrDate[2]);
+                           				
+                           				LocalDate date1 = LocalDate.of(revY, revM, revD);
+                               			
+                           				int nowY = Integer.parseInt(revNowDate[0]);
+                           				int nowM = Integer.parseInt(revNowDate[1]);
+                           				int nowD = Integer.parseInt(revNowDate[2]);
+                           				LocalDate date2 = LocalDate.of(nowY, nowM, nowD);
+                           				
+                               			int result = date1.compareTo(date2);
+                               		
+                                 %>
+                                 <%if(result < 0) {%>
+                                 	<a href="Review.jsp?shared_space_seq=<%=list.get(i).getShared_space_seq()%>&center_name=<%=list.get(i).getCenter_name() %>&shared_space_name=<%=list.get(i).getShared_space_name()%>&user_id=<%=loginM.getUser_id()%>">리뷰</a>
+                                 <%} else{ %>
+                                 	<% out.println("이용 전"); %>
+                                 <%} %>
+                                 </td>
                         </tr>
                         <%} %>
                      </table>
