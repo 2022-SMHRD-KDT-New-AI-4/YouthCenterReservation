@@ -151,7 +151,8 @@
 	
 	<% ArrayList<CenterVO> list = (ArrayList<CenterVO>)request.getAttribute("list");
  		MemberVO loginM = (MemberVO)session.getAttribute("loginM");
-		MemberDAO dao = new MemberDAO(); 
+		MemberDAO dao = new MemberDAO();
+		session.setAttribute("Clist", list);
 		/* List<MarkVO> list2 = dao.selectMark(loginM.getUser_id()); */
 		
 		
