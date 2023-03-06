@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>전체지도</title>
+    <title>여러개 마커에 이벤트 등록하기1</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <style>
     
@@ -30,7 +30,6 @@
     .link {
     	width:160px;
     }
-    
     </style>
 
 </head>
@@ -45,7 +44,7 @@
  <% List<CenterVO> list = (List<CenterVO>)request.getAttribute("list"); %>
 
 
-<%for(int i =0; i<46;i++) {%>
+<%for(int i =0; i<list.size();i++) {%>
 	<input type="hidden" value="<%=list.get(i).getCenter_name()%>" class="center_name<%=i%>">
 	<input type="hidden" value="<%=list.get(i).getCenter_pic()%>" class="center_pic<%=i%>">
 	<input type="hidden" value="<%=list.get(i).getLocal_do()%>" class="local_do<%=i%>">
@@ -70,6 +69,15 @@
 		var center_runtime = $('.center_runtime'+seq).val();
 		var center_tel = $('.center_tel'+seq).val(); 
 		
+		console.log(seq);
+		console.log(lat);
+		console.log(lng);
+		console.log(center_name);
+		console.log(center_pic);
+		console.log(local_do);
+		console.log(local_gu);
+		console.log(center_runtime);
+		console.log(center_tel);
 		
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
@@ -79,7 +87,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-var aa = {
+var mapdata = {
         content: '<div class="wrap">' + 
         '    <div class="info">' + 
         '        <div class="title">' + 
@@ -101,7 +109,7 @@ var aa = {
         latlng: new kakao.maps.LatLng(lat,lng)
     }
 
-positions.push(aa);
+positions.push(mapdata);
 seq = seq+1;
 </script>
 <%} %>

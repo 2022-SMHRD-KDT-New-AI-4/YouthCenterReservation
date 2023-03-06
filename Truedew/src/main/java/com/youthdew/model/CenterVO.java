@@ -139,6 +139,19 @@ public class CenterVO {
 				+ ", local_gu=" + local_gu + ", center_runtime=" + center_runtime + ", center_tel=" + center_tel
 				+ ", lat=" + lat + ", lng=" + lng + ", center_pic=" + center_pic + "]";
 	}
+
+	public CenterVO(String center_name, String local_do, String local_gu, String center_runtime, String center_tel,
+			String lat, String lng, String center_pic) {
+		super();
+		this.center_name = center_name;
+		this.local_do = local_do;
+		this.local_gu = local_gu;
+		this.center_runtime = center_runtime;
+		this.center_tel = center_tel;
+		this.lat = lat;
+		this.lng = lng;
+		this.center_pic = center_pic;
+	}
 	
 	
 	
