@@ -33,7 +33,7 @@
 <link rel="stylesheet" type="text/css" href="styles/common.css">
 <link rel="stylesheet" type="text/css" href="styles/white-theme.css">
 <link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
-<link rel="stylesheet" type="text/css" href="styles/linefont.css">
+<!-- <link rel="stylesheet" type="text/css" href="styles/linefont.css"> -->
 
 <style>
 #d-flex {
@@ -56,11 +56,21 @@ margin-left : 100px;
 margin:auto;
             width: 540px;
             height: 100%;
+            font-family: 'Source Sans Pro', sans-serif;
             
 }
 #checkRes{
 margin:auto;
         display:block;
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+body{
+    font-family: 'LINESeedKR-Bd' !important;
 }
 </style>
 
@@ -228,6 +238,16 @@ margin:auto;
 		isCheck = false;
 		checkList = [];
 		var checkBoxV = document.querySelectorAll(".check_re");
+		var selectedDate=$('#selectedDate').text();
+		
+		console.log(selectedDate);
+		
+		if(selectedDate==""){
+			
+			alert("날짜를 선택하세요");
+		}else if($("input:checkbox[name='checkbox_solid_border']").is(":checked")==false){
+			alert("예약시간을 선택하세요")
+		}else{
 		
 		for(var i = 0; i < checkBoxV.length; i++){
 			if(checkBoxV[i].checked){
@@ -252,10 +272,12 @@ margin:auto;
 			alert("시간은 연속으로 예약 가능합니다.");
 			$('#checkRes').attr('type','button');
 		}else{
-			/* console.log(checkList); */
+			// console.log(checkList); 
 			$('#checkRes').attr('type','submit');
-			alert("예약하시겠습니까?")
-		}
+			alert("예약하시겠습니까?");
+		}  
+		
+		}//els문 끝
 	});
 	
 	
