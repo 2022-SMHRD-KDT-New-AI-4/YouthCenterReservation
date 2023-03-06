@@ -156,6 +156,13 @@
 		
 		
 	%>
+	
+	<!-- map list 가져오기 -->
+	<form action="mapCenterService" id="mapform">
+		<input type="hidden" value="<%=list.get(0).getCenter_name()%>" id="center_name">
+	</form>
+	
+	
 	<!-- Booking -->
 		
 	<div id="localname">

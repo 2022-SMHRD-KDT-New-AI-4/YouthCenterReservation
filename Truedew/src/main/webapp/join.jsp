@@ -24,7 +24,7 @@
 
 #logintitle{
 	position:relative;
-	bottom:20%;
+	top:10%;
 
 }
 

@@ -15,7 +15,6 @@
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 300px;height: 130px;border-radius: 0px;border-bottom: 0px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 20px;font-weight: bold;}
-    .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
     .info .body {position: relative;overflow: hidden; width: 300px;}
     .info .desc {position: relative;margin: 13px 0 0 90px;height: 100px;}
     .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 12px; margin-top: -13px;}
@@ -27,6 +26,9 @@
     .aa {
     	width:195px;
     	height:18px;
+    }
+    .link {
+    	width:160px;
     }
     
     </style>
@@ -82,7 +84,6 @@ var aa = {
         '    <div class="info">' + 
         '        <div class="title">' + 
                    center_name + 
-        '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
         '        </div>' + 
         '        <div class="body">' + 
         '            <div class="img">' +
