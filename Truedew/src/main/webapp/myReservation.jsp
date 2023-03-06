@@ -111,7 +111,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                         <br>
                   <div class="user_info_cond">
                      <br>
-                     <h4 id="user_name"><%=loginM.getUser_name()%> 님의 최근 예약 내역입니다.</h4>
+                     <h3 id="user_name"><%=loginM.getUser_name()%> 님의 최근 예약 내역입니다.</h3>
                      <br>
                   </div>
                   <br>
