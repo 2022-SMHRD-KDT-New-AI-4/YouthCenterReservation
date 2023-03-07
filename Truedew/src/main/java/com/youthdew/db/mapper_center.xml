@@ -31,6 +31,22 @@
 	and b.fac_cnt>=1
 	</select>
 	
+		<!-- 부대시설 필터링 센터정보 조회 수정 -->
+	<select id="Selectfac2" parameterType="com.youthdew.model.FacSearchVO" resultType="CenterVO">
+	select *
+	from tb_center
+	where center_id in (
+                    select a.center_id
+                    from tb_center a, tb_center_facility b
+                    where a.center_id=b.center_id 
+                    and a.local_do like '%'||#{local_do}||'%'
+                    and (b.fac_code=#{fac1} or b.fac_code=#{fac2} or b.fac_code=#{fac3} or b.fac_code=#{fac4})
+                    and b.fac_cnt>=1
+                    group by a.center_id
+                    having count(a.center_id)>=#{cnt})
+	</select>
+	
+	
 	<!-- 센터정보 조회8 --> <!-- map에 필요한 정보 -->
 	<select id="SearchMap" resultType="CenterVO">
 		select * from tb_center
