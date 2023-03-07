@@ -112,7 +112,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 					<br>
 					<br>
 					<div id="user_info_view">
-						<h4>회원정보</h4>
+						<h4 class="user_name">회원정보</h4>
 						<table id="user_info_view_detail">
 							<tr>
 								<td>성명</td>
@@ -131,7 +131,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 					<br>
 					<br>
 					</div>
-					<div id="user_address_info"><h4>연락처정보</h4>
+					<div id="user_address_info"><h4 class="user_name">연락처정보</h4>
 						<table>
 							<tr>
 								<td>전화번호</td>

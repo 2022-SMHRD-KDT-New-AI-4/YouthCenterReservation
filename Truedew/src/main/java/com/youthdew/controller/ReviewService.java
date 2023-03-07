@@ -27,8 +27,9 @@ public class ReviewService extends HttpServlet {
 		int shared_space_seq = Integer.parseInt(request.getParameter("shared_space_seq"));
 		String content = request.getParameter("content");
 		int reviewStar = Integer.parseInt(request.getParameter("reviewStar"));
+		int reserv_seq = Integer.parseInt(request.getParameter("reserv_seq"));
 		
-		ReviewVO vo = new ReviewVO(user_id,shared_space_seq,content,reviewStar);
+		ReviewVO vo = new ReviewVO(user_id,shared_space_seq,content,reviewStar,reserv_seq);
 		
 		ReviewDAO dao = new ReviewDAO();
 //		System.out.println(user_id);

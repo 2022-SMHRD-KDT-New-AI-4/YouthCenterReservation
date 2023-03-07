@@ -56,6 +56,7 @@
 	String center_name = request.getParameter("center_name");
 	String user_id = request.getParameter("user_id");
 	String shared_space_name = request.getParameter("shared_space_name");
+	int reserv_seq = Integer.parseInt(request.getParameter("reserv_seq"));
 	
 %>
 <div class="super_container">
@@ -93,14 +94,13 @@
 								<li><%= center_name%></li>
 								<li><%= shared_space_name%></li>
 								<li><%= shared_space_seq%></li>
-								
 							</ul>
 						</div>
 						<div>
 							<div class="contact_form_container">
 							<form action="ReviewService" method="post" class="contact_form" id="contact_form">
-							
 								<input type="hidden" name="shared_space_seq" id="shared_space_seq" value="<%=shared_space_seq%>" required="required">
+								<input type="hidden" name="reserv_seq" id="reserv_seq" value="<%=reserv_seq%>" required="required">
 								<div class="row">
 									<div class="col-md-6 input_container">
 										<input type="text" class="contact_input" name="user_id" id="user_id" value="<%=user_id%>" required="required" readonly/>

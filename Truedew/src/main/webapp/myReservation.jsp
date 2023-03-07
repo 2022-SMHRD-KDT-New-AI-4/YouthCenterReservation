@@ -1,3 +1,5 @@
+<%@page import="com.youthdew.model.ReviewVO"%>
+<%@page import="com.youthdew.model.ReviewDAO"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -104,7 +106,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
             <!-- User_info -->
             <div class="col-lg-9">
                <div class="blog_posts">
-                  <div class="user_info"><h4>예약확인/취소</h4></div>
+                  <div class="user_info"><h4 class="user_name">예약확인/취소</h4></div>
                   <div>
                      <hr>
                   </div>
@@ -161,7 +163,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            			int resultC = date3.compareTo(date4);                           		
                            %>
                            		<% if(resultC < 0) {%>                       				
-                    				취소 불가
+                    				<span class="strike-through">취소</span>
                            		<% } else { %>
                            			<a href="deleteReserveService?reserv_seq=<%=list.get(i).getReserv_seq()%>">취소</a>
                            		<%} %>
@@ -169,7 +171,9 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            <td><%=list.get(i).getApply_date() %></td>
                            <td>
                            		<% 
-                           	        LocalDate now = LocalDate.now();
+                           			//System.out.println(" -> " + list.get(i).getReserv_date().substring(0, 10));
+                           			
+	                           		LocalDate now = LocalDate.now();
 	                           		String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	                           		
 	                           		String[] revArrDate = (list.get(i).getReserv_date().substring(0, 10)).split("-");
@@ -183,6 +187,9 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            				int revM = Integer.parseInt(revArrDate[1]);
                            				int revD = Integer.parseInt(revArrDate[2]);
                            				
+                           				//System.out.println(revY+","+revM+","+revD);
+	                                    
+	                                    
                            				LocalDate date1 = LocalDate.of(revY, revM, revD);
                                			
                            				int nowY = Integer.parseInt(revNowDate[0]);
@@ -192,12 +199,23 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            				
                                			int result = date1.compareTo(date2);
                                		
+                                    /* boolean thisIsTrue = now.isBefore(resDate2);
+                                    System.out.print(thisIsTrue); */
+                                    
                                  %>
-                                 <%if(result < 0) {%>
-                                 	<a href="Review.jsp?shared_space_seq=<%=list.get(i).getShared_space_seq()%>&center_name=<%=list.get(i).getCenter_name() %>&shared_space_name=<%=list.get(i).getShared_space_name()%>&user_id=<%=loginM.getUser_id()%>">리뷰</a>
-                                 <%} else{ %>
+                                 <% 
+                                 ReviewDAO dao2 = new ReviewDAO();
+                                 ReviewVO rvo = dao2.checkReview(list.get(i).getReserv_seq());
+                                 if(result < 0){
+	                                 if(rvo == null) {%>
+	                                 <a href="Review.jsp?shared_space_seq=<%=list.get(i).getShared_space_seq()%>&center_name=<%=list.get(i).getCenter_name() %>&shared_space_name=<%=list.get(i).getShared_space_name()%>&user_id=<%=loginM.getUser_id()%>&reserv_seq=<%=list.get(i).getReserv_seq()%>">리뷰</a>
+	                                 <%} else{ %>
+	                                 	<% out.println("작성 완료"); %>
+                                 	 <%} %>
+	                            <% }else{ %>
                                  	<% out.println("이용 전"); %>
                                  <%} %>
+                                 
                                  </td>
                         </tr>
                         <%} %>

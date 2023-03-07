@@ -77,7 +77,7 @@
 					<div class="sidebar">
 						<!-- 나의 정보 -->
 						<div class="recent_posts">
-							<div class="sidebar_title"><a hred="mypage.html"><h3>마이페이지</h3></a></div>
+							<div class="sidebar_title"><a hred="mypage.html"><h3 class="user_name">마이페이지</h3></a></div>
 							<div class="sidebar_list">
 							<ul>
 								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 예약 -->
@@ -110,7 +110,7 @@
 				<!-- User_info -->
 				<div class="col-lg-9">
 					<div class="blog_posts">
-						<div class="user_info"><h4>예약확인/취소</h4></div>
+						<div class="user_info"><h4 class="user_name">즐겨찾기</h4></div>
 						<div>
 							<hr>
 						</div>
@@ -123,7 +123,7 @@
 						<div>
 						
 						
-										<%for(int i=0; i< list.size();i=i+3){ %>
+					<%for(int i=0; i< list.size();i=i+3){ %>
 					<!-- Booking Slider -->
 					<div > <!-- class="booking_slider_container" -->
 						<div class="owl-carousel owl-theme booking_slider">

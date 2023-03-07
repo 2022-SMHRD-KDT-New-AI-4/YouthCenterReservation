@@ -14,4 +14,12 @@ public class ReviewDAO {
 	    session.close();
 	    return cnt;
 	}
+	
+	public ReviewVO checkReview(int reserv_seq) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		ReviewVO rvo = session.selectOne("checkReview", reserv_seq);
+		session.close();
+		return rvo;
+	}
+	
 }
