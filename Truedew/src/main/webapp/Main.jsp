@@ -111,7 +111,7 @@ margin: auto;
          
       </div>
    </div>
-   
+   <!--테스트 수정  -->
    
    <!-- 달력 -->
    <!-- <div><input type="text" class="datepicker booking_input booking_input_a booking_out" placeholder="Check out" required="required"></div> -->
