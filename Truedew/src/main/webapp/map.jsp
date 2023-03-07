@@ -107,7 +107,7 @@
     	color:black;
     }
     .link {
-    	width:160px;
+    	width:150px;
     }
     #map {
     	margin-left : 10%;
