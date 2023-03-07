@@ -74,6 +74,25 @@ body{
 font-size: 30px;
 margin-bottom:10px;
 }
+.booking_input_container.d-flex.flex-row{
+	width:764px;
+	height:69px;
+	position:relative;
+	margin-left:130px;
+}
+#lolist {
+	width: 100%;
+	height: 54px;
+}
+#ctlist {
+	width: 100%;
+	height: 54px;
+}
+.booking_button.trans_200 {
+	width: 150.54px;
+	height: 54px;
+}
+
 </style>
 
 </head>
@@ -137,11 +156,11 @@ margin-bottom:10px;
                                     <option value="">센터명</option>                                             
                                   </select>
                                  </div>
-            
-                              </div>
-                              <div>
+            					<div>
                               <input type="submit" class="booking_button trans_200" value="다시예약하기">
                               </div>
+                              </div>
+                              
                            </div>
                         </form>
                      </div>

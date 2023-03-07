@@ -117,7 +117,25 @@ margin-top:10px;
 /*     margin-top:20px;
     margin-left:40px; */
 }
+.booking_input_container.d-flex.flex-row.align-items-start{
+	width:764px;
+	height:69px;
+	position:relative;
+	margin-left:130px;
+}
 
+#lolist {
+	width: 100%;
+	height: 54px;
+}
+#ctlist {
+	width: 100%;
+	height: 54px;
+}
+.booking_button.trans_200 {
+	width: 150.54px;
+	height: 54px;
+}
 
 </style>
 
