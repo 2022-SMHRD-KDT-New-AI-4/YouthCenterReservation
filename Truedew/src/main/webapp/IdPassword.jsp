@@ -96,9 +96,9 @@
              <form name="passfindScreen" action="FindPasswordService" method="post">
             <h3>이메일 <input name="user_id" type = "text" placeholder="아이디를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="30" style="width:350px;height:50px;font-size:20px;"></h3>
             
-            <h3>성명&nbsp;&nbsp;&nbsp;&nbsp;<input name="user_name" type = "text" placeholder="성명을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
+            <h3>성명&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="user_name" type = "text" placeholder="성명을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
             
-            <h3>연락처<input name="user_phone" type = "text" placeholder="연락처를 입력하세요" class="booking_input booking_input_b" auotofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
+            <h3>연락처&nbsp;<input name="user_phone" type = "text" placeholder="연락처를 입력하세요" class="booking_input booking_input_b" auotofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
             <br>
            
             <button type="submit" class="btn" onClick="pass_search">비밀번호 찾기</button>
