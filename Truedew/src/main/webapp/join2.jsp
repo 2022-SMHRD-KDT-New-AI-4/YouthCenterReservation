@@ -74,7 +74,7 @@
 			<br>
 			<br>
 			
-              <a id="naverIdLogin_loginButton" href="javascript:void(0)">
+              <a id="naverIdLogin_loginButton" href="join.jsp">
                   <img src="images/네이버회원가입.png" width="450" height="450" id="naver">
               </a>
       
@@ -97,7 +97,7 @@
         </script>
         <!-- 카카오 로그인 버튼 -->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a onclick="kakaoLogin();" href="javascript:void(0)">
+              <a onclick="kakaoLogin();" href="join.jsp">
                   <img src="images/카카오회원가입.png" width="450" height="450" id="kakao">
               </a>
         

@@ -86,7 +86,7 @@
         var naverLogin = new naver.LoginWithNaverId(
                 {
                     clientId: "QP0QMGrvcWsotET3DOQ1", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
-                    callbackUrl: "http://localhost:8081/Truedew/Main.jsp", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+                    callbackUrl: "http://localhost:8081/Truedew/loginService_gen", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
                     isPopup: false,
                     callbackHandle: true
                     
