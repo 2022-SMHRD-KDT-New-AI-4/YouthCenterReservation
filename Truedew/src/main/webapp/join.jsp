@@ -118,6 +118,33 @@ input[type='date']:valid::before {
 
 
 
+	<script>
+        	$("#joinbtn").click(function() {
+        		if ($.trim($("#id").val()) == '') {
+        			alert("아이디를 입력해 주세요.");
+        			return false;
+        		}
+        		if ($.trim($("#pw").val()) == '') {
+        			alert("비밀번호를 입력해주세요.");
+        			return false;
+        		}
+        		if ($.trim($("#named").val()) == '') {
+        			alert("이름을 입력해주세요.");
+        			return false;
+        		}
+        		if ($.trim($("#birth").val()) == '') {
+        			alert("생년월일을 입력해주세요.");
+        			return false;
+        		}
+        		if ($.trim($("#tel").val()) == '') {
+        			alert("전화번호를 입력해주세요.");
+        			return false;
+        		}
+        		$("#commentform").submit();
+        	}
+        
+        
+        </script>
 
 								</div>
 							 </div>
@@ -131,7 +158,6 @@ input[type='date']:valid::before {
 		   
 		</div>
 	 </div>
-	
 	<!-- 달력 -->
 	<!-- <div><input type="text" class="datepicker booking_input booking_input_a booking_out" placeholder="Check out" required="required"></div> -->
 
