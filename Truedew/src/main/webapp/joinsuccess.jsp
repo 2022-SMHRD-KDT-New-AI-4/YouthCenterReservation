@@ -24,7 +24,7 @@
 
 #logintitle{
 	position:relative;
-	bottom:20%;
+	top:20%;
     background-color: rgba(0, 0, 0, 0.4);
     height:500px;
     
