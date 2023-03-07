@@ -139,7 +139,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 							</tr>
 						</table>
 						<div class="info_detail_button">
-							<button class="out_button"><a href="#">회원 탈퇴</a></button>
+							<button class="out_button"><a href="DeleteMemberService?user_id=<%=loginM.getUser_id()%>">회원 탈퇴</a></button>
 						</div>
 					</div>
 				</div>

@@ -153,4 +153,13 @@ public class MemberDAO {
 		session.close();
 		return lvo;
 	}
+	
+	//회원삭제
+	public int delete(String user_id) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		int cnt = session.delete("deleteuser",user_id);
+		session.close();
+		return cnt;
+	
+	}
 }

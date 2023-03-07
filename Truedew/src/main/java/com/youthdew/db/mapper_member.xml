@@ -61,6 +61,11 @@
 	<select id="pwSearch" resultType="MemberVO" parameterType="MemberVO">
 		select * from tb_user where user_id=#{user_id} and user_name=#{user_name} and user_phone=#{user_phone}
 	</select>
+	
+	<!-- 회원삭제(탈퇴) -->
+	<delete id="deleteuser" parameterType="String">
+		delete from tb_user where user_id=#{user_id}
+	</delete>
 
 
 </mapper>  
