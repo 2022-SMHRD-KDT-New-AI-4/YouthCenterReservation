@@ -286,7 +286,7 @@ margin-bottom:10px;
             if(temp < 0){
                temp = temp * -1;
             }
-            if(temp > 2){
+            if(temp > 1){
                isCheck = true;
                break;
             }
