@@ -53,6 +53,12 @@ public class MemberVO {
 		this.user_id = user_id;
 		this.user_pw = user_pw;
 	}
+	
+	public MemberVO(String user_id, String user_name, String user_phone) {
+		this.user_id = user_id;
+		this.user_name = user_name;
+		this.user_phone = user_phone;
+	}
 
 	public MemberVO(String user_id, String user_pw, String user_name, String user_birthdate, String user_phone) {
 		super();

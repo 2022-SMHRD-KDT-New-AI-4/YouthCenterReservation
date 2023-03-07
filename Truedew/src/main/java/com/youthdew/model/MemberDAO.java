@@ -44,6 +44,23 @@ public class MemberDAO {
 		return lvo;
 	}
 	
+	// 아이디 조회
+		public MemberVO idSearch(String user_id) {
+			SqlSession session = SqlSessionFactory.openSession(true);
+			MemberVO lvo = session.selectOne("idSearch", user_id);
+			session.close();
+			return lvo;
+		}
+		
+		// 비밀번호 조회
+		public MemberVO pwSearch(String user_id) {
+			SqlSession session = SqlSessionFactory.openSession(true);
+			MemberVO lvo = session.selectOne("pwSearch", user_id);
+			session.close();
+			return lvo;
+		}
+		
+	
 	
 	// 나의공간(즐겨찾기) 조회
 	public List<MarkVO> selectMark(String user_id) {
@@ -121,5 +138,19 @@ public class MemberDAO {
 		int cnt = session.insert("insertMessage", vo);
 		session.close();
 		return cnt;
+	}
+	
+	public MemberVO idSearch(MemberVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		MemberVO lvo = session.selectOne("idSearch",vo);
+		session.close();
+		return lvo;
+	}
+	
+	public MemberVO pwSearch(MemberVO vo) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		MemberVO lvo = session.selectOne("pwSearch",vo);
+		session.close();
+		return lvo;
 	}
 }

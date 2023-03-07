@@ -51,6 +51,16 @@
 	<insert id="insertReview" parameterType="com.youthdew.model.ReviewVO">
 		insert into tb_review values(tb_review_seq.nextval,#{user_id},#{shared_space_seq},#{review_content},#{review_ratings},sysdate)
 	</insert>
+	
+	<!-- 아이디 찾기 -->
+	<select id="idSearch" resultType="MemberVO" parameterType="MemberVO">
+		select * from tb_user where user_name=#{user_id} and user_phone=#{user_pw}
+	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="pwSearch" resultType="MemberVO" parameterType="MemberVO">
+		select * from tb_user where user_id=#{user_id} and user_name=#{user_name} and user_phone=#{user_phone}
+	</select>
 
 
 </mapper>  

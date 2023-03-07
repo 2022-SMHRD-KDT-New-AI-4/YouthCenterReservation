@@ -1,3 +1,6 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.youthdew.model.MemberVO"%>
+<%@page import="com.youthdew.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,7 +27,6 @@
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="styles/linefont.css">
   
 <style>
 
@@ -79,25 +81,28 @@
             <br>
           <div class ="Id_Find"  >
              <h2 id="id">아이디 찾기</h2>
-             <h3 id="name">성명&nbsp;&nbsp;&nbsp;&nbsp;<input id="na" name="user_id" type="text" placeholder="성명을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
+             <form name="idfindScreen" action="IdPasswordService" method="post">
+             <h3 id="name">성명&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="user_name" name="user_name" type="text" placeholder="성명을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
           
-             <h3 id="ph">연락처&nbsp;<input name="user_phine" type = "text" placeholder="연락처를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
+             <h3 id="ph">연락처&nbsp;<input name="user_phone" type = "text" placeholder="연락처를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
              <br>
-             <button type="button" class="btn">아이디 찾기 </button>
-               
+             <button type="submit" class="btn" id="findID-btn" onclick="id_search()">아이디 찾기</button>
+             </form>
           </div>
             
     
           <div class = "Pass_Find">
             <h2 id="pass">비밀번호 찾기</h2>
-            <h3>이메일 <input name="user_email" type = "text" placeholder="이메일을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="30" style="width:350px;height:50px;font-size:20px;"></h3>
+             <form name="passfindScreen" action="FindPasswordService" method="post">
+            <h3>이메일 <input name="user_id" type = "text" placeholder="아이디를 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="30" style="width:350px;height:50px;font-size:20px;"></h3>
             
-            <h3>성명 &nbsp;&nbsp;&nbsp;<input name="user_name" type = "text" placeholder="성명을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
+            <h3>성명&nbsp;&nbsp;&nbsp;&nbsp;<input name="user_name" type = "text" placeholder="성명을 입력하세요" class="booking_input booking_input_b" autofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
             
-            <h3>연락처 <input name="user_Phone" type = "text" placeholder="연락처를 입력하세요" class="booking_input booking_input_b" auotofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
+            <h3>연락처<input name="user_phone" type = "text" placeholder="연락처를 입력하세요" class="booking_input booking_input_b" auotofocusmaxlength="20" style="width:350px;height:50px;font-size:20px;"></h3>
             <br>
-            <button type="button" class="btn">비밀번호 찾기</button>
-            
+           
+            <button type="submit" class="btn" onClick="pass_search">비밀번호 찾기</button>
+            </form>
           </div>
             
         
@@ -109,20 +114,7 @@
 </div>
 <!-- footers -->
 <footer id="footers"></footer>
-<script>
-     // 메뉴바 import 시작
-        async function fetchHtmlAsText(url) {
-            return await (await fetch(url)).text();
-            }
 
-        async function importPage(target) {
-            document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.jsp');
-            }
-
-        importPage('menubar');
-
-        // 메뉴바 import 끝
-</script>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
