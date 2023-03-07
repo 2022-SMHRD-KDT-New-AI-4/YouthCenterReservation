@@ -48,9 +48,9 @@
 	</insert>
 	
 	<!-- 리뷰 작성 -->
-	<insert id="insertReview" parameterType="com.youthdew.model.ReviewVO">
-		insert into tb_review values(tb_review_seq.nextval,#{user_id},#{shared_space_seq},#{review_content},#{review_ratings},sysdate)
-	</insert>
+   <insert id="insertReview" parameterType="com.youthdew.model.ReviewVO">
+      insert into tb_review values(tb_review_seq.nextval,#{user_id},#{shared_space_seq},#{review_content},#{review_ratings},sysdate,#{reserv_seq})
+   </insert>
 	
 	<!-- 리뷰 조회 -->
 	<select id="checkReview" resultType="com.youthdew.model.ReviewVO">

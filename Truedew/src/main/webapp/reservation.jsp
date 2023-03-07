@@ -70,6 +70,10 @@ margin:auto;
 body{
     font-family: 'LINESeedKR-Bd' !important;
 }
+#center_name{
+font-size: 30px;
+margin-bottom:10px;
+}
 </style>
 
 </head>
@@ -154,7 +158,7 @@ body{
    <div class="container">
    <div class="blog_post">
    <div id="center_name">
-      <span ><%=svo.getCenter_name() %></span></div>
+      <span id="center_name"><%=svo.getCenter_name() %></span></div>
         <div class="blog_post_image"><img id="space_img" src =<%=lvo.getShared_space_pic()%>>
         </div>
           <div class="blog_post_content">
@@ -172,6 +176,7 @@ body{
            </div>
           </div>
          </div>
+         <br><br><br>
       <hr>
       
       <!-- 예약하기 창 -->
@@ -312,7 +317,10 @@ body{
          
 
          dateClick : function(info) {
-            if (prevClickedDayEl) {
+        	var clickDay = new Date(info.dateStr).toISOString().slice(0,10);//선택한 날짜
+			var today = new Date().toISOString().slice(0,10); //오늘 날짜
+           
+			if (prevClickedDayEl) {
                prevClickedDayEl.style.backgroundColor = ''; // 이전에 클릭한 날짜의 배경색을 원래대로 되돌림
             }
             info.dayEl.style.backgroundColor = '#ffddff';
@@ -342,8 +350,11 @@ body{
                            }                 
                   //console.log(runtime.length);
                   if(time == "null"){
-                     $("#check_box-col-2").html("<div style='text-align:center;'><span style='color:red;'><b>주말은 휴관입니다</b></span></div>");
-                  } else {
+                	  console.log("뜨니?")
+         	           $(".col-2").html("<div style='text-align:center;'><span style='color:red;'><b>주말은 휴관입니다</b></span></div>");
+         	       } else if(clickDay<=today){
+         	            $(".col-2").html("<div style='text-align:center;'><span style='color:red;'><b>예약은 현재일 기준 다음날 부터 가능합니다.</b></span></div>"); 
+         	       }else {
                      
                   var open = Number(time.substring(0,2));
                   var last = Number(time.substring(6,8));
