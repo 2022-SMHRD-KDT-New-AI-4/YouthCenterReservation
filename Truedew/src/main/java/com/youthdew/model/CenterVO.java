@@ -15,6 +15,9 @@ public class CenterVO {
 	private String fac_code;
 	private int fac_cnt;
 	
+	private String sns_code;
+	private String sns_url;
+	
 	
 	public CenterVO() {
 		super();
@@ -30,6 +33,8 @@ public class CenterVO {
 		this.local_do = local_do;
 		this.fac_code = fac_code;
 	}
+	
+
 
 	
 
@@ -146,6 +151,23 @@ public class CenterVO {
 	public void setFac_cnt(int fac_cnt) {
 		this.fac_cnt = fac_cnt;
 	}
+
+	public String getSns_code() {
+		return sns_code;
+	}
+
+	public void setSns_code(String sns_code) {
+		this.sns_code = sns_code;
+	}
+
+	public String getSns_url() {
+		return sns_url;
+	}
+
+	public void setSns_url(String sns_url) {
+		this.sns_url = sns_url;
+	}
+
 
 	
 	

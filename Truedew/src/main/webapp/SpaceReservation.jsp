@@ -1,3 +1,4 @@
+<%@page import="com.youthdew.model.CenterDAO"%>
 <%@page import="com.youthdew.model.MemberVO"%>
 <%@page import="com.youthdew.model.CenterVO"%>
 <%@page import="com.youthdew.model.SpaceListVO"%>
@@ -43,25 +44,22 @@ margin-top: 10px;
 } */
 
 #reservation{
- position:relative;
- left: 50%;
- bottom: 150px;
- 
+ 	position:relative;
+ 	left: 50%;
+ 	bottom: 150px;
 }
 
 #localname{
-		font-size: 50px;
-		text-align: center;
-		margin-top: 50px;
-		color: black;
-	}
+	font-size: 50px;
+	text-align: center;
+	margin-top: 50px;
+	color: black;
+}
 
 #peoplelogo{
-	
 	width:70px;
 	height:70px;
 	margin-bottom:20px;
-	
 	}
 
 #chklogin{
@@ -94,10 +92,8 @@ color:white;
 } */
 #facility_img{
 	width:50px;
-	height:50px;
-	
+	height:50px;	
 }
-
 
 #facinfo{
 
@@ -107,7 +103,6 @@ font-size:25px;
 color:black;
 margin-top:10px;
 }
-
 
 #factb{
     border: 1px solid rgb(166, 163, 163);
@@ -137,6 +132,16 @@ margin-top:10px;
 	height: 54px;
 }
 
+.sns{
+	width: 40px;
+}
+
+.center_sns{
+	margin-top:10px;
+	margin-left:50px;
+	margin-bottom:30px;
+}
+
 </style>
 
 </head>
@@ -155,6 +160,9 @@ if(loginM != null){
 	SpaceListDAO dao = new SpaceListDAO();
 	ArrayList<CenterVO> list2 = dao.SelectcenterFacility(Center_id);
 
+	//sns
+	CenterDAO dao2 = new CenterDAO();
+	ArrayList<CenterVO> list3 = dao2.selectSNS(Center_id);
 	
 %>
 
@@ -284,6 +292,21 @@ if(loginM != null){
 		 					<td><%=center_info.getCenter_tel()%></td>
 		 				</tr>
 		 			</table>
+		 			<div class="center_sns">
+						<%for(int i =0;i<list3.size();i++){ 
+							if(list3 !=null){
+								if(list3.get(i).getSns_code().equals("유튜브")){%>	
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_1.png"></a>
+		 						<%}else if(list3.get(i).getSns_code().equals("인스타그램")){%>
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_2.png"></a> 
+		 						<%}else if(list3.get(i).getSns_code().equals("페이스북")){%>
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_3.png"></a>
+		 						<%}else if(list3.get(i).getSns_code().equals("카카오톡플러스친구")){%>
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_4.png"></a> 
+		 						<%}else{%>
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_5.png"></a> 
+		 						<%}}} %>
+		 			</div>
 		 			
 
                     </div>
