@@ -110,7 +110,8 @@
     	margin-left : 10%;
     }
     #listbtn {
-    	left:90%;
+    	left:85%;
+    	bottom:30px;
     }
 
 </style>
