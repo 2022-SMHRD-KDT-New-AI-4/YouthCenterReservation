@@ -767,7 +767,7 @@ hr {
 	margin-left: 10px;
 }
 .user_info_cond {
-	margin-top: -30px;
+	margin-top: -50px;
 	border-radius: 12px;
 	height: 110px;
 	background-color: rgb(6,163,218);
@@ -776,6 +776,7 @@ hr {
 	font-size: 24px;
 	font-weight: 300px;
 	text-align: center;
+	color: white;
 	font-family: 'LINESeedKR-Bd';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
     font-weight: 700;

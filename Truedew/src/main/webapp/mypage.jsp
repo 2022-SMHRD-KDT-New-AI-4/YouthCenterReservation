@@ -77,7 +77,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 					<div class="sidebar">
 						<!-- 나의 정보 -->
 						<div class="recent_posts">
-							<div class="sidebar_title"><a hred="mypage.jsp"><h3>마이페이지</h3></a></div>
+							<div class="sidebar_title"><a hred="mypage.jsp"><h3 class="user_name">마이페이지</h3></a></div>
 							<div class="sidebar_list">
 							<ul>
 								<li><a href="mypage.jsp"> - 나의 정보</a></li> <!-- 나의 정보 -->
