@@ -52,7 +52,7 @@ public class MemberDAO {
 			return lvo;
 		}
 		
-		// 비밀번호 조회
+	    // 비밀번호 조회
 		public MemberVO pwSearch(String user_id) {
 			SqlSession session = SqlSessionFactory.openSession(true);
 			MemberVO lvo = session.selectOne("pwSearch", user_id);
