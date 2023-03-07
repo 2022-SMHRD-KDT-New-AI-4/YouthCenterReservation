@@ -298,7 +298,7 @@ if(loginM != null){
 		 			<table id="factb">
 		 			<tr>
 		 			<%for(int i =0; i<list2.size();i++){%>
-		 			<td><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png">
+		 			<td><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png"></td>
 		 			<td id="first"><%=list2.get(i).getFac_code()%></td>
 		 			<td><%=list2.get(i).getFac_cnt()%>개</td>
 		 			</tr>
@@ -325,8 +325,9 @@ if(loginM != null){
    <!-- Footer -->
 
 	
-	<footer id="footers"></footer>
 </div>
+</div>
+	<footer id="footers"></footer>
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
