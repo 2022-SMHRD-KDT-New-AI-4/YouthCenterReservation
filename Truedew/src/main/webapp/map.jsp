@@ -88,14 +88,14 @@
             text-align: center; /* inline-block화 된 div들을 텍스트 마냥 center로 정렬*/
         }
 
-.wrap {position: absolute;left: 0;bottom: -26px;width: 288px;height: 132px;margin-left: -69.2px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+.wrap {position: absolute;left: 0;bottom: -26px;width: 288px;height: 132px;margin-left: -69.2px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'LINESeedKR-Bd' !important;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
-    .wrap .info {width: 300px;height: 130px;border-radius: 0px;border-bottom: 0px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
-    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 20px;font-weight: bold;}
-    .info .body {position: relative;overflow: hidden; width: 300px;}
-    .info .desc {position: relative;margin: 13px 0 0 90px;height: 100px;}
-    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 12px; margin-top: -13px;}
-    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px;}
+    .wrap .info {width: 300px;height: 130px;border-radius: 0px;border-bottom: 0px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff; font-family: 'LINESeedKR-Bd' !important;}
+    .info .title {padding: 5px 0 0 10px;height: 30px;background: #eee;border-bottom: 1px solid #ddd;font-size: 20px; font-family: 'LINESeedKR-Bd' !important; font-style: black;}
+    .info .body {position: relative;overflow: hidden; width: 300px; font-family: 'LINESeedKR-Bd' !important; font-style: normal;}
+    .info .desc {position: relative;margin: 13px 0 0 90px;height: 100px; font-family: 'LINESeedKR-Bd' !important; font-style: normal;}
+    .desc .ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 12px; margin-top: -13px; font-family: 'LINESeedKR-Bd' !important; font-style: normal;}
+    .desc .jibun {font-size: 11px;color: #888;margin-top: -2px; font-family: 'LINESeedKR-Bd' !important; font-style: normal;}
     .info .img {position: absolute;top: 0px;left: 0px;width: 90px;height:95px;border: 0px solid #ddd;color: #888;overflow: hidden; background : url('src/main/java/gd/map.jpg/광주청년센터.jpg')}
     .info .img1 {position: absolute;top: 0px;left: 0px;width: 90px;height:95px;border: 0px solid #ddd;color: #888;overflow: hidden; background : url('')}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px; height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
@@ -103,6 +103,8 @@
     .aa {
     	width:195px;
     	height:18px;
+    	font-family: 'LINESeedKR-Bd' !important;
+    	color:black;
     }
     .link {
     	width:160px;
@@ -113,6 +115,12 @@
     #listbtn {
     	left:85%;
     	bottom:30px;
+    }
+    .title{
+    	color:black;
+    }
+    .ellipsis{
+    	color:black;
     }
 
 </style>
