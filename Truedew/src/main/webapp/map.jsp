@@ -181,7 +181,7 @@
 	
 	<div class="listing">
 	    <div id="listbtn">
-    	<a href="CenterListService?local_do=<%=list.get(1).getLocal_do() %>" style="height:50px;width:50px;"><img style="height:50px;width:50px" src="./images/list.png"></a>
+    	<a href="CenterListService?local_do=<%=list.get(0).getLocal_do() %>" style="height:50px;width:50px;"><img style="height:50px;width:50px" src="./images/list.png"></a>
     	</div>
 
 <div id="map" style="width:80%;height:700px;"></div>
