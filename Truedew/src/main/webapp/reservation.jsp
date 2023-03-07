@@ -350,10 +350,10 @@ margin-bottom:10px;
                            }                 
                   //console.log(runtime.length);
                   if(time == "null"){
-                	  console.log("뜨니?")
-         	           $(".col-2").html("<div style='text-align:center;'><span style='color:red;'><b>주말은 휴관입니다</b></span></div>");
+                	  
+         	           $("#check_box-col-2").html("<div style='text-align:center;'><span style='color:red;'><b>주말은 휴관입니다</b></span></div><br>");
          	       } else if(clickDay<=today){
-         	            $(".col-2").html("<div style='text-align:center;'><span style='color:red;'><b>예약은 현재일 기준 다음날 부터 가능합니다.</b></span></div>"); 
+         	            $("#check_box-col-2").html("<div style='text-align:center;'><span style='color:red;'><b>예약은 현재일 기준 다음날 부터 가능합니다.</b></span></div><br>"); 
          	       }else {
                      
                   var open = Number(time.substring(0,2));
