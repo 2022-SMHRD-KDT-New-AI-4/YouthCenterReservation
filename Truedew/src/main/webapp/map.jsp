@@ -32,6 +32,7 @@
 <link rel="stylesheet" type="text/css" href="styles/chkboxstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/white-theme.css">
 <link rel="stylesheet" type="text/css" href="styles/common.css">
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
 <script src="js/listevent.js"></script>
 <script src="js/htmlplus.js"></script>
 
