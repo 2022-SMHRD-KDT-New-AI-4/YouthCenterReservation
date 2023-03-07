@@ -20,6 +20,7 @@
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
     #myform fieldset{
@@ -88,12 +89,12 @@
 				<!-- Contact Content -->
 				<div class="col-lg-9">
 					<div class="contact_content">
-						<div class="contact_title"><h3>리뷰 작성</h3></div>
+						<div class="contact_title"><h3 style="font-family: 'LINESeedKR-Bd' !important;">리뷰 작성</h3></div>
 						<div class="contact_list">
 							<ul>
 								<li><%= center_name%></li>
 								<li><%= shared_space_name%></li>
-								<li><%= shared_space_seq%></li>
+								
 							</ul>
 						</div>
 						<div>
