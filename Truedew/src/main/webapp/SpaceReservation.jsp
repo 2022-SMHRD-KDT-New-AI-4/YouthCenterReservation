@@ -40,11 +40,6 @@
     font-size:20px;
     margin-top:10px;
 }
-/* .show{
-border: 1px solid rgb(209, 205, 205);
-margin-top: 10px;
-} */
-
 #reservation{
  	position:relative;
  	left: 50%;
@@ -76,29 +71,46 @@ margin-top: 10px;
     
 }
 #detailinfo{
-    border: 1px solid rgb(166, 163, 163);
+/*센터 공간 정보 테이블  */
+    /* border: 1px solid rgb(166, 163, 163); */
     height:250px;
     width:900px;
     text-align:center;
     margin-top:20px;
     margin-left:40px;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border-top: 3px solid rgb(6, 163, 218);
+    border-bottom: 3px solid rgb(6, 163, 218);
 }
 
 td{
-    border: 1px solid rgb(166, 163, 163);
+    /* border: 1px solid rgb(166, 163, 163); */
+    
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
     
 }
-/* #first{
-background-color:rgb(6,163,218);
-color:white;
-} */
+th{
+    /* border: 1px solid rgb(166, 163, 163); */
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+
+}
 #facility_img{
 	width:50px;
-	height:50px;	
+	height:50px;
+	float:left;	
+}
+#bullet_img{
+width:40px;
 }
 
 #facinfo{
-
+/* 부대시설 테이블  */
 width:80%;
 height:400px;
 font-size:25px;
@@ -143,7 +155,12 @@ margin-top:10px;
 	margin-left:50px;
 	margin-bottom:30px;
 }
-
+#tab-content {
+	height: 1000px;
+}
+span.spacename {
+	margin-top: 30px;
+}
 </style>
 
 </head>
@@ -270,7 +287,7 @@ if(loginM != null){
 	</div> <!-- tab-content1 끝 -->
    
    
-   <div class="tab-content">
+   <div class="tab-content" id="tab-content">
                 <div class="blog_post_title"><span class="spacename"><%=center_info.getCenter_name()%></span>
                 <br><br>
 		 		<div class="blog_post_text" >
@@ -278,19 +295,19 @@ if(loginM != null){
                     <div class="blog_post_content" id="detailct">
                     <table id="detailinfo">
 		 				<tr>
-		 					<td>운영기관 </td>
+		 					<th>운영기관 </th>
 		 					<td><%=center_info.getCenter_name()%></td>
 		 				</tr>
 		 				<tr>
-		 					<td>공간이용시간 </td>
+		 					<th>공간이용시간 </th>
 		 					<td><%=center_info.getCenter_runtime()%></td>
 		 				</tr>
 		 				<tr>
-		 					<td>주소 </td>
+		 					<th>주소 </th>
 		 					<td><%=center_info.getLocal_do()%> <%=center_info.getLocal_gu()%></td>
 		 				</tr>
 		 				<tr>
-		 					<td>전화번호 </td>
+		 					<th>전화번호 </th>
 		 					<td><%=center_info.getCenter_tel()%></td>
 		 				</tr>
 		 			</table>
@@ -298,15 +315,15 @@ if(loginM != null){
 						<%for(int i =0;i<list3.size();i++){ 
 							if(list3 !=null){
 								if(list3.get(i).getSns_code().equals("유튜브")){%>	
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_1.png"></a>
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_1.png">&nbsp;</a>
 		 						<%}else if(list3.get(i).getSns_code().equals("인스타그램")){%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_2.png"></a> 
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_2.png">&nbsp;</a> 
 		 						<%}else if(list3.get(i).getSns_code().equals("페이스북")){%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_3.png"></a>
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_3.png">&nbsp;</a>
 		 						<%}else if(list3.get(i).getSns_code().equals("카카오톡플러스친구")){%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_4.png"></a> 
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_4.png">&nbsp;</a> 
 		 						<%}else{%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_5.png"></a> 
+		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_5.png">&nbsp;</a> 
 		 						<%}}} %>
 		 			</div>
 		 			
@@ -318,13 +335,12 @@ if(loginM != null){
 		 			<hr>
    
    		 			<div class="blog_post">
-   		 			<div class="blog_post_title"><span class="spacename">부대시설</span>	
+   		 			<div class="blog_post_title"><img id="bullet_img"src = "./images/next.png"><span class="spacename">부대시설</span>
 		 			<div id="facinfo">
-		 			<table id="factb">
+		 			<table id="detailinfo">
 		 			<tr>
 		 			<%for(int i =0; i<list2.size();i++){%>
-		 			<td><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png"></td>
-		 			<td id="first"><%=list2.get(i).getFac_code()%></td>
+		 			<th><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png"><%=list2.get(i).getFac_code()%></th>
 		 			<td><%=list2.get(i).getFac_cnt()%>개</td>
 		 			</tr>
 		 			<%} %>
