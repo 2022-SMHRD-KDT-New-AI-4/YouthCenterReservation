@@ -51,7 +51,7 @@ margin-left : 100px;
 }
 #check_box-col-2{
  display:  inline-block;
-margin:auto;
+margin-left : 47px;
             width: 540px;
             height: 100%;
             font-family: 'Source Sans Pro', sans-serif;
@@ -91,6 +91,9 @@ margin-bottom:10px;
 .booking_button.trans_200 {
 	width: 150.54px;
 	height: 54px;
+}
+#check_box-col-1 {
+	margin-right:95px;
 }
 
 </style>
@@ -370,9 +373,9 @@ margin-bottom:10px;
                   //console.log(runtime.length);
                   if(time == "null"){
                 	  
-         	           $("#check_box-col-2").html("<div style='text-align:center;'><span style='color:red;'><b>주말은 휴관입니다</b></span></div><br>");
+         	           $("#check_box-col-2").html("<div style='text-align:center;'><span id='check_box-col-1' style='color:red;'><b>주말은 휴관입니다</b></span></div><br>");
          	       } else if(clickDay<=today){
-         	            $("#check_box-col-2").html("<div style='text-align:center;'><span style='color:red;'><b>예약은 현재일 기준 다음날 부터 가능합니다.</b></span></div><br>"); 
+         	            $("#check_box-col-2").html("<div style='text-align:center;'><span id='check_box-col-1' style='color:red;'><b>예약은 현재일 기준 다음날 부터 가능합니다.</b></span></div><br>"); 
          	       }else {
                      
                   var open = Number(time.substring(0,2));
