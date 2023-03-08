@@ -29,6 +29,14 @@
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/linefont.css">
+
+<style>
+/* #pagediv{
+background-color:red;
+width:1100px !important;
+} */
+</style>
+
 </head>
 <body>
 
@@ -104,7 +112,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
             </div>
 
             <!-- User_info -->
-            <div class="col-lg-9">
+            <div id="pagediv" class="col-lg-9">
                <div class="blog_posts">
                   <div class="user_info"><h4 class="user_name">예약확인/취소</h4></div>
                   <div>
@@ -124,7 +132,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            <td>센터 명</td>
                            <td>공간 명</td>
                            <td>예약 일자</td>
-                           <td>예약 상태</td>
+                           <!-- <td>예약 상태</td> -->
                            <td>예약 취소</td>
                            <td>신청일자</td>
                            <td>리뷰</td>
@@ -137,7 +145,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                            <td><%=list.get(i).getReserv_date().substring(0, 10)%>
 								<br><%=list.get(i).getUse_time().substring(0,5)%><%=list.get(i).getUse_time().substring(list.get(i).getUse_time().lastIndexOf("~"))%>                       
                            </td>
-                           <td>예약상태</td>
+                           <!-- <td>예약상태</td> -->
                            <td>
                            <%
                            		LocalDate now1 = LocalDate.now();
