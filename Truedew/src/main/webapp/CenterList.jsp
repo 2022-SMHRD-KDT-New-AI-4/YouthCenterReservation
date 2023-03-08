@@ -190,22 +190,22 @@
 				<div id="facontainer" class='box-group solid'>
 				<div class="ckboxborder">
 				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_1 value="빔프로젝트">
-				<label for='checkbox_solid_border_1'>빔프로젝트</label>
+				<label for='checkbox_solid_border_1'>&nbsp;빔프로젝트&nbsp;</label>
 				</div>
 				
 				<div class="ckboxborder">
 				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_2 value="PC">
-				<label for='checkbox_solid_border_2'>PC</label>
+				<label for='checkbox_solid_border_2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 				</div>
 				
 				<div class="ckboxborder">
 				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_3 value="프린터">
-				<label for='checkbox_solid_border_3'>프린터</label>
+				<label for='checkbox_solid_border_3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;프린터&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 				</div>
 				
 				<div class="ckboxborder">
 				<input class="checkGoods" type="checkbox" name="fac_code" id=checkbox_solid_border_4 value="마이크">
-				<label for='checkbox_solid_border_4'>마이크</label>
+				<label for='checkbox_solid_border_4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;마이크&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 				</div>
 				
 				</div><!-- box-group solid border 닫음 -->
