@@ -340,14 +340,17 @@ if(loginM != null){
 		</div>
 <!-- tab-content2 끝 -->
 
-<%
-	ReviewVO center_id = (ReviewVO)request.getAttribute("center_id");
-	String center_Id = center_id.getCenter_id();
+ <%
+	/* ReviewVO center_id = (ReviewVO)request.getAttribute("center_id");
+ String center_Id = center_id.getCenter_id();
+ */
+
 	ReviewDAO rdao = new ReviewDAO();
-	ArrayList<ReviewVO> Rlist = rdao.viewReview(center_Id);
+ 	ArrayList<ReviewVO> Rlist = rdao.viewReview(Center_id);
 %>
 
       <div class="tab-content">
+      <span>리뷰</span>
 	      <%for(int i=0; i<Rlist.size(); i++) {%>
 	        <div class="blog_post">
 	        	<div>

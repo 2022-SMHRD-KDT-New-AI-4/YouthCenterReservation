@@ -61,7 +61,7 @@
 	<select id="viewReview" resultType="com.youthdew.model.ReviewVO">
 		select a.center_id, c.center_name, a.shared_space_seq, a.shared_space_name, b.user_id, b.review_content, b.review_ratings, b.review_date
 		from tb_shared_space a, tb_review b, tb_center c 
-		where a.shared_space_seq = b.shared_space_seq and a.center_id = c.center_id and a.center_id=#{center_Id};
+		where a.shared_space_seq = b.shared_space_seq and a.center_id = c.center_id and a.center_id=#{center_id}
 	</select>
 	
 	<!-- 아이디 찾기 -->
