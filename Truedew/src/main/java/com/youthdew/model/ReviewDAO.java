@@ -1,5 +1,7 @@
 package com.youthdew.model;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -22,4 +24,10 @@ public class ReviewDAO {
 		return rvo;
 	}
 	
+	public ArrayList<ReviewVO> viewReview(String center_Id) {
+		SqlSession session = SqlSessionFactory.openSession(true);
+		ArrayList<ReviewVO> rvo = session.selectOne("checkReview", center_Id);
+		session.close();
+		return rvo;
+	}
 }

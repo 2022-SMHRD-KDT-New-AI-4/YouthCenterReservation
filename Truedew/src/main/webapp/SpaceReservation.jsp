@@ -1,3 +1,5 @@
+<%@page import="com.youthdew.model.ReviewDAO"%>
+<%@page import="com.youthdew.model.ReviewVO"%>
 <%@page import="com.youthdew.model.CenterDAO"%>
 <%@page import="com.youthdew.model.MemberVO"%>
 <%@page import="com.youthdew.model.CenterVO"%>
@@ -335,13 +337,31 @@ if(loginM != null){
 			
 				</div>	
 
-</div> <!-- tab-content2 끝 -->
+		</div>
+<!-- tab-content2 끝 -->
 
-
+<%
+	ReviewVO center_id = (ReviewVO)request.getAttribute("center_id");
+	String center_Id = center_id.getCenter_id();
+	ReviewDAO rdao = new ReviewDAO();
+	ArrayList<ReviewVO> Rlist = rdao.viewReview(center_Id);
+%>
 
       <div class="tab-content">
-        <span>리뷰정보입니다</span>
-	</div> <!-- tab-content3 끝 -->
+	      <%for(int i=0; i<Rlist.size(); i++) {%>
+	        <div class="blog_post">
+	        	<div>
+	        		<ul>
+	        			<li><%= Rlist.get(i).getUser_id() %></li>
+	        			<li><%= Rlist.get(i).getReview_content() %></li>
+	        			<li><%= Rlist.get(i).getReview_ratings() %></li>
+	        		</ul>
+	        	</div>
+	        	
+	        </div>
+        	<%} %>
+		</div>
+	<!-- tab-content3 끝 -->
 	
 <!-- 탭 메뉴 내용 끝 -->
 	 
