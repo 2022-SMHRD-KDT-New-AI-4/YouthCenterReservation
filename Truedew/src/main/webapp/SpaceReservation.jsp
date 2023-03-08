@@ -106,7 +106,9 @@ th{
 	float:left;	
 }
 #bullet_img{
-width:40px;
+	width:40px;
+	display:inline-block;
+	vertical-align:middle;
 }
 
 #facinfo{
@@ -355,7 +357,7 @@ if(loginM != null){
 		 			<hr>
    
    		 			<div class="blog_post">
-   		 			<div class="blog_post_title"><img id="bullet_img"src = "./images/next.png"><span class="spacename">부대시설</span>
+   		 			<div class="blog_post_title"><span class="spacename"><img id="bullet_img"src = "./images/next.png">&nbsp;부대시설</span>
 		 			<div id="facinfo">
 		 			<table id="detailinfo">
 		 			<tr>

@@ -50,12 +50,39 @@ height:100%;
 width:1000px;
 position:relative;
 left:30px;
+border-collapse: collapse;
+line-height: 1.5;
+text-align:center;
+border-top: 3px solid rgb(6, 163, 218);
+/*  border:none; */
+   
 }
 
 .sidebar_lastinfo{
 position:absolute;
 top:80%;
 margin-left:10px;
+}
+
+.res_search_table thead th {
+border : 10px;
+    padding: 10px;
+    font-weight: bold;
+   /*  vertical-align: top; */
+    color: #369;
+     border-top: 3px solid rgb(6, 163, 218);
+    border-bottom: 3px solid rgb(6, 163, 218);
+    background: #f3f6f7;
+    /*  border:none; */
+}
+
+.res_search_table td {
+    width: 350px;
+    padding: 10px;
+    /* vertical-align: top; */
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+border-right: none;
 }
 
 </style>
@@ -150,16 +177,19 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                   <br>
                   <div>
                      <table class="res_search_table">
+                     	<thead>
                         <tr id="res_search_table_col">
-                           <td>번호</td>
-                           <td>센터 명</td>
-                           <td>공간 명</td>
-                           <td>예약 일자</td>
+                           <th>번호</th>
+                           <th>센터 명</th>
+                           <th>공간 명</th>
+                           <th>예약 일자</th>
                            <!-- <td>예약 상태</td> -->
-                           <td>예약 취소</td>
-                           <td>신청일자</td>
-                           <td>리뷰</td>
+                           <th>예약 취소</th>
+                           <th>신청일자</th>
+                           <th>리뷰</th>
                         </tr>
+                        </thead>
+                        <tbody>
                         <%for (int i =0;i<list.size();i++){%>
                         <tr id="res_search_table_col">
                            <td><%=i+1%></td>
@@ -250,6 +280,7 @@ ArrayList<reservationInfoVO> list = (ArrayList<reservationInfoVO>)dao.reservatio
                                  </td>
                         </tr>
                         <%} %>
+                        </tbody>
                      </table>
                   </div>
                </div>

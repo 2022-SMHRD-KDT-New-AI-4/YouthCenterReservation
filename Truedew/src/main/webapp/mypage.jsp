@@ -42,6 +42,38 @@ position:absolute;
 top:80%;
 margin-left:10px;
 }
+.user_info_view_detail{
+width:1000px;
+position:relative;
+left:30px;
+border-collapse: collapse;
+line-height: 1.5;
+text-align:center;
+border-top: 3px solid rgb(6, 163, 218);
+/*  border:none; */
+   
+}
+
+.user_info_view_detail thead th {
+border : 10px;
+    padding: 10px;
+    font-weight: bold;
+   /*  vertical-align: top; */
+    color: #369;
+     border-top: 3px solid rgb(6, 163, 218);
+    border-bottom: 3px solid rgb(6, 163, 218);
+    background: #f3f6f7;
+    /*  border:none; */
+}
+
+..user_info_view_detail td {
+    width: 350px;
+    padding: 10px;
+    /* vertical-align: top; */
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+border-right: none;
+}
 </style>
 
 
@@ -142,33 +174,29 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 						<h4 class="user_name">회원정보</h4>
 						<table id="user_info_view_detail">
 							<tr>
-								<td>성명</td>
+								<th>성명</td>
 								<td class="info_detail"><%=loginM.getUser_name() %></td>
 							</tr>
 							<tr>
-								<td>아이디</td>
+								<th>아이디</td>
 								<td class="info_detail"><%=loginM.getUser_id() %></td>
 							</tr>
 							<tr>
-								<td>생년월일</td>
+								<th>생년월일</td>
 								<td class="info_detail"><%=loginM.getUser_birthdate().substring(0,11) %></td>
 							</tr>
-						</table>
-					<br>
-					<br>
-					<br>
-					</div>
-					<div id="user_address_info"><h4 class="user_name">연락처정보</h4>
-						<table>
 							<tr>
-								<td>전화번호</td>
+								<th>전화번호</td>
 								<td class="info_detail"><%=loginM.getUser_phone() %></td>
 							</tr>
 						</table>
+					
+					</div>
+					
 						<div class="info_detail_button">
 							<button class="out_button"><a href="DeleteMemberService?user_id=<%=loginM.getUser_id()%>">회원 탈퇴</a></button>
 						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
