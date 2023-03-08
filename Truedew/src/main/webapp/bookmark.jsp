@@ -28,7 +28,32 @@
 <link rel="stylesheet" type="text/css" href="styles/centerlist.css">
 
 <style>
+ #pagediv{
+/* background-color:red; */
+width:1100px !important;
+}
 
+#mydiv{
+width:1500px !important;
+right:20%;
+}
+
+.sidebar{
+background-color: #eaeaea;
+height:100%;
+}
+
+.res_search_table{
+width:1000px;
+position:relative;
+left:30px;
+}
+
+.sidebar_lastinfo{
+position:absolute;
+top:80%;
+margin-left:10px;
+}
 </style>
 
 </head>
@@ -69,7 +94,7 @@
 
 	<div class="blog">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="mydiv">
 
                 <div class="col-lg-3">
                     
@@ -98,17 +123,17 @@
 								<br>
 							</ul>
 							</div>
+						</div>
 							<div class="sidebar_lastinfo">
 								<div><font size="1">광주동구예술길31-15 3~4, 7층</font></div>
 								<div><font size="1">스마트인재개발원</font></div>
 								<div><font size="1">대표전화:062-655-3506</font></div>
 							</div>
-						</div>
 					</div>
 				</div>
 
 				<!-- User_info -->
-				<div class="col-lg-9">
+				<div id="pagediv" class="col-lg-9">
 					<div class="blog_posts">
 						<div class="user_info"><h4 class="user_name">즐겨찾기</h4></div>
 						<div>
@@ -116,7 +141,7 @@
 						</div>
                         <br>
 						<div class="user_info_cond">
-							<br>
+							<br><br>
 							<h4 id="user_name"><%=loginM.getUser_name() %> 님의 즐겨찾기 내역입니다.</h4>
 						</div>
 						<br><br>

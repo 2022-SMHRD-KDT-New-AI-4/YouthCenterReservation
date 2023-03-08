@@ -19,6 +19,33 @@
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 <link rel="stylesheet" type="text/css" href="styles/newstyle.css">
 <link rel="stylesheet" type="text/css" href="styles/linefont.css">
+
+<style>
+
+ #pagediv{
+/* background-color:red; */
+width:1100px !important;
+}
+
+#mydiv{
+width:1500px !important;
+right:20%;
+}
+
+.sidebar{
+background-color: #eaeaea;
+height:100%;
+}
+
+.sidebar_lastinfo{
+position:absolute;
+top:80%;
+margin-left:10px;
+}
+</style>
+
+
+
 </head>
 <body>
 <%
@@ -69,7 +96,7 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 
 	<div class="blog">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="mydiv">
 
                 <div class="col-lg-3">
                     
@@ -91,17 +118,17 @@ MemberVO loginM = (MemberVO)session.getAttribute("loginM");
 								<br>
 							</ul>
 							</div>
+						</div>
 							<div class="sidebar_lastinfo">
 								<div><font size="1">광주동구예술길31-15 3~4, 7층</font></div>
 								<div><font size="1">스마트인재개발원</font></div>
 								<div><font size="1">대표전화:062-655-3506</font></div>
 							</div>
-						</div>
 					</div>
 				</div>
 
 				<!-- User_info -->
-				<div class="col-lg-9">
+				<div id="pagediv" class="col-lg-9">
 					<div class="blog_posts">
 						<div class="user_info_cond">
 							<img src="./images/person.JPG" id="personImg" alt="">

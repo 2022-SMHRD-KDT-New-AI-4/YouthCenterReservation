@@ -54,7 +54,7 @@ left:30px;
 
 .sidebar_lastinfo{
 position:absolute;
-top:95%;
+top:80%;
 margin-left:10px;
 }
 
