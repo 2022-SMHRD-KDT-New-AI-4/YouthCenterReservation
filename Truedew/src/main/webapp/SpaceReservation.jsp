@@ -33,6 +33,11 @@
 <link rel="stylesheet" type="text/css" href="styles/linefont.css">
 
 <style>
+#super_container {
+	width: 100%;
+	height: 100%;
+	/* overflow: hidden; */
+}
 #local_ysh{	
 	width:700px;
 	height:200px;
@@ -70,7 +75,7 @@
     font-size:25px;
     
 }
-#detailinfo{
+.detailinfo{
 /*센터 공간 정보 테이블  */
     /* border: 1px solid rgb(166, 163, 163); */
     height:250px;
@@ -88,14 +93,14 @@ td{
     /* border: 1px solid rgb(166, 163, 163); */
     
     padding: 10px;
-    vertical-align: top;
+    vertical-align: middle;
     border-bottom: 1px solid #ccc;
     
 }
 th{
     /* border: 1px solid rgb(166, 163, 163); */
     padding: 10px;
-    vertical-align: top;
+    vertical-align: middle; 
     border-bottom: 1px solid #ccc;
     background: #f3f6f7;
 
@@ -113,7 +118,7 @@ th{
 
 #facinfo{
 /* 부대시설 테이블  */
-width:80%;
+width:100%;
 height:400px;
 font-size:25px;
 color:black;
@@ -152,6 +157,7 @@ margin-top:10px;
 	width: 40px;
 }
 
+
 .center_sns{
 	margin-top:10px;
 	margin-left:50px;
@@ -183,6 +189,16 @@ color:black;
 	height: 200px;
 	margin-top:30px;
 }
+.th1{
+width:60px;
+}
+.th2{
+width:250px;
+}
+#table2{
+width: 600px;
+}
+
 </style>
 
 </head>
@@ -207,7 +223,7 @@ if(loginM != null){
 	
 %>
 
-<div class="super_container">
+<div class="super_container" id="super_container">
 	
     <!-- Header -->
 	<div id="headers"></div>
@@ -309,13 +325,13 @@ if(loginM != null){
 	</div> <!-- tab-content1 끝 -->
    
    
-   <div class="tab-content" id="tab-content">
+   <div class="tab-content">
                 <div class="blog_post_title"><span class="spacename"><%=center_info.getCenter_name()%></span>
                 <br><br>
 		 		<div class="blog_post_text" >
                     <div class="blog_post_image"><img id="space_pic" src=<%= center_info.getCenter_pic()%> alt=""></div>
                     <div class="blog_post_content" id="detailct">
-                    <table id="detailinfo">
+                    <table class="detailinfo">
 		 				<tr>
 		 					<th>운영기관 </th>
 		 					<td><%=center_info.getCenter_name()%></td>
@@ -333,36 +349,38 @@ if(loginM != null){
 		 					<td><%=center_info.getCenter_tel()%></td>
 		 				</tr>
 		 			</table>
-		 			<div class="center_sns">
-						<%for(int i =0;i<list3.size();i++){ 
-							if(list3 !=null){
-								if(list3.get(i).getSns_code().equals("유튜브")){%>	
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_1.png">&nbsp;</a>
-		 						<%}else if(list3.get(i).getSns_code().equals("인스타그램")){%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_2.png">&nbsp;</a> 
-		 						<%}else if(list3.get(i).getSns_code().equals("페이스북")){%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_3.png">&nbsp;</a>
-		 						<%}else if(list3.get(i).getSns_code().equals("카카오톡플러스친구")){%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_4.png">&nbsp;</a> 
-		 						<%}else{%>
-		 							<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_5.png">&nbsp;</a> 
-		 						<%}}} %>
+		 			<!-- <div class="blog_post"> -->
+				<!-- <div class="blog_post_title"><span class="spacename">SNS</span></div> -->
+				<div class="center_sns">
+				<%for(int i =0;i<list3.size();i++){ 
+				if(list3 !=null){
+					if(list3.get(i).getSns_code().equals("유튜브")){%>	
+		 			<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_1.png"> &nbsp;</a>
+		 			<%}else if(list3.get(i).getSns_code().equals("인스타그램")){%>
+		 			<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_2.png"> &nbsp;</a> 
+		 			<%}else if(list3.get(i).getSns_code().equals("페이스북")){%>
+		 			<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_3.png"> &nbsp;</a>
+		 			<%}else if(list3.get(i).getSns_code().equals("카카오톡플러스친구")){%>
+		 			<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_4.png"> &nbsp;</a> 
+		 			<%}else{%>
+		 			<a href="<%=list3.get(i).getSns_url()%>"><img class="sns" src= "./images/center_sns_5.png"> &nbsp;</a> 
+		 			<%}}} %>
 		 			</div>
-		 			
-
+					<!-- </div> -->
                     </div>
 			    </div>
 			    
 			    </div>
 		 			<hr>
    
-   		 			<div class="blog_post">
+   		 			<div class="blog_post_text">
    		 			<div class="blog_post_title"><span class="spacename"><img id="bullet_img"src = "./images/next.png">&nbsp;부대시설</span>
 		 			<div id="facinfo">
-		 			<table id="detailinfo">
+		 			<table class="detailinfo" id="table2">
 		 			<tr>
 		 			<%for(int i =0; i<list2.size();i++){%>
-		 			<th><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png"><%=list2.get(i).getFac_code()%></th>
+		 			<th class="th1"><img id="facility_img" src = "./images/facility_img_<%=i+1 %>.png"></th>
+		 			<th class="th2"><%=list2.get(i).getFac_code()%></th>
 		 			<td><%=list2.get(i).getFac_cnt()%>개</td>
 		 			</tr>
 		 			<%} %>
@@ -376,6 +394,7 @@ if(loginM != null){
 				</div>	
 
 		</div>
+		
 <!-- tab-content2 끝 -->
 
  <%

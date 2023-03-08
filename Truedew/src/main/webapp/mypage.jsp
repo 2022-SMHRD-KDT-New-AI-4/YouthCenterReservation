@@ -54,25 +54,36 @@ border-top: 3px solid rgb(6, 163, 218);
    
 }
 
-.user_info_view_detail thead th {
-border : 10px;
-    padding: 10px;
-    font-weight: bold;
-   /*  vertical-align: top; */
-    color: #369;
-     border-top: 3px solid rgb(6, 163, 218);
+#user_info_view_detail{
+/*센터 공간 정보 테이블  */
+    /* border: 1px solid rgb(166, 163, 163); */
+    height:250px;
+    width:500px;
+    text-align:center;
+    margin-top:20px;
+    margin-left:40px;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border-top: 3px solid rgb(6, 163, 218);
     border-bottom: 3px solid rgb(6, 163, 218);
-    background: #f3f6f7;
-    /*  border:none; */
 }
 
-..user_info_view_detail td {
-    width: 350px;
+td{
+    /* border: 1px solid rgb(166, 163, 163); */
+    
     padding: 10px;
     /* vertical-align: top; */
     border-bottom: 1px solid #ccc;
-    border-left: none;
-border-right: none;
+    border-right:none;
+}
+th{
+    /* border: 1px solid rgb(166, 163, 163); */
+    padding: 10px;
+    /* vertical-align: top; */
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+    border-left:none;
+
 }
 </style>
 
