@@ -161,6 +161,26 @@ margin-top:10px;
 span.spacename {
 	margin-top: 30px;
 }
+
+.revuserid{
+font-size:20px;
+color:black;
+}
+.revspace{
+font-size:25px;
+color:black;
+}
+
+.review_content{
+font-size:25px;
+color:black;
+}
+
+.review_post {
+	width: 100%;
+	height: 200px;
+	margin-top:30px;
+}
 </style>
 
 </head>
@@ -366,17 +386,26 @@ if(loginM != null){
 %>
 
       <div class="tab-content">
-      <span>리뷰</span>
-	      <%for(int i=0; i<Rlist.size(); i++) {%>
-	        <div class="blog_post">
-	        	<div>
-	        		<ul>
-	        			<li><%= Rlist.get(i).getUser_id() %></li>
-	        			<li><%= Rlist.get(i).getReview_content() %></li>
-	        			<li><%= Rlist.get(i).getReview_ratings() %></li>
-	        		</ul>
-	        	</div>
-	        	
+      
+	      <%for(int i=0; i<Rlist.size(); i++) {
+	    	  int star = Rlist.get(i).getReview_ratings();
+	      %>
+	     <div class="review_post">
+	     	<div class="revspace"><%=Rlist.get(i).getShared_space_name() %></div>
+	        <div class="revuserid"><span> <%= Rlist.get(i).getUser_id() %></span></div>
+	        <div><%=Rlist.get(i).getReview_date().substring(0,10) %></div>
+			<div class="review_content">
+				<div>
+				<%for(int j=1;j<=star;j++){%>
+					⭐
+				<%}%>
+				</div>
+				<div>
+					
+					<%= Rlist.get(i).getReview_content() %>
+				</div>
+				<div><hr></div>
+	        </div>
 	        </div>
         	<%} %>
 		</div>
