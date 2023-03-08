@@ -73,7 +73,7 @@
                         <li><a href="mypage.jsp">마이페이지</a>	</li>					
                         <li><a href="LogoutService">로그아웃</a></li>
                         
-                        <li><a id="msg" href="Message.jsp" onclick="window.open(this.href,'_blank','width=500px, height=500px, toolbars=no, scrollbars=no,left=1100, top=200'); return false;">
+                        <li><a id="msg" href="Message.jsp" onclick="window.open(this.href,'_blank','width=500px, height=500px, toolbars=no, scrollbars=no,left=1100, top=160'); return false;">
                                 <div>
                                 
                                 	<% if(msglist.toString().equals("[]")) {%>
