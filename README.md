@@ -79,8 +79,6 @@
 
 ## 📌 서비스 흐름도
 ![service2](https://user-images.githubusercontent.com/125417021/226230003-63679a04-bf6a-46b0-b506-2ab4eb06a9f2.PNG)
-
-
 <br>
 
 ## 📌 ER다이어그램
@@ -103,7 +101,7 @@
 <br>
 
 ### 센터 즐겨찾기 및 리뷰 기능
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+![즐겨찾기_리뷰](https://user-images.githubusercontent.com/125417068/226272987-d1cafbf8-fc19-4f16-a189-57825cf22a5a.PNG)
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
