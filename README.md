@@ -124,26 +124,26 @@
   </tr>
   <tr>
     <td align="center">
-        <b>마이페이지</b>
+        <b>마이페이지</b><br>
         <b>리뷰페이지</b>
     </td>
     <td align="center">
-        <b>예약페이지</b>
-        <b>공간리스트</b>
+        <b>예약페이지</b><br>
+        <b>공간리스트</b><br>
         <b>DB관리</b>
     </td>
     <td align="center">
-        <b>예약페이지</b>
-        <b>센터리스트</b>
+        <b>예약페이지</b><br>
+        <b>센터리스트</b><br>
         <b>메시지창</b>
     </td>
     <td align="center">
-        <b>KakaoMap API</b>
+        <b>KakaoMap API</b><br>
         <b>로그인/회원가입</b>
     </td>
     <td align="center">
-        <b>크롤링</b>
-        <b>DB관리</b>
+        <b>크롤링</b><br>
+        <b>DB관리</b><br>
         <b>ID/PW 찾기</b>
     </td>
     <td align="center">
