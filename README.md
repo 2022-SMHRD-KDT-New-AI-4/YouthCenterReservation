@@ -99,7 +99,7 @@
 <br>
 
 ### 전국 청년센터 공간 통합 예약
-![예약하기](https://user-images.githubusercontent.com/125417068/226242292-034f9c97-c549-47b9-8726-d65e296654cc.PNG)
+![GIF 2023-03-20 오후 2-11-23](https://user-images.githubusercontent.com/125417068/226252330-9c46f434-643c-4cc0-aeab-6825e5729eb9.gif)
 <br>
 
 ### 센터 즐겨찾기 및 리뷰 기능
