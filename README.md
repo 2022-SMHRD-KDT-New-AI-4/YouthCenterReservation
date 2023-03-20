@@ -77,7 +77,7 @@
 <br>
 
 ## 📌 서비스 흐름도
-![service](https://user-images.githubusercontent.com/125417021/226223979-758ccd4a-827e-4162-afe4-b3edea7d0dc6.PNG)
+![service](https://user-images.githubusercontent.com/125417021/226229886-cde53346-d86e-4fe2-981b-5e47169dcb6c.PNG)
 <br>
 
 ## 📌 ER다이어그램
