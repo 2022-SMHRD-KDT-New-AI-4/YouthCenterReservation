@@ -84,8 +84,9 @@
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![myerd](https://user-images.githubusercontent.com/125417021/226236497-4a1f7832-f370-427c-a518-11cf2395b58b.png)
 <br>
+
 
 ## 🖥 화면 구성
 
