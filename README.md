@@ -95,7 +95,7 @@
 <br>
 
 ### 지역 별 센터 및 공간 정보 제공(부대시설 별 필터)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+![예약하기](https://user-images.githubusercontent.com/125417068/226242292-034f9c97-c549-47b9-8726-d65e296654cc.PNG)
 <br>
 
 ### 전국 청년센터 공간 통합 예약
