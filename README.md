@@ -1,5 +1,5 @@
 # 📎 전국청년센터 온라인 예약 시스템(팀명: True이슬)
-![truelog_main](https://user-images.githubusercontent.com/125417021/226223314-dceb44db-ff52-4a4a-90f5-b2d1a63d071e.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/125417021/226223314-dceb44db-ff52-4a4a-90f5-b2d1a63d071e.png">
 
 ## 👀 서비스 소개
 * 서비스명:  전국청년센터 통합 온라인 예약 시스템 
@@ -95,7 +95,7 @@
 <br>
 
 ### 지역 별 센터 및 공간 정보 제공(부대시설 별 필터)
-![센터조회](https://user-images.githubusercontent.com/125417068/226270602-8ef00e94-8ded-49d4-a250-4112a57a7a67.PNG)
+![센터리스트](https://user-images.githubusercontent.com/125417068/226271008-0fed9b8a-14fa-49a2-8d7f-d7bddb5fb99b.PNG)
 <br>
 
 ### 전국 청년센터 공간 통합 예약
