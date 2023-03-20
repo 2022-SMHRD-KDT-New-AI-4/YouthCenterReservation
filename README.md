@@ -73,11 +73,13 @@
 <br>
 
 ## 📌 메뉴 구성
-![menu](https://user-images.githubusercontent.com/125417021/226229537-397f7171-3ebc-4832-855b-6cd9cbe2b216.PNG)
+![service](https://user-images.githubusercontent.com/125417021/226229886-cde53346-d86e-4fe2-981b-5e47169dcb6c.PNG)
 <br>
 
 ## 📌 서비스 흐름도
-![service](https://user-images.githubusercontent.com/125417021/226229886-cde53346-d86e-4fe2-981b-5e47169dcb6c.PNG)
+![service2](https://user-images.githubusercontent.com/125417021/226230003-63679a04-bf6a-46b0-b506-2ab4eb06a9f2.PNG)
+
+
 <br>
 
 ## 📌 ER다이어그램
