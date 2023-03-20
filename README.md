@@ -133,12 +133,12 @@
     <td align="center"><b>Deep Learning</b></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/mable052" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/sora3601" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/2minz" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/kp1145" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/YUSEONGHOON" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/EungjinK" target='_blank'>github</a></td>
   </tr>
 </table>
 
