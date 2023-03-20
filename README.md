@@ -123,12 +123,32 @@
     <td align="center"><strong>김응진</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b>Deep Learning</b></td>
-    <td align="center"><b>Deep Learning</b></td>
+    <td align="center">
+        <b>마이페이지</b>
+        <b>리뷰페이지</b>
+    </td>
+    <td align="center">
+        <b>예약페이지</b>
+        <b>공간리스트</b>
+        <b>DB관리</b>
+    </td>
+    <td align="center">
+        <b>예약페이지</b>
+        <b>센터리스트</b>
+        <b>메시지창</b>
+    </td>
+    <td align="center">
+        <b>KakaoMap API</b>
+        <b>로그인/회원가입</b>
+    </td>
+    <td align="center">
+        <b>크롤링</b>
+        <b>DB관리</b>
+        <b>ID/PW 찾기</b>
+    </td>
+    <td align="center">
+        <b>FullCalendar API</b>
+    </td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/mable052" target='_blank'>github</a></td>
