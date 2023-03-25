@@ -152,14 +152,14 @@
   <tr>
     <td align="center"><a href="https://github.com/mable052" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/sora3601" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/2minz" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/miniz2" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/kp1145" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/YUSEONGHOON" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/EungjinK" target='_blank'>github</a></td>
   </tr>
 </table>
 
-## 🤾‍♂️ 트러블슈팅
+<!-- ## 🤾‍♂️ 트러블슈팅
 개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
 프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
   
@@ -167,4 +167,4 @@
  문제점 설명 및 해결방안
  
 * 문제2<br>
- 문제점 설명 및 해결방안
+ 문제점 설명 및 해결방안 -->
